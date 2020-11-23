@@ -8,7 +8,7 @@
 - [ ] Basic UI screens
 - [ ] Complex UI screens
 - [ ] Backend Integration with firebase/app write
-- [ ] Bacsic Blender Models
+- [ ] Basic Blender Models
 - [ ] Complex Blender Models
 - [ ] Unity AR integraiton
 - [ ] Unit Testing
