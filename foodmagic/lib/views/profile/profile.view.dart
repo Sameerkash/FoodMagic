@@ -65,6 +65,7 @@ class ProfileView extends StatelessWidget {
                 fontWeight: FontWeight.w400
             ),
             ),
+          ],
     ),
  ),
     );
