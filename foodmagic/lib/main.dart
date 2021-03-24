@@ -11,6 +11,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     GlobalKey<NavigatorState> navigatorKey;
     return ScreenUtilInit(
       designSize: Size(2340, 1080),
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
       builder: () => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Food Magic',
+=======
+    return MaterialApp(
+        title: 'food magic',
+>>>>>>> acc2f17eb25aaaeeb5b794650929c3c3d3a4434e
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
