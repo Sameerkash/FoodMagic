@@ -18,7 +18,7 @@ class CustomBackground extends StatelessWidget {
         width: 1.sw,
         color: Color.fromARGB(255, 16, 36, 51),
       ),
-      BackgroundArc(),
+      BackgroundArc2(),
       child
     ]);
   }
