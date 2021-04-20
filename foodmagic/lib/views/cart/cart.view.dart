@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodmagic/widgets/background_arc.widget.dart';
 import 'package:foodmagic/widgets/containers.dart';
+import 'package:foodmagic/widgets/custom_background.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CartView extends StatelessWidget {
@@ -31,60 +32,70 @@ class CartView extends StatelessWidget {
         ],
       ),
 
-      body: SingleChildScrollView(
-        child: Stack(children: [
-          BackgroundArc(),
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Card(
-              child: Column(
-                children: [
-                  Container(
-                    height: 0.08.sh,
-                    width: double.infinity,
-                    color: Colors.amber,
-                    alignment: Alignment.center,
-                    child: Text(
-                      "3 Items/ Totoal Cost 199",
-                      style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) => ItemTile(),
-                    itemCount: 3,
-                  ),
-                  CartContainer(
-                    leading: "Coupon Code",
-                    trailing: "D3DE5",
-                  ),
-                  CartContainer(
-                    leading: "Total Amount",
-                    trailing: "\$199",
-                  ),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 16, 36, 51)),
-                    onPressed: () {},
-                    child: Container(
-                        alignment: Alignment.center,
-                        width: 0.75.sw,
-                        height: 0.05.sh,
-                        child: Text("ORDER NOW",
-                            style: GoogleFonts.openSans(color: Colors.amber))),
-                  ),
-                  SizedBox(
-                    height: 0.03.sh,
-                  ),
-                ],
+      body: CustomBackground(
+        child: SingleChildScrollView(
+          child: CartContent(),
+        ),
+      ),
+    );
+  }
+}
+
+class CartContent extends StatelessWidget {
+  const CartContent({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Card(
+        child: Column(
+          children: [
+            Container(
+              height: 0.08.sh,
+              width: double.infinity,
+              color: Colors.amber,
+              alignment: Alignment.center,
+              child: Text(
+                "3 Items/ Totoal Cost 199",
+                style: GoogleFonts.openSans(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
             ),
-          ),
-        ]),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) => ItemTile(),
+              itemCount: 3,
+            ),
+            CartContainer(
+              leading: "Coupon Code",
+              trailing: "D3DE5",
+            ),
+            CartContainer(
+              leading: "Total Amount",
+              trailing: "\$199",
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 16, 36, 51)),
+              onPressed: () {},
+              child: Container(
+                  alignment: Alignment.center,
+                  width: 0.75.sw,
+                  height: 0.05.sh,
+                  child: Text("ORDER NOW",
+                      style: GoogleFonts.openSans(color: Colors.amber))),
+            ),
+            SizedBox(
+              height: 0.03.sh,
+            ),
+          ],
+        ),
       ),
     );
   }

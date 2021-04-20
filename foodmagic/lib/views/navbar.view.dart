@@ -2,22 +2,17 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:foodmagic/views/cart/cart.view.dart';
+import 'package:foodmagic/views/profile/profile.view.dart';
 
-class NavbarView extends StatefulHookWidget {
-  const NavbarView({Key key}) : super(key: key);
-
-  @override
-  _NavbarViewState createState() => _NavbarViewState();
-}
-
-class _NavbarViewState extends State<NavbarView>
-    with SingleTickerProviderStateMixin {
+class NavbarView extends HookWidget {
   @override
   Widget build(BuildContext context) {
     var currentIndex = useState(0);
     var pageController = usePageController();
+
     return Scaffold(
       body: PageView(
+        onPageChanged: (index) => currentIndex.value = index,
         controller: pageController,
         children: [
           Center(
@@ -31,11 +26,7 @@ class _NavbarViewState extends State<NavbarView>
               child: Text("Hedalskmdalo"),
             ),
           ),
-          Center(
-            child: Container(
-              child: Text("Heladslko"),
-            ),
-          ),
+          ProfileView()
         ],
       ),
       bottomNavigationBar: BottomNavyBar(
@@ -44,17 +35,16 @@ class _NavbarViewState extends State<NavbarView>
         itemCornerRadius: 24,
         curve: Curves.easeIn,
         onItemSelected: (index) {
+          print(currentIndex.value);
           currentIndex.value = index;
           pageController.animateToPage(index,
-              duration: Duration(microseconds: 500),
+              duration: Duration(milliseconds: 500),
               curve: Curves.fastOutSlowIn);
         },
         backgroundColor: Colors.black,
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
-            icon: Icon(
-              Icons.home,
-            ),
+            icon: Icon(Icons.home),
             title: Text('Home'),
             activeColor: Colors.amber,
             textAlign: TextAlign.center,
@@ -69,9 +59,7 @@ class _NavbarViewState extends State<NavbarView>
           ),
           BottomNavyBarItem(
             icon: Icon(Icons.history),
-            title: Text(
-              'Recent',
-            ),
+            title: Text('Recent'),
             inactiveColor: Colors.grey,
             activeColor: Colors.amber,
             textAlign: TextAlign.center,

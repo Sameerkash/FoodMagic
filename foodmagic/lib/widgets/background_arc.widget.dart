@@ -28,7 +28,7 @@ class RPSCustomPainter extends CustomPainter {
       ..strokeWidth = 1;
 
     Path path_0 = Path();
-    path_0.moveTo(size.width * 0.0028571, size.height * 0.2980000);
+    path_0.moveTo(size.width * 0.0028575, size.height * 0.2980000);
     path_0.quadraticBezierTo(size.width * 0.0509429, size.height * 0.4220400,
         size.width * 0.1442857, size.height * 0.4960000);
     path_0.cubicTo(
