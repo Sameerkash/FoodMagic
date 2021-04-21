@@ -4,13 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ProfileView extends StatelessWidget {
   final style1 = GoogleFonts.openSans(
-      fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black);
+      fontSize: 18, fontWeight: FontWeight.w500, color: Colors.amber);
   final style2 = GoogleFonts.openSans(
       fontSize: 15, fontWeight: FontWeight.w400, color: Colors.grey);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color.fromARGB(255, 16, 36, 51),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 16, 36, 51),
         elevation: 0,

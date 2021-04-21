@@ -1,6 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:foodmagic/views/recents/recents.view.dart';
 
 import 'cart/cart.view.dart';
 import 'home/home.view.dart';
@@ -19,12 +20,8 @@ class NavbarView extends HookWidget {
         children: [
           HomeView(),
           CartView(),
-          Center(
-            child: Container(
-              child: Text("Hedalskmdalo"),
-            ),
-          ),
-          ProfileView()
+          RecentsView(),
+          ProfileView(),
         ],
       ),
       bottomNavigationBar: BottomNavyBar(
