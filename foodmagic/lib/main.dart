@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodmagic/router/router.gr.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import 'router/router.gr.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));

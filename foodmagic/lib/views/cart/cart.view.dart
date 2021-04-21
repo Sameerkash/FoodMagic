@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodmagic/widgets/background_arc.widget.dart';
-import 'package:foodmagic/widgets/containers.dart';
-import 'package:foodmagic/widgets/custom_background.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../widgets/containers.dart';
+import '../../widgets/custom_background.dart';
 
 class CartView extends StatelessWidget {
   @override

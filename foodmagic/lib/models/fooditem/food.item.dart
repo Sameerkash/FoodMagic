@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'food.item.freezed.dart';
 part 'food.item.g.dart';
 

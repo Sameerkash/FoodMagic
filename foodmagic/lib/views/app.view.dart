@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodmagic/views/navbar.view.dart';
+
+import 'navbar.view.dart';
 
 class AppView extends StatelessWidget {
   @override
