@@ -1,12 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../../utils/extensions.dart';
 
 class RecentsView extends StatelessWidget {
-  final style1 = GoogleFonts.openSans(
-      fontSize: 16, fontWeight: FontWeight.w500, color: Colors.amber);
-
   /// Dummy data
   final List<OrderItems> orderItem = [
     OrderItems(
@@ -28,6 +24,7 @@ class RecentsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final style1 = context.bodyText1;
     return Scaffold(
       backgroundColor: Color(0xff0e273b),
       body: SafeArea(
@@ -37,13 +34,8 @@ class RecentsView extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(15.0),
-                child: Text(
-                  "Your Orders",
-                  style: GoogleFonts.openSans(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.amber),
-                ),
+                child: Text("Your Orders",
+                    style: context.headline1.copyWith(fontSize: 22)),
               ),
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
@@ -97,17 +89,9 @@ class OrderItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Total",
-                      style: GoogleFonts.openSans(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey,
-                      )),
+                      style: context.headline2.copyWith(color: Colors.grey)),
                   Text("$total",
-                      style: GoogleFonts.openSans(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.amber,
-                      )),
+                      style: context.subtitle2.copyWith(color: Colors.amber)),
                 ],
               ),
               Divider(),
@@ -124,7 +108,8 @@ class OrderItem extends StatelessWidget {
                         width: 50,
                         child: CircleAvatar(
                             radius: 5,
-                            backgroundImage: AssetImage(orderItems[i].imageUrl)),
+                            backgroundImage:
+                                AssetImage(orderItems[i].imageUrl)),
                       ),
                       SizedBox(width: 0.03.sw),
                       Text("${orderItems[i].quantity} x ${orderItems[i].name}",

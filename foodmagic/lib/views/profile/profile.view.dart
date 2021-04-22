@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../../utils/extensions.dart';
 
 class ProfileView extends StatelessWidget {
-  final style1 = GoogleFonts.openSans(
-      fontSize: 18, fontWeight: FontWeight.w500, color: Colors.amber);
-  final style2 = GoogleFonts.openSans(
-      fontSize: 15, fontWeight: FontWeight.w400, color: Colors.grey);
   @override
   Widget build(BuildContext context) {
+    final style1 = context.headline1.copyWith(fontWeight: FontWeight.w500);
+    final style2 = context.bodyText1
+        .copyWith(fontWeight: FontWeight.w400, color: Colors.grey);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 16, 36, 51),
@@ -82,9 +81,15 @@ class ProfileView extends StatelessWidget {
                             Spacer(
                               flex: 1,
                             ),
-                            IconButton(
-                              icon: Icon(Icons.favorite_border),
-                              onPressed: () {},
+                            Align(
+                              alignment: Alignment.center,
+                              child: IconButton(
+                                icon: Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.red,
+                                ),
+                                onPressed: () {},
+                              ),
                             )
                           ],
                         ),

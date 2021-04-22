@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../../widgets/containers.dart';
-import '../../widgets/background.dart';
 import '../../utils/extensions.dart';
+import '../../widgets/background.dart';
+import '../../widgets/containers.dart';
+
 class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color.fromARGB(255, 16, 36, 51),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 16, 36, 51),
         elevation: 0,
         centerTitle: true,
         toolbarHeight: 80,
@@ -31,7 +29,6 @@ class CartView extends StatelessWidget {
           )
         ],
       ),
-
       body: CustomBackground(
         child: SingleChildScrollView(
           child: CartContent(),
@@ -60,10 +57,8 @@ class CartContent extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 "3 Items/ Totoal Cost 199",
-                style: GoogleFonts.openSans(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
+                style: context.headline2
+                    .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
               ),
             ),
             ListView.builder(
@@ -81,15 +76,12 @@ class CartContent extends StatelessWidget {
               trailing: "\$199",
             ),
             TextButton(
-              style: TextButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 16, 36, 51)),
               onPressed: () {},
-              child: Container(
-                  alignment: Alignment.center,
-                  width: 0.75.sw,
-                  height: 0.05.sh,
-                  child: Text("ORDER NOW",
-                      style: GoogleFonts.openSans(color: Colors.amber))),
+              style: TextButton.styleFrom(
+                  backgroundColor: context.primaryColor,
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 0.2.sw, vertical: 0.02.sh)),
+              child: Text("ORDER NOW", style: context.button.copyWith()),
             ),
             SizedBox(
               height: 0.03.sh,
@@ -102,18 +94,21 @@ class CartContent extends StatelessWidget {
 }
 
 class ItemTile extends StatelessWidget {
+  final String title;
+  final String subTitle;
+  final String price;
   const ItemTile({
     Key key,
+    @required this.title,
+    @required this.subTitle,
+    @required this.price,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final style1 = GoogleFonts.openSans(
-        fontSize: 17, fontWeight: FontWeight.w500, color: Colors.black);
-    final style2 = GoogleFonts.openSans(
-        fontSize: 20, fontWeight: FontWeight.w400, color: Colors.grey);
-    final style3 = GoogleFonts.openSans(
-        fontSize: 13, fontWeight: FontWeight.w400, color: Colors.grey);
+    final style1 = context.headline1;
+    final style2 = context.subtitle2;
+    final style3 = context.subtitle1;
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 0.01.sh),
       child: Container(
