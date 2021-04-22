@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../widgets/containers.dart';
-import '../../widgets/custom_background.dart';
-
+import '../../widgets/background.dart';
+import '../../utils/extensions.dart';
 class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,11 +15,11 @@ class CartView extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         toolbarHeight: 80,
-        title: Text("CART ITEM",
-            style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.white)),
+        title: Text(
+          "CART ITEM",
+          style: TextStyle(
+              fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(0.0),
           child: const SizedBox(),

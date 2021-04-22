@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../widgets/custom_background.dart';
+import '../../widgets/background.dart';
 
 class HomeView extends StatelessWidget {
 // Temporary data

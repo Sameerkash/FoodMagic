@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'background_arc.widget.dart';
+import 'arc.dart';
 
 class CustomBackground extends StatelessWidget {
   final Widget child;

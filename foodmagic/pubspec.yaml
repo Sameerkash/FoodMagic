@@ -24,40 +24,29 @@ dependencies:
   flutter:
     sdk: flutter
   animations: ^2.0.0
-  auto_route: ^0.6.9
   auto_size_text: ^2.1.0
+  badges: ^1.2.0
+  beamer: ^0.12.1
   bottom_navy_bar: ^5.6.0
-  bubble: ^1.1.9+1
   cached_network_image: ^2.4.1
   carousel_slider: ^2.3.1
-  cloud_firestore: ^0.14.4
   cupertino_icons: ^1.0.2
   dartz: ^0.9.2
-  direct_select_flutter: ^1.0.7
-  firebase_auth: ^0.18.4+1
-  firebase_core: ^0.5.3
-  firebase_storage: ^5.2.0
   flutter_hooks: ^0.15.0
   flutter_screenutil: ^4.0.3+3
-  flutter_swipable: ^0.1.1
-  flutter_tindercard: ^0.2.0
   flutter_vector_icons: ^1.0.0
-  flutter_zoom_drawer: ^1.0.4+1
   freezed_annotation: ^0.12.0
   geolocator: ^5.3.1
+  get: ^4.1.4
   google_fonts: ^1.1.1
-  hooks_riverpod: ^0.12.2
   json_annotation: ^3.0.0
   path_provider: ^2.0.1
   sembast: ^3.0.0+4
-  swipebuttonflutter: ^0.1.2
   url_launcher: ^5.7.10
-  badges: ^1.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  auto_route_generator: ^0.6.10
   build_runner: ^1.6.0
   freezed: ^0.12.7
   json_serializable: ^3.5.1
