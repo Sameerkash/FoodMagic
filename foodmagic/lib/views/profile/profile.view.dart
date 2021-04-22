@@ -19,10 +19,7 @@ class ProfileView extends StatelessWidget {
               fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 15.0),
-            child: Icon(Icons.edit),
-          )
+          Icon(Icons.edit).padR(15.0),
         ],
       ),
       body: SafeArea(
@@ -45,64 +42,56 @@ class ProfileView extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
-                child: Text(
-                  "Favourites",
-                  style: TextStyle(fontSize: 20, color: Colors.grey),
-                ),
-              ),
+              Text(
+                "Favourites",
+                style: TextStyle(fontSize: 20, color: Colors.grey),
+              ).padSym(15.0, 30.0),
               AnimatedList(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 initialItemCount: 8,
                 itemBuilder: (context, index, animation) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 5.0, horizontal: 5),
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      elevation: 1,
-                      child: ListTile(
-                        leading: Container(
-                          height: 100,
-                          width: 100,
-                          child: CircleAvatar(
-                              radius: 5,
-                              backgroundImage: AssetImage('assets/p1.jpeg')),
-                        ),
-                        title: Row(
-                          children: [
-                            Text("Margherita", style: style1),
-                            SizedBox(width: 0.02.sw),
-                            Text("Original", style: style2),
-                            Spacer(
-                              flex: 1,
-                            ),
-                            Align(
-                              alignment: Alignment.center,
-                              child: IconButton(
-                                icon: Icon(
-                                  Icons.favorite_border,
-                                  color: Colors.red,
-                                ),
-                                onPressed: () {},
+                  return Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    elevation: 1,
+                    child: ListTile(
+                      leading: Container(
+                        height: 100,
+                        width: 100,
+                        child: CircleAvatar(
+                            radius: 5,
+                            backgroundImage: AssetImage('assets/p1.jpeg')),
+                      ),
+                      title: Row(
+                        children: [
+                          Text("Margherita", style: style1),
+                          SizedBox(width: 0.02.sw),
+                          Text("Original", style: style2),
+                          Spacer(
+                            flex: 1,
+                          ),
+                          Align(
+                            alignment: Alignment.center,
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.favorite_border,
+                                color: Colors.red,
                               ),
-                            )
-                          ],
-                        ),
-                        subtitle: Row(
-                          children: [
-                            Text("Italiano", style: style2),
-                            SizedBox(width: 0.02.sw),
-                            Text("Lover", style: style2)
-                          ],
-                        ),
+                              onPressed: () {},
+                            ),
+                          )
+                        ],
+                      ),
+                      subtitle: Row(
+                        children: [
+                          Text("Italiano", style: style2),
+                          SizedBox(width: 0.02.sw),
+                          Text("Lover", style: style2)
+                        ],
                       ),
                     ),
-                  );
+                  ).padSym(5.0, 5.0);
                 },
               )
             ],

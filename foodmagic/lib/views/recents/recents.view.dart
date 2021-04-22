@@ -32,11 +32,10 @@ class RecentsView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Text("Your Orders",
-                    style: context.headline1.copyWith(fontSize: 22)),
-              ),
+              Text(
+                "Your Orders",
+                style: context.headline1.copyWith(fontSize: 22),
+              ).padAll(15),
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
@@ -73,88 +72,84 @@ class OrderItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        elevation: 2,
-        child: Container(
-          padding: const EdgeInsets.all(12),
-          width: 0.8.sw,
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Total",
-                      style: context.headline2.copyWith(color: Colors.grey)),
-                  Text("$total",
-                      style: context.subtitle2.copyWith(color: Colors.amber)),
-                ],
-              ),
-              Divider(),
-              ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: orderItems.length,
-                itemBuilder: (_, i) => Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 50,
-                        width: 50,
-                        child: CircleAvatar(
-                            radius: 5,
-                            backgroundImage:
-                                AssetImage(orderItems[i].imageUrl)),
-                      ),
-                      SizedBox(width: 0.03.sw),
-                      Text("${orderItems[i].quantity} x ${orderItems[i].name}",
-                          style: style1.copyWith(
-                              color: Colors.black87, fontSize: 15)),
-                      Spacer(flex: 1),
-                      Text("${orderItems[i].price}",
-                          style: style1.copyWith(
-                              color: Colors.black54, fontSize: 14)),
-                      SizedBox(width: 0.025.sw),
-                    ],
-                  ),
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      elevation: 2,
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        width: 0.8.sw,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Total",
+                    style: context.headline2.copyWith(color: Colors.grey)),
+                Text("$total",
+                    style: context.subtitle2.copyWith(color: Colors.amber)),
+              ],
+            ),
+            Divider(),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: orderItems.length,
+              itemBuilder: (_, i) => Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 50,
+                      width: 50,
+                      child: CircleAvatar(
+                          radius: 5,
+                          backgroundImage: AssetImage(orderItems[i].imageUrl)),
+                    ),
+                    SizedBox(width: 0.03.sw),
+                    Text("${orderItems[i].quantity} x ${orderItems[i].name}",
+                        style: style1.copyWith(
+                            color: Colors.black87, fontSize: 15)),
+                    Spacer(flex: 1),
+                    Text("${orderItems[i].price}",
+                        style: style1.copyWith(
+                            color: Colors.black54, fontSize: 14)),
+                    SizedBox(width: 0.025.sw),
+                  ],
                 ),
               ),
-              Divider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        "Ordered on",
-                        style: style1.copyWith(
-                            color: Colors.black54, fontSize: 14),
-                      ),
-                      Text("$orderDate",
-                          style: style1.copyWith(
-                              color: Colors.black87, fontSize: 14)),
-                    ],
-                  ),
-                  TextButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.replay, color: Colors.amber),
-                    label: Text(
-                      "Repeat Order",
-                      style: style1.copyWith(color: Colors.amber, fontSize: 14),
+            ),
+            Divider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      "Ordered on",
+                      style:
+                          style1.copyWith(color: Colors.black54, fontSize: 14),
                     ),
+                    Text("$orderDate",
+                        style: style1.copyWith(
+                            color: Colors.black87, fontSize: 14)),
+                  ],
+                ),
+                TextButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.replay, color: Colors.amber),
+                  label: Text(
+                    "Repeat Order",
+                    style: style1.copyWith(color: Colors.amber, fontSize: 14),
                   ),
-                ],
-              )
-            ],
-          ),
+                ),
+              ],
+            )
+          ],
         ),
       ),
-    );
+    ).padAll(8);
   }
 }
 

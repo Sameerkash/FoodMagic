@@ -129,22 +129,15 @@ class HomeView extends StatelessWidget {
                   Item(menuItems: tacoItems),
                 ]),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: Text(
-                  "FOOD AND DRINKS",
-                  style: context.bodyText2.copyWith(
-                      fontStyle: FontStyle.italic, fontWeight: FontWeight.w700),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: Text(
-                  "Popular Today",
-                  style:
-                      context.bodyText1.copyWith(fontWeight: FontWeight.bold),
-                ),
-              ),
+              Text(
+                "FOOD AND DRINKS",
+                style: context.bodyText2.copyWith(
+                    fontStyle: FontStyle.italic, fontWeight: FontWeight.w700),
+              ).padSym(0.0, 15.0),
+              Text(
+                "Popular Today",
+                style: context.bodyText1.copyWith(fontWeight: FontWeight.bold),
+              ).padSym(0.0, 15.0),
               Container(
                 height: 0.32.sh,
                 child: ListView.builder(
