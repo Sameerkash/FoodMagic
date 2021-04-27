@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodmagic/widgets/button.dart';
 
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
@@ -70,14 +71,7 @@ class CartContent extends StatelessWidget {
             leading: "Total Amount",
             trailing: "\$199",
           ),
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-                backgroundColor: context.primaryColor,
-                padding: EdgeInsets.symmetric(
-                    horizontal: 0.2.sw, vertical: 0.02.sh)),
-            child: Text("ORDER NOW", style: context.button.copyWith()),
-          ),
+          CustomTextButton(text: "ORDER NOW"),
           SizedBox(
             height: 0.03.sh,
           ),

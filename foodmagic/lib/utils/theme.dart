@@ -29,7 +29,7 @@ class AppTheme {
         subtitle2: GoogleFonts.openSans(
             fontSize: 20, fontWeight: FontWeight.w400, color: Colors.grey),
         button: GoogleFonts.openSans(
-            backgroundColor: primaryColor, color: Colors.amber),
+            backgroundColor: primaryColor, color: Colors.amber, fontSize: 18),
         caption: GoogleFonts.openSans(color: Colors.amber, fontSize: 16),
       ),
     );
