@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodmagic/widgets/button.dart';
 
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
+import '../../widgets/button.dart';
 import '../../widgets/containers.dart';
 
 class CartView extends StatelessWidget {

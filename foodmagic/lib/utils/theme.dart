@@ -32,6 +32,18 @@ class AppTheme {
             backgroundColor: primaryColor, color: Colors.amber, fontSize: 18),
         caption: GoogleFonts.openSans(color: Colors.amber, fontSize: 16),
       ),
+      inputDecorationTheme: InputDecorationTheme(
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey[300]),
+        ),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.amber),
+        ),
+        labelStyle: GoogleFonts.openSans(
+            fontSize: 18, fontWeight: FontWeight.w500, color: Colors.amber),
+        suffixStyle: GoogleFonts.openSans(
+            fontSize: 18, fontWeight: FontWeight.w500, color: Colors.amber),
+      ),
     );
   }
 }

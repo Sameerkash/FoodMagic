@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodmagic/views/auth/auth.view.dart';
 
-import 'navbar.view.dart';
+import 'auth/auth.view.dart';
 
 class AppView extends StatelessWidget {
   @override

@@ -5,21 +5,36 @@ import 'arc.dart';
 
 class CustomBackground extends StatelessWidget {
   final Widget child;
-  const CustomBackground({
-    Key key,
-    @required this.child,
-  }) : super(key: key);
+  final List<Widget> children;
+  final MainAxisSize mainAxisSize;
+  final MainAxisAlignment mainAxisAlignment;
+  final CrossAxisAlignment crossAxisAlignment;
+  const CustomBackground(
+      {Key key,
+      this.child,
+      this.children,
+      this.mainAxisAlignment,
+      this.crossAxisAlignment,
+      this.mainAxisSize})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
+    return SingleChildScrollView(
+        child: Stack(children: [
       Container(
         height: 0.01.sh,
         width: 1.sw,
         color: Color.fromARGB(255, 16, 36, 51),
       ),
       BackgroundArc2(),
-      child
-    ]);
+      if (child != null) child,
+      if (children != null && children.isNotEmpty)
+        Column(
+            mainAxisSize: mainAxisSize ?? MainAxisSize.min,
+            crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
+            mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.center,
+            children: children)
+    ]));
   }
 }

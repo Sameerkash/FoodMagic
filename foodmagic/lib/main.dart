@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodmagic/utils/theme.dart';
-import 'package:foodmagic/views/app.view.dart';
 import 'package:get/get.dart';
+
+import 'utils/theme.dart';
+import 'views/app.view.dart';
 
 void main() {
   runApp((MyApp()));

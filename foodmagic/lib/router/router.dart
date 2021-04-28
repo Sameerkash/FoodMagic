@@ -1,6 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:foodmagic/views/navbar.view.dart';
+
+import '../views/navbar.view.dart';
 
 class NavBarLocation extends BeamLocation {
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../utils/extensions.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../utils/extensions.dart';
 
 /// Items that are displayed below Popular Today section
 class HomeItemCard extends StatelessWidget {

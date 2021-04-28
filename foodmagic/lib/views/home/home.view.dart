@@ -3,8 +3,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:foodmagic/widgets/cards.dart';
-import 'package:foodmagic/widgets/containers.dart';
+import '../../widgets/cards.dart';
+import '../../widgets/containers.dart';
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
 
