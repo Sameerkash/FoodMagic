@@ -5,13 +5,15 @@ import 'package:foodmagic/router/router.dart';
 import 'package:get/get.dart';
 
 import 'utils/theme.dart';
-import 'views/app.view.dart';
 
 void main() {
   runApp((MyApp()));
 }
 
 class MyApp extends StatelessWidget {
+  final routerDelegate = BeamerRouterDelegate(
+      locationBuilder: BeamerLocationBuilder(
+          beamLocations: [AppViewLocation(), AuthViewLocation()]));
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -21,14 +23,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Food Magic',
         theme: AppTheme.appTheme(),
-        routerDelegate: BeamerRouterDelegate(
-          locationBuilder: (state) {
-            if (state.uri.pathSegments.contains('signup')) {
-              return AuthViewLocation(state);
-            }
-            return AppViewLocation(state);
-          },
-        ),
+        routerDelegate: routerDelegate,
+        backButtonDispatcher:
+            BeamerBackButtonDispatcher(delegate: routerDelegate),
         routeInformationParser: BeamerRouteInformationParser(),
       ),
     );

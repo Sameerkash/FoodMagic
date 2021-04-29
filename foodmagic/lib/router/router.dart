@@ -7,7 +7,6 @@ import 'package:foodmagic/views/auth/signup.view.dart';
 import '../views/navbar.view.dart';
 
 class AppViewLocation extends BeamLocation {
-  AppViewLocation(BeamState state) : super(state);
   @override
   List<BeamPage> pagesBuilder(BuildContext context, BeamState state) {
     return [
@@ -24,8 +23,6 @@ class AppViewLocation extends BeamLocation {
 }
 
 class AuthViewLocation extends BeamLocation {
-  AuthViewLocation(BeamState state) : super(state);
-
   @override
   List<BeamPage> pagesBuilder(BuildContext context, BeamState state) {
     return [
