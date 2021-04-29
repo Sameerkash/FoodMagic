@@ -1,5 +1,7 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodmagic/router/router.dart';
 import 'package:get/get.dart';
 
 import 'utils/theme.dart';
@@ -15,11 +17,19 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: Size(2340, 1080),
       allowFontScaling: false,
-      builder: () => GetMaterialApp(
+      builder: () => GetMaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: 'Food Magic',
         theme: AppTheme.appTheme(),
-        home: AppView(),
+        routerDelegate: BeamerRouterDelegate(
+          locationBuilder: (state) {
+            if (state.uri.pathSegments.contains('signup')) {
+              return AuthViewLocation(state);
+            }
+            return AppViewLocation(state);
+          },
+        ),
+        routeInformationParser: BeamerRouteInformationParser(),
       ),
     );
   }

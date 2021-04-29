@@ -1,11 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:beamer/beamer.dart';
+import 'package:foodmagic/router/router.dart';
+import 'package:foodmagic/views/auth/auth.view.dart';
 import '../../widgets/background.dart';
 import '../../widgets/button.dart';
 import '../../widgets/field.dart';
 import '../../utils/extensions.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignInView extends StatelessWidget {
   @override
@@ -59,7 +62,10 @@ class SignInView extends StatelessWidget {
                 TextSpan(
                   text: "Sign Up",
                   style: context.bodyText1.copyWith(color: Colors.amber),
-                  recognizer: TapGestureRecognizer()..onTap = () {},
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      context.beamToNamed('/signup', beamBackOnPop: true);
+                    },
                 ),
               ],
             ),

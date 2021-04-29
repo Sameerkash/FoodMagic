@@ -6,7 +6,7 @@ import '../../widgets/button.dart';
 import '../../widgets/field.dart';
 import '../../utils/extensions.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:beamer/beamer.dart';
 class SignUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,9 @@ class SignUpView extends StatelessWidget {
                 TextSpan(
                   text: "Sign In",
                   style: context.bodyText1.copyWith(color: Colors.amber),
-                  recognizer: TapGestureRecognizer()..onTap = () {},
+                  recognizer: TapGestureRecognizer()..onTap = () {
+                     context.beamBack();
+                  },
                 ),
               ],
             ),
