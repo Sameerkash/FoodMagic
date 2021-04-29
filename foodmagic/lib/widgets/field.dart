@@ -23,6 +23,7 @@ class CustomTextField extends StatelessWidget {
     return Container(
       width: width ?? 0.82.sw,
       child: TextField(
+        controller: controller,
         style: GoogleFonts.openSans(
             fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
         obscureText: obscureText,

@@ -1,15 +1,22 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:foodmagic/services/repository.dart';
 import '../../widgets/background.dart';
 import '../../widgets/button.dart';
 import '../../widgets/field.dart';
 import '../../utils/extensions.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:beamer/beamer.dart';
-class SignUpView extends StatelessWidget {
+
+class SignUpView extends HookWidget {
   @override
   Widget build(BuildContext context) {
+    var name = useTextEditingController();
+    var password = useTextEditingController();
+    var email = useTextEditingController();
+
     return Scaffold(
       body: CustomBackground(
         children: [
@@ -34,23 +41,38 @@ class SignUpView extends StatelessWidget {
           Container(),
           SizedBox(height: 0.1.sh),
           CustomTextField(
+              controller: email,
               label: "Your Email",
               icon: Icon(MaterialCommunityIcons.email,
                   color: context.primaryColor)),
           SizedBox(height: 0.04.sh),
           CustomTextField(
+              controller: name,
               label: "Your Name",
               icon: Icon(MaterialCommunityIcons.face_profile,
                   color: context.primaryColor)),
           SizedBox(height: 0.04.sh),
           CustomTextField(
+            controller: password,
             obscureText: true,
             label: "Your Password",
             icon: Icon(MaterialCommunityIcons.eye, color: context.primaryColor),
           ),
           SizedBox(height: 0.08.sh),
           CustomTextButton(
-            onPressed: () {},
+            onPressed: () {
+              if (email.value.text.length > 0 &&
+                  name.value.text.length > 0 &&
+                  password.value.text.length > 0) {
+                print(email.value.text);
+                print("hello");
+
+                Repository.intializeApp().createUser(
+                    email: email.value.text,
+                    name: name.value.text,
+                    password: password.value.text);
+              }
+            },
             text: "SIGN UP",
             paddingH: 0.35.sw,
           ),
@@ -64,9 +86,10 @@ class SignUpView extends StatelessWidget {
                 TextSpan(
                   text: "Sign In",
                   style: context.bodyText1.copyWith(color: Colors.amber),
-                  recognizer: TapGestureRecognizer()..onTap = () {
-                     context.beamBack();
-                  },
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      context.beamBack();
+                    },
                 ),
               ],
             ),
