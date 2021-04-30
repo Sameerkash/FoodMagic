@@ -23,3 +23,4 @@ abstract class AppUser with _$AppUser {
 
   Map<String, dynamic> toJson() => _$_$_AppUserToJson(this);
 }
+
