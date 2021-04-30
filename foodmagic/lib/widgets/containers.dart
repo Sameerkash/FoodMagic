@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../utils/extensions.dart';
+import '../utils/extensions.dart';
 
 class CartContainer extends StatelessWidget {
   final String leading;
