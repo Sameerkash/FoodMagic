@@ -1,0 +1,1 @@
+Scripts for Initializing AppWrite database with dummy data

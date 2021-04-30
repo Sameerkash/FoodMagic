@@ -18,7 +18,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   final routerDelegate = BeamerRouterDelegate(
       locationBuilder: BeamerLocationBuilder(beamLocations: [
-    AppViewLocation(),
+    // AppViewLocation(),
     // NavBarViewLocation(),
     // AuthViewLocation()
   ]));
