@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodmagic/controllers/auth.controller.dart';
+import 'package:get/get.dart';
 import '../../utils/extensions.dart';
 
 class ProfileView extends StatelessWidget {
+  final auth = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     final style1 = context.headline1.copyWith(fontWeight: FontWeight.w500);
@@ -19,7 +22,12 @@ class ProfileView extends StatelessWidget {
               fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
         ),
         actions: [
-          Icon(Icons.edit).padR(15.0),
+          IconButton(
+            icon: Icon(Icons.edit).padR(15.0),
+            onPressed: () {
+              auth.signOut();
+            },
+          )
         ],
       ),
       body: SafeArea(

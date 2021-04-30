@@ -4,8 +4,11 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:beamer/beamer.dart';
+import 'package:foodmagic/controllers/auth.controller.dart';
 import 'package:foodmagic/router/router.dart';
 import 'package:foodmagic/views/auth/auth.view.dart';
+import 'package:foodmagic/views/auth/signup.view.dart';
+import 'package:get/get.dart';
 import '../../widgets/background.dart';
 import '../../widgets/button.dart';
 import '../../widgets/field.dart';
@@ -14,9 +17,9 @@ import '../../utils/extensions.dart';
 class SignInView extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    var name = useTextEditingController();
+    var email = useTextEditingController();
     var password = useTextEditingController();
-
+    final auth = Get.find<AuthController>();
 
     return Scaffold(
       body: CustomBackground(
@@ -42,19 +45,24 @@ class SignInView extends HookWidget {
           Container(),
           SizedBox(height: 0.1.sh),
           CustomTextField(
+            controller: email,
             label: "Your Email",
             icon:
                 Icon(MaterialCommunityIcons.email, color: context.primaryColor),
           ),
           SizedBox(height: 0.05.sh),
           CustomTextField(
+            controller: password,
             obscureText: true,
             label: "Your Password",
             icon: Icon(MaterialCommunityIcons.eye, color: context.primaryColor),
           ),
           SizedBox(height: 0.08.sh),
           CustomTextButton(
-            onPressed: () {},
+            onPressed: () {
+              if (email.value.text.length > 0 && password.value.text.length > 0)
+                auth.signIn(email.value.text, password.value.text);
+            },
             text: "SIGN IN",
             paddingH: 0.35.sw,
           ),
@@ -69,7 +77,8 @@ class SignInView extends HookWidget {
                   style: context.bodyText1.copyWith(color: Colors.amber),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      context.beamToNamed('/signup', beamBackOnPop: true);
+                      Get.to(SignUpView());
+                      // context.beamToNamed('/signup', beamBackOnPop: true);
                     },
                 ),
               ],
