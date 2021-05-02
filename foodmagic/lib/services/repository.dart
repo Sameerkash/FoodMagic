@@ -91,11 +91,17 @@ class Repository {
   }
 
   Future signInUser({String password, String email}) async {
+   
+    try {
+      
     final Response session =
         await account.createSession(email: email, password: password);
     print(session);
     if (session.statusCode == 201) {
+       print("signin");
       _store.record(SESSIONKEY).put(await getDb(), session.data);
+    }
+    } catch (e) {
     }
   }
 

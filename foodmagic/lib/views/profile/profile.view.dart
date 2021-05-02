@@ -86,7 +86,9 @@ class ProfileView extends StatelessWidget {
                                 Icons.favorite_border,
                                 color: Colors.red,
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+
+                              },
                             ),
                           )
                         ],

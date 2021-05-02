@@ -12,6 +12,7 @@ class FoodItem extends Equatable {
   final String price;
   final String tag;
   final String type;
+  
   FoodItem(
       {this.itemId,
       this.category,

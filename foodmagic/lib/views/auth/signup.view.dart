@@ -66,13 +66,15 @@ final auth = Get.find<AuthController>();
           SizedBox(height: 0.08.sh),
           CustomTextButton(
             onPressed: () {
+              print("called");
               if (email.value.text.length > 0 &&
                   name.value.text.length > 0 &&
                   password.value.text.length > 0) {
-              //  auth.sinup(
-              //       email: email.value.text,
-              //       name: name.value.text,
-              //       password: password.value.text);
+                    print(email.value.text);
+               auth.signUp(
+                    email: email.value.text,
+                    name: name.value.text,
+                    password: password.value.text);
               }
             },
             text: "SIGN UP",
@@ -90,7 +92,7 @@ final auth = Get.find<AuthController>();
                   style: context.bodyText1.copyWith(color: Colors.amber),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      context.beamBack();
+                      //context.beamBack();
                     },
                 ),
               ],

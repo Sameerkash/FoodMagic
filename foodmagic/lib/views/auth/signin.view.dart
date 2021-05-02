@@ -77,7 +77,7 @@ class SignInView extends HookWidget {
                   style: context.bodyText1.copyWith(color: Colors.amber),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      Get.to(SignUpView());
+                      Get.to(()=> SignUpView());
                       // context.beamToNamed('/signup', beamBackOnPop: true);
                     },
                 ),

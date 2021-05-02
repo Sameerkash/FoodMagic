@@ -78,7 +78,7 @@ class BackgroundArc2 extends StatelessWidget {
   final double diameter;
   const BackgroundArc2({
     Key key,
-    this.diameter = 730,
+    this.diameter = 500,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
