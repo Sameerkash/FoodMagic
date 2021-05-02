@@ -100,7 +100,7 @@ class ProfileView extends StatelessWidget {
                           Text("Lover", style: style2)
                         ],
                       ),
-                    ),
+                    ).padB(1.0)
                   ).padSym(5.0, 5.0);
                 },
               )
