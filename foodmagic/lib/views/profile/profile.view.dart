@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodmagic/controllers/auth.controller.dart';
+import '../../controllers/auth.controller.dart';
 import 'package:get/get.dart';
 import '../../utils/extensions.dart';
 
@@ -98,7 +98,7 @@ class ProfileView extends StatelessWidget {
                           Text("Lover", style: style2)
                         ],
                       ),
-                    ),
+                    ).padB(5),
                   ).padSym(5.0, 5.0);
                 },
               )

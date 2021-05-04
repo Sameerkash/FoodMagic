@@ -1,13 +1,13 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodmagic/controllers/bindings/bindings.dart';
-import 'package:foodmagic/router/router.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:foodmagic/services/locator.dart';
-import 'package:foodmagic/views/app.view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import 'controllers/bindings/bindings.dart';
+import 'services/locator.dart';
 import 'utils/theme.dart';
+import 'views/app.view.dart';
 
 void main() async {
   await load();

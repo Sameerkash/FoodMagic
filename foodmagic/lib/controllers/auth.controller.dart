@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:foodmagic/models/user/user.dart';
-import 'package:foodmagic/services/locator.dart';
-import 'package:foodmagic/services/repository.dart';
 import 'package:get/get.dart';
+
+import '../services/locator.dart';
+import '../services/repository.dart';
 
 class AuthController extends GetxController {
   final Rx<AuthenticationState> _state = AuthenticationState().obs;

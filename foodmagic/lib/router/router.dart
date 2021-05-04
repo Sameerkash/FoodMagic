@@ -1,9 +1,8 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:foodmagic/views/app.view.dart';
-import 'package:foodmagic/views/auth/auth.view.dart';
-import 'package:foodmagic/views/auth/signup.view.dart';
 
+import '../views/app.view.dart';
+import '../views/auth/signup.view.dart';
 import '../views/navbar.view.dart';
 
 class NavBarViewLocation extends BeamLocation {

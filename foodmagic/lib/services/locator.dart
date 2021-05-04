@@ -1,5 +1,6 @@
-import 'package:foodmagic/services/repository.dart';
 import 'package:get_it/get_it.dart';
+
+import 'repository.dart';
 
 final GetIt getIt = GetIt.instance;
 

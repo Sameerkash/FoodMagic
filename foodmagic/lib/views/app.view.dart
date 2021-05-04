@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:foodmagic/controllers/auth.controller.dart';
-import 'package:foodmagic/views/navbar.view.dart';
 import 'package:get/get.dart';
 
+import '../controllers/auth.controller.dart';
 import 'auth/auth.view.dart';
+import 'navbar.view.dart';
 
 class AppView extends GetWidget<AuthController> {
   @override

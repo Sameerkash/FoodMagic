@@ -60,7 +60,9 @@ class CartContent extends StatelessWidget {
           ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) => ItemTile(),
+            itemBuilder: (context, index) => ItemTile(
+              // price: "1234",
+            ),
             itemCount: 3,
           ),
           CartContainer(
