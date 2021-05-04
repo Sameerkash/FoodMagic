@@ -1,6 +1,8 @@
-import 'package:foodmagic/models/user/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../models/user/user.dart';
+
 part 'auth.vm.freezed.dart';
 
 @freezed

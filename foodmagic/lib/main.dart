@@ -8,7 +8,6 @@ import 'views/app.view.dart';
 
 void main() async {
   await load();
-
   runApp((MyApp()));
 }
 
