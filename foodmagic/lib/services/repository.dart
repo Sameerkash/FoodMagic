@@ -63,7 +63,7 @@ class Repository {
   Future<Map<String, Object?>?> getLoggedInUser() async {
     try {
       final user = await (_store.record(SESSIONKEY).get(await (getDb())));
-      // final appuser = AppUser.fromJson(user);
+      // final appuser = User.fromJson(user);
       if (user != null)
         return user;
       else
