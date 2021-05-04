@@ -3,21 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:get/get.dart';
 
-import '../../controllers/auth.controller.dart';
+
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
 import '../../widgets/button.dart';
 import '../../widgets/field.dart';
-import 'signup.view.dart';
 
 class SignInView extends HookWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController? email = useTextEditingController();
     TextEditingController? password = useTextEditingController();
-    final auth = Get.find<AuthController>();
 
     return Scaffold(
       body: CustomBackground(
@@ -58,8 +55,9 @@ class SignInView extends HookWidget {
           SizedBox(height: 0.08.sh),
           CustomTextButton(
             onPressed: () {
-              if (email.value.text.length > 0 && password.value.text.length > 0)
-                auth.signIn(email.value.text, password.value.text);
+              if (email.value.text.length > 0 &&
+                  password.value.text.length >
+                      0) {} // auth.signIn(email.value.text, password.value.text);
             },
             text: "SIGN IN",
             paddingH: 0.35.sw,
@@ -75,7 +73,7 @@ class SignInView extends HookWidget {
                   style: context.bodyText1!.copyWith(color: Colors.amber),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      Get.to(SignUpView());
+
                       // context.beamToNamed('/signup', beamBackOnPop: true);
                     },
                 ),

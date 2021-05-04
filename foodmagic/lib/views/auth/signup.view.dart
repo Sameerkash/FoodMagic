@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:get/get.dart';
 
-import '../../controllers/auth.controller.dart';
+
+
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
 import '../../widgets/button.dart';
@@ -19,7 +19,6 @@ class SignUpView extends HookWidget {
     TextEditingController? password = useTextEditingController();
     TextEditingController? email = useTextEditingController();
 
-    final auth = Get.find<AuthController>();
 
     return Scaffold(
       body: CustomBackground(
@@ -68,10 +67,10 @@ class SignUpView extends HookWidget {
               if (email.value.text.length > 0 &&
                   name.value.text.length > 0 &&
                   password.value.text.length > 0) {
-                auth.signUp(
-                    email: email.value.text,
-                    name: name.value.text,
-                    password: password.value.text);
+                // auth.signUp(
+                //     email: email.value.text,
+                //     name: name.value.text,
+                //     password: password.value.text);
               }
             },
             text: "SIGN UP",

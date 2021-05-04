@@ -6,22 +6,22 @@ part of 'food.item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FoodItem _$FoodItemFromJson(Map<String, dynamic> json) {
-  return FoodItem(
-    itemId: json['itemId'] as String?,
-    category: json['category'] == null
-        ? null
-        : Category.fromJson(json['category'] as Map<String, dynamic>),
-    name: json['name'] as String?,
-    ingredients:
-        (json['ingredients'] as List?)?.map((e) => e as String).toList(),
-    price: json['price'] as String?,
+_$_FoodItem _$_$_FoodItemFromJson(Map<String, dynamic> json) {
+  return _$_FoodItem(
+    itemId: json['itemId'] as String,
+    category: Category.fromJson(json['category'] as Map<String, dynamic>),
+    name: json['name'] as String,
+    ingredients: (json['ingredients'] as List<dynamic>?)
+        ?.map((e) => e as String)
+        .toList(),
+    price: json['price'] as String,
     tag: json['tag'] as String?,
     type: json['type'] as String?,
   );
 }
 
-Map<String, dynamic> _$FoodItemToJson(FoodItem instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_FoodItemToJson(_$_FoodItem instance) =>
+    <String, dynamic>{
       'itemId': instance.itemId,
       'category': instance.category,
       'name': instance.name,
@@ -31,14 +31,15 @@ Map<String, dynamic> _$FoodItemToJson(FoodItem instance) => <String, dynamic>{
       'type': instance.type,
     };
 
-Category _$CategoryFromJson(Map<String, dynamic> json) {
-  return Category(
-    categoryId: json['categoryId'] as String?,
+_$_Category _$_$_CategoryFromJson(Map<String, dynamic> json) {
+  return _$_Category(
+    categoryId: json['categoryId'] as String,
     name: json['name'] as String?,
   );
 }
 
-Map<String, dynamic> _$CategoryToJson(Category instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_CategoryToJson(_$_Category instance) =>
+    <String, dynamic>{
       'categoryId': instance.categoryId,
       'name': instance.name,
     };

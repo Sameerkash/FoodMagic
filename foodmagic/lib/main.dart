@@ -2,16 +2,13 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
-import 'controllers/bindings/bindings.dart';
-import 'services/locator.dart';
 import 'utils/theme.dart';
 import 'views/app.view.dart';
 
 void main() async {
   await load();
-  setUp();
+
   runApp((MyApp()));
 }
 
@@ -26,9 +23,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(2340, 1080),
-      builder: () => GetMaterialApp(
+      builder: () => MaterialApp(
         // .router(
-        initialBinding: AuthBinding(),
+
         debugShowCheckedModeBanner: false,
         title: 'Food Magic',
         theme: AppTheme.appTheme(),
