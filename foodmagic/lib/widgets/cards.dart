@@ -10,11 +10,11 @@ class HomeItemCard extends StatelessWidget {
   final String subTitle;
   final String price;
   const HomeItemCard({
-    Key key,
-    @required this.imageUrl,
-    @required this.title,
-    @required this.subTitle,
-    @required this.price,
+    Key? key,
+    required this.imageUrl,
+    required this.title,
+    required this.subTitle,
+    required this.price,
   }) : super(key: key);
 
   @override

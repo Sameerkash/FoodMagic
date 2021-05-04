@@ -34,7 +34,7 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey[300]),
+          borderSide: BorderSide(color: Colors.grey[300]!),
         ),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.amber),

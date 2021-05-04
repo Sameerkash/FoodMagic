@@ -27,8 +27,12 @@ class AuthController extends GetxController {
       _state.value = Authenticated();
   }
 
-  void signUp({String email, String name, String password}) async {
-    await getIt<Repository>().createUser(email: email, password: password);
+  void signUp(
+      {required String email,
+      required String name,
+      required String password}) async {
+    await getIt<Repository>()
+        .createUser(name: name, email: email, password: password);
     getAuthState();
   }
 
@@ -66,7 +70,7 @@ class Authenticated extends AuthenticationState {
 class AuthenticationFailure extends AuthenticationState {
   final String message;
 
-  AuthenticationFailure({@required this.message});
+  AuthenticationFailure({required this.message});
 
   @override
   List<Object> get props => [message];

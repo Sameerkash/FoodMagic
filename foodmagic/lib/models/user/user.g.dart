@@ -8,13 +8,13 @@ part of 'user.dart';
 
 AppUser _$AppUserFromJson(Map<String, dynamic> json) {
   return AppUser(
-    userId: json['userId'] as String,
-    userName: json['userName'] as String,
-    email: json['email'] as String,
-    phone: json['phone'] as String,
-    adress: json['adress'] as String,
-    imageUrl: json['imageUrl'] as String,
-    bio: json['bio'] as String,
+    userId: json['userId'] as String?,
+    userName: json['userName'] as String?,
+    email: json['email'] as String?,
+    phone: json['phone'] as String?,
+    adress: json['adress'] as String?,
+    imageUrl: json['imageUrl'] as String?,
+    bio: json['bio'] as String?,
   );
 }
 

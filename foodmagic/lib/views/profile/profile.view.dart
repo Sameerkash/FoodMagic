@@ -8,8 +8,8 @@ class ProfileView extends StatelessWidget {
   final auth = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
-    final style1 = context.headline1.copyWith(fontWeight: FontWeight.w500);
-    final style2 = context.bodyText1
+    final style1 = context.headline1!.copyWith(fontWeight: FontWeight.w500);
+    final style2 = context.bodyText1!
         .copyWith(fontWeight: FontWeight.w400, color: Colors.grey);
     return Scaffold(
       appBar: AppBar(

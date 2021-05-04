@@ -66,7 +66,7 @@ class HomeView extends StatelessWidget {
           backgroundColor: Color(0xff0e273b),
           elevation: 0,
           title: Text("FOOD MAGIC",
-              style: context.headline3.copyWith(fontStyle: FontStyle.italic)),
+              style: context.headline3!.copyWith(fontStyle: FontStyle.italic)),
           actions: [
             Icon(MaterialCommunityIcons.wallet),
             SizedBox(width: 10),
@@ -74,7 +74,7 @@ class HomeView extends StatelessWidget {
               alignment: Alignment.center,
               child: Text("\$802",
                   style:
-                      context.headline3.copyWith(fontStyle: FontStyle.italic)),
+                      context.headline3!.copyWith(fontStyle: FontStyle.italic)),
             ),
             SizedBox(width: 25)
           ],
@@ -132,12 +132,12 @@ class HomeView extends StatelessWidget {
               ),
               Text(
                 "FOOD AND DRINKS",
-                style: context.bodyText2.copyWith(
+                style: context.bodyText2!.copyWith(
                     fontStyle: FontStyle.italic, fontWeight: FontWeight.w700),
               ).padSym(0.0, 15.0),
               Text(
                 "Popular Today",
-                style: context.bodyText1.copyWith(fontWeight: FontWeight.bold),
+                style: context.bodyText1!.copyWith(fontWeight: FontWeight.bold),
               ).padSym(0.0, 15.0),
               Container(
                 height: 0.32.sh,
@@ -164,9 +164,9 @@ class HomeView extends StatelessWidget {
 
 /// Items that are showed in each TabBarView of the app
 class Item extends StatelessWidget {
-  final List<MenuItemContainer> menuItems;
+  final List<MenuItemContainer>? menuItems;
   const Item({
-    Key key,
+    Key? key,
     this.menuItems,
   }) : super(key: key);
 
@@ -180,7 +180,7 @@ class Item extends StatelessWidget {
             initialPage: 0,
             enableInfiniteScroll: false,
           ),
-          items: menuItems
+          items: menuItems!
               .map(
                 (e) => Builder(
                   builder: (_) => e,

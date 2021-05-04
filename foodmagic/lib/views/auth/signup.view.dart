@@ -15,11 +15,11 @@ import '../../widgets/field.dart';
 class SignUpView extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    var name = useTextEditingController();
-    var password = useTextEditingController();
-    var email = useTextEditingController();
+    TextEditingController? name = useTextEditingController();
+    TextEditingController? password = useTextEditingController();
+    TextEditingController? email = useTextEditingController();
 
-final auth = Get.find<AuthController>();
+    final auth = Get.find<AuthController>();
 
     return Scaffold(
       body: CustomBackground(
@@ -29,18 +29,18 @@ final auth = Get.find<AuthController>();
           ),
           Text(
             "Hi!",
-            style: context.headline1.copyWith(fontSize: 40),
+            style: context.headline1!.copyWith(fontSize: 40),
           ),
           SizedBox(
             height: 0.05.sh,
           ),
           Text(
             "We'll need some basic details,",
-            style: context.headline3.copyWith(fontSize: 19),
+            style: context.headline3!.copyWith(fontSize: 19),
           ).padB(10),
           Text(
             "please fill them up below",
-            style: context.headline3.copyWith(fontSize: 18),
+            style: context.headline3!.copyWith(fontSize: 18),
           ),
           Container(),
           SizedBox(height: 0.1.sh),
@@ -68,10 +68,10 @@ final auth = Get.find<AuthController>();
               if (email.value.text.length > 0 &&
                   name.value.text.length > 0 &&
                   password.value.text.length > 0) {
-              //  auth.sinup(
-              //       email: email.value.text,
-              //       name: name.value.text,
-              //       password: password.value.text);
+                auth.signUp(
+                    email: email.value.text,
+                    name: name.value.text,
+                    password: password.value.text);
               }
             },
             text: "SIGN UP",
@@ -86,7 +86,7 @@ final auth = Get.find<AuthController>();
                     style: context.bodyText1),
                 TextSpan(
                   text: "Sign In",
-                  style: context.bodyText1.copyWith(color: Colors.amber),
+                  style: context.bodyText1!.copyWith(color: Colors.amber),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       context.beamBack();

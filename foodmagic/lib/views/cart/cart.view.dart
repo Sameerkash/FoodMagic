@@ -38,7 +38,7 @@ class CartView extends StatelessWidget {
 
 class CartContent extends StatelessWidget {
   const CartContent({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -53,7 +53,7 @@ class CartContent extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               "3 Items/ Totoal Cost 199",
-              style: context.headline2
+              style: context.headline2!
                   .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
             ),
           ),
@@ -61,6 +61,9 @@ class CartContent extends StatelessWidget {
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) => ItemTile(
+              title: "Marghrita",
+              subTitle: '',
+              price: '',
               // price: "1234",
             ),
             itemCount: 3,
@@ -88,10 +91,10 @@ class ItemTile extends StatelessWidget {
   final String subTitle;
   final String price;
   const ItemTile({
-    Key key,
-    @required this.title,
-    @required this.subTitle,
-    @required this.price,
+    Key? key,
+    required this.title,
+    required this.subTitle,
+    required this.price,
   }) : super(key: key);
 
   @override

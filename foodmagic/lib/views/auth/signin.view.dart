@@ -15,8 +15,8 @@ import 'signup.view.dart';
 class SignInView extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    var email = useTextEditingController();
-    var password = useTextEditingController();
+    TextEditingController? email = useTextEditingController();
+    TextEditingController? password = useTextEditingController();
     final auth = Get.find<AuthController>();
 
     return Scaffold(
@@ -27,18 +27,18 @@ class SignInView extends HookWidget {
           ),
           Text(
             "FoodMagic",
-            style: context.headline1.copyWith(fontSize: 40),
+            style: context.headline1!.copyWith(fontSize: 40),
           ),
           SizedBox(
             height: 0.05.sh,
           ),
           Text(
             "Welcome,",
-            style: context.headline3.copyWith(fontSize: 25),
+            style: context.headline3!.copyWith(fontSize: 25),
           ).padB(10),
           Text(
             "Sign In to continue",
-            style: context.headline3.copyWith(fontSize: 18),
+            style: context.headline3!.copyWith(fontSize: 18),
           ),
           Container(),
           SizedBox(height: 0.1.sh),
@@ -72,7 +72,7 @@ class SignInView extends HookWidget {
                     text: "Don't have an account? ", style: context.bodyText1),
                 TextSpan(
                   text: "Sign Up",
-                  style: context.bodyText1.copyWith(color: Colors.amber),
+                  style: context.bodyText1!.copyWith(color: Colors.amber),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       Get.to(SignUpView());

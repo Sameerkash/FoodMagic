@@ -4,13 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'arc.dart';
 
 class CustomBackground extends StatelessWidget {
-  final Widget child;
-  final List<Widget> children;
-  final MainAxisSize mainAxisSize;
-  final MainAxisAlignment mainAxisAlignment;
-  final CrossAxisAlignment crossAxisAlignment;
+  final Widget? child;
+  final List<Widget>? children;
+  final MainAxisSize? mainAxisSize;
+  final MainAxisAlignment? mainAxisAlignment;
+  final CrossAxisAlignment? crossAxisAlignment;
   const CustomBackground(
-      {Key key,
+      {Key? key,
       this.child,
       this.children,
       this.mainAxisAlignment,
@@ -28,13 +28,13 @@ class CustomBackground extends StatelessWidget {
         color: Color.fromARGB(255, 16, 36, 51),
       ),
       BackgroundArc2(),
-      if (child != null) child,
-      if (children != null && children.isNotEmpty)
+      if (child != null) child!,
+      if (children != null && children!.isNotEmpty)
         Column(
             mainAxisSize: mainAxisSize ?? MainAxisSize.min,
             crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
             mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.center,
-            children: children)
+            children: children!)
     ]));
   }
 }

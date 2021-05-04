@@ -10,19 +10,19 @@ class Repository {
 
   /// Appwrite account service
 
-  Account account;
+  late Account account;
 
   /// Appwrite database serivce
 
-  Database database;
+  Database? database;
 
   /// Appwrite storage service
 
-  Storage storage;
+  Storage? storage;
 
   /// Sembast local database serivce
 
-  sembast.Database _db;
+  sembast.Database? _db;
 
   /// File path to a file in the current directory
   String dbName = 'foodmagic.db';
@@ -43,7 +43,7 @@ class Repository {
       var path = (await getApplicationSupportDirectory()).path + "/" + dbName;
       _db = await dbFactory.openDatabase(path);
     }
-    return _db;
+    return _db!;
   }
 
   Repository() {
@@ -60,9 +60,9 @@ class Repository {
   }
 
   /// Get the current Logged In user
-  Future<Map<String, Object>> getLoggedInUser() async {
+  Future<Map<String, Object?>?> getLoggedInUser() async {
     try {
-      final user = await _store.record(SESSIONKEY).get(await getDb());
+      final user = await (_store.record(SESSIONKEY).get(await (getDb())));
       // final appuser = AppUser.fromJson(user);
       if (user != null)
         return user;
@@ -74,7 +74,10 @@ class Repository {
     }
   }
 
-  Future createUser({String name, String password, String email}) async {
+  Future createUser(
+      {required String name,
+      required String password,
+      required String email}) async {
     try {
       final Response user =
           await account.create(email: email, password: password, name: name);
@@ -84,25 +87,25 @@ class Repository {
         final Response session =
             await account.createSession(email: email, password: password);
 
-        _store.record(SESSIONKEY).put(await getDb(), session.data);
+        _store.record(SESSIONKEY).put(await (getDb()), session.data);
       }
     } catch (e) {}
   }
 
-  Future signInUser({String password, String email}) async {
+  Future signInUser({required String password, required String email}) async {
     final Response session =
         await account.createSession(email: email, password: password);
     print(session);
     if (session.statusCode == 201) {
-      _store.record(SESSIONKEY).put(await getDb(), session.data);
+      _store.record(SESSIONKEY).put(await (getDb()), session.data);
     }
   }
 
   Future signOut() async {
     try {
-      final session = await _store.record(SESSIONKEY).get(await getDb());
-      await account.deleteSession(sessionId: session["\$id"]);
-      await _store.record(SESSIONKEY).delete(await getDb());
+      final session = await (_store.record(SESSIONKEY).get(await (getDb())));
+      await account.deleteSession(sessionId: session!["\$id"] as String);
+      await _store.record(SESSIONKEY).delete(await (getDb()));
     } catch (e) {}
   }
 }

@@ -5,13 +5,13 @@ part 'food.item.g.dart';
 
 @JsonSerializable()
 class FoodItem extends Equatable {
-  final String itemId;
-  final Category category;
-  final String name;
-  final List<String> ingredients;
-  final String price;
-  final String tag;
-  final String type;
+  final String? itemId;
+  final Category? category;
+  final String? name;
+  final List<String>? ingredients;
+  final String? price;
+  final String? tag;
+  final String? type;
   FoodItem(
       {this.itemId,
       this.category,
@@ -22,7 +22,7 @@ class FoodItem extends Equatable {
       this.type});
 
   @override
-  List<Object> get props => [name];
+  List<Object?> get props => [name];
 
   @override
   bool get stringify => true;
@@ -36,8 +36,8 @@ class FoodItem extends Equatable {
 @JsonSerializable()
 
 class Category extends Equatable {
-  final String categoryId;
-  final String name;
+  final String? categoryId;
+  final String? name;
   Category({
     this.categoryId,
     this.name,
@@ -49,7 +49,7 @@ class Category extends Equatable {
   Map<String, dynamic> toJson() => _$CategoryToJson(this);
 
   @override
-  List<Object> get props => [name, categoryId];
+  List<Object?> get props => [name, categoryId];
 
   @override
   bool get stringify => true;

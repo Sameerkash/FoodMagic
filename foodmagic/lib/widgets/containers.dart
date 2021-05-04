@@ -8,14 +8,14 @@ class CartContainer extends StatelessWidget {
   final String trailing;
 
   const CartContainer({
-    Key key,
-    @required this.leading,
-    @required this.trailing,
+    Key? key,
+    required this.leading,
+    required this.trailing,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final style = context.headline2.copyWith(color: Colors.grey);
+    final style = context.headline2!.copyWith(color: Colors.grey);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 0.05.sw),
       height: 0.08.sh,
@@ -37,11 +37,11 @@ class MenuItemContainer extends StatelessWidget {
   final String subTitle;
   final String price;
   const MenuItemContainer({
-    Key key,
-    @required this.imageUrl,
-    @required this.title,
-    @required this.subTitle,
-    @required this.price,
+    Key? key,
+    required this.imageUrl,
+    required this.title,
+    required this.subTitle,
+    required this.price,
   }) : super(key: key);
 
   @override
@@ -76,7 +76,7 @@ class MenuItemContainer extends StatelessWidget {
           ),
           Text(
             subTitle,
-            style: context.bodyText1.copyWith(color: Colors.white),
+            style: context.bodyText1!.copyWith(color: Colors.white),
           ),
           SizedBox(
             height: 0.01.sh,

@@ -8,16 +8,16 @@ part of 'food.item.dart';
 
 FoodItem _$FoodItemFromJson(Map<String, dynamic> json) {
   return FoodItem(
-    itemId: json['itemId'] as String,
+    itemId: json['itemId'] as String?,
     category: json['category'] == null
         ? null
         : Category.fromJson(json['category'] as Map<String, dynamic>),
-    name: json['name'] as String,
+    name: json['name'] as String?,
     ingredients:
-        (json['ingredients'] as List)?.map((e) => e as String)?.toList(),
-    price: json['price'] as String,
-    tag: json['tag'] as String,
-    type: json['type'] as String,
+        (json['ingredients'] as List?)?.map((e) => e as String).toList(),
+    price: json['price'] as String?,
+    tag: json['tag'] as String?,
+    type: json['type'] as String?,
   );
 }
 
@@ -33,8 +33,8 @@ Map<String, dynamic> _$FoodItemToJson(FoodItem instance) => <String, dynamic>{
 
 Category _$CategoryFromJson(Map<String, dynamic> json) {
   return Category(
-    categoryId: json['categoryId'] as String,
-    name: json['name'] as String,
+    categoryId: json['categoryId'] as String?,
+    name: json['name'] as String?,
   );
 }
 

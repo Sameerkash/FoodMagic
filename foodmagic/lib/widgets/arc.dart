@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class BackgroundArc extends StatelessWidget {
   final double diameter;
 
-  const BackgroundArc({Key key, this.diameter = 500}) : super(key: key);
+  const BackgroundArc({Key? key, this.diameter = 500}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class RPSCustomPainter extends CustomPainter {
 class BackgroundArc2 extends StatelessWidget {
   final double diameter;
   const BackgroundArc2({
-    Key key,
+    Key? key,
     this.diameter = 730,
   }) : super(key: key);
   @override

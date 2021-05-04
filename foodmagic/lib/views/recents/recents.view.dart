@@ -35,7 +35,7 @@ class RecentsView extends StatelessWidget {
             children: [
               Text(
                 "Your Orders",
-                style: context.headline1.copyWith(fontSize: 22),
+                style: context.headline1!.copyWith(fontSize: 22),
               ).padAll(15),
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
@@ -59,17 +59,17 @@ class RecentsView extends StatelessWidget {
 class OrderItem extends StatelessWidget {
   final String total;
   final List<OrderItems> orderItems;
-  final String orderDate;
+  final String? orderDate;
 
   const OrderItem(
-      {Key key,
-      @required this.style1,
-      @required this.total,
-      @required this.orderItems,
+      {Key? key,
+      required this.style1,
+      required this.total,
+      required this.orderItems,
       this.orderDate})
       : super(key: key);
 
-  final TextStyle style1;
+  final TextStyle? style1;
 
   @override
   Widget build(BuildContext context) {
@@ -87,9 +87,9 @@ class OrderItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Total",
-                    style: context.headline2.copyWith(color: Colors.grey)),
+                    style: context.headline2!.copyWith(color: Colors.grey)),
                 Text("$total",
-                    style: context.subtitle2.copyWith(color: Colors.amber)),
+                    style: context.subtitle2!.copyWith(color: Colors.amber)),
               ],
             ),
             Divider(),
@@ -110,11 +110,11 @@ class OrderItem extends StatelessWidget {
                     ),
                     SizedBox(width: 0.03.sw),
                     Text("${orderItems[i].quantity} x ${orderItems[i].name}",
-                        style: style1.copyWith(
+                        style: style1!.copyWith(
                             color: Colors.black87, fontSize: 15)),
                     Spacer(flex: 1),
                     Text("${orderItems[i].price}",
-                        style: style1.copyWith(
+                        style: style1!.copyWith(
                             color: Colors.black54, fontSize: 14)),
                     SizedBox(width: 0.025.sw),
                   ],
@@ -130,10 +130,10 @@ class OrderItem extends StatelessWidget {
                     Text(
                       "Ordered on",
                       style:
-                          style1.copyWith(color: Colors.black54, fontSize: 14),
+                          style1!.copyWith(color: Colors.black54, fontSize: 14),
                     ),
                     Text("$orderDate",
-                        style: style1.copyWith(
+                        style: style1!.copyWith(
                             color: Colors.black87, fontSize: 14)),
                   ],
                 ),
@@ -142,7 +142,7 @@ class OrderItem extends StatelessWidget {
                   icon: Icon(Icons.replay, color: Colors.amber),
                   label: Text(
                     "Repeat Order",
-                    style: style1.copyWith(color: Colors.amber, fontSize: 14),
+                    style: style1!.copyWith(color: Colors.amber, fontSize: 14),
                   ),
                 ),
               ],
@@ -162,9 +162,9 @@ class OrderItems {
   final String name;
   final String price;
   OrderItems({
-    @required this.imageUrl,
-    @required this.quantity,
-    @required this.name,
-    @required this.price,
+    required this.imageUrl,
+    required this.quantity,
+    required this.name,
+    required this.price,
   });
 }

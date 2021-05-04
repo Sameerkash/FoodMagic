@@ -5,13 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utils/extensions.dart';
 
 class CustomTextField extends StatelessWidget {
-  final String label;
-  final double width;
-  final Icon icon;
+  final String? label;
+  final double? width;
+  final Icon? icon;
   final bool obscureText;
-  final TextEditingController controller;
+  final TextEditingController? controller;
   const CustomTextField(
-      {Key key,
+      {Key? key,
       this.icon,
       this.label,
       this.width,
