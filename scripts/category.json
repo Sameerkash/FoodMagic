@@ -1,0 +1,14 @@
+[
+        {
+        "categoryId": "746d5eae-e548-4b24-90ad-8c31763d15a5",
+        "name": "Pizza"
+    },
+    {
+        "categoryId": "e13a1506-de1f-437c-aaac-1fb6a9778a64",
+        "name": "Burger"
+    },
+    {
+        "categoryId": "b263e3d1-830a-44e7-ad25-ba414e082a13",
+        "name": "Dessert"
+    }
+]
