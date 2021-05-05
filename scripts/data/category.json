@@ -1,0 +1,16 @@
+[
+  {
+    "categoryId": "06315c03-8fdd-4411-bacd-8c101afacb2a",
+    "name": "Pizza"
+  },
+
+  {
+    "categoryId": "4f9f14f6-b9f9-4635-b30c-5174664666bd",
+    "name": "Burger"
+  },
+
+  {
+    "categoryId": "819e0ecc-920f-4663-90b7-abecfd9379d0",
+    "name": "Tacos"
+  }
+]

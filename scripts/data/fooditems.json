@@ -1,0 +1,16 @@
+[
+  {
+    "itemId": "18dde9ae-9d08-4229-b8d7-0a01b006a414",
+    "name": "Margherita",
+    "ingreditents": ["Jalepeno", "chilli", "peppers", "zuchini"],
+    "price": 100,
+    "tags": [],
+    "isVeg": true,
+    "isEgg": false,
+    "type": "Cheese Burst",
+    "style": "Italiano",
+    "discount": 30,
+    "imageUrl": "",
+    "arModelUrl": ""
+  }
+]

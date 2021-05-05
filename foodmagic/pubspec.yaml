@@ -34,7 +34,6 @@ dependencies:
   cupertino_icons: ^1.0.3
   dartz: ^0.10.0-nullsafety.1
   device_preview: ^0.7.1
-  equatable: ^2.0.0
   flutter_dotenv: ^4.0.0-nullsafety.1
   flutter_hooks: ^0.16.0
   flutter_screenutil: ^5.0.0
