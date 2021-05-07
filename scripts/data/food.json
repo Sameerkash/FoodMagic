@@ -57,8 +57,8 @@
   },
   {
       "itemId": "ad6a745a-fc64-4f21-87f6-6316b6dd645e", 
-      "name": "Chicken Fiesta", 
-      "ingreditents": ["Grilled Chicken Rashers","Peri-Peri Chicken","Onion","Capsicum"], 
+      "name": "Mushroom Fiesta", 
+      "ingreditents": ["Button Mshrooms","Chicken Slices","Onion","Capsicum"], 
       "price": "Rs. 450",
       "tags": ["NEW"], 
       "isVeg": false, 
@@ -113,8 +113,8 @@
   },
   {
       "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679", 
-      "name": "Crunchy Mexican Chicken Taco", 
-      "ingreditents": ["Tortilla","Mexican Chicken","Lettuce","Ranch Sauce"], 
+      "name": "Shrimp Taco", 
+      "ingreditents": ["Tortilla","Shrimp","Lettuce","Ranch Sauce"], 
       "price": "Rs. 115",
       "tags": ["HOT"], 
       "isVeg": false, 
@@ -127,8 +127,8 @@
   },
   {
       "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679", 
-      "name": "Soft Pinto Bean Taco", 
-      "ingreditents": ["Tortilla","Pinto Beans","Lettuce","Ranch Sauce"], 
+      "name": "Egg and Cheese Taco", 
+      "ingreditents": ["Tortilla","Egg","Lettuce","Ranch Sauce"], 
       "price": "Rs. 90",
       "tags": ["NEW"], 
       "isVeg": true, 
@@ -141,7 +141,7 @@
   },
   {
       "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679", 
-      "name": "Indie Chicken Tikka", 
+      "name": "Indie Chicken Tikka Taco", 
       "ingreditents": ["Chicken Tikka","Onion","Red Paprika","Mint Mayo"], 
       "price": "Rs. 570",
       "tags": ["Bestseller"], 
@@ -206,6 +206,20 @@
       "type": "Regular", 
       "style": "American", 
       "discount": 20, 
+      "imageUrl": "", 
+      "arModelUrl": "" 
+  },   
+  {
+      "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679", 
+      "name": "Aloo Tikki Burger", 
+      "ingreditents": ["Aloo Patty","Crispy Lettuce","Onion","Barbeque"], 
+      "price": "Rs. 105",
+      "tags": ["Recommended"], 
+      "isVeg": true, 
+      "isEgg": false, 
+      "type": "Regular", 
+      "style": "Indian", 
+      "discount": 15, 
       "imageUrl": "", 
       "arModelUrl": "" 
   }   
