@@ -1,16 +1,14 @@
 [
   {
-    "categoryId": "06315c03-8fdd-4411-bacd-8c101afacb2a",
-    "name": "Pizza"
+  "categoryId": "746d5eae-e548-4b24-90ad-8c31763d15a5",
+  "name": "Pizza"
   },
-
   {
-    "categoryId": "4f9f14f6-b9f9-4635-b30c-5174664666bd",
+    "categoryId": "e13a1506-de1f-437c-aaac-1fb6a9778a64",
     "name": "Burger"
   },
-
   {
-    "categoryId": "819e0ecc-920f-4663-90b7-abecfd9379d0",
-    "name": "Tacos"
+    "categoryId": "b263e3d1-830a-44e7-ad25-ba414e082a13",
+    "name": "Dessert"
   }
 ]
