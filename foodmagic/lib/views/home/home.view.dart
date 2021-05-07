@@ -123,7 +123,7 @@ class HomeView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 0.37.sh,
+                height: 0.36.sh,
                 child: TabBarView(children: [
                   Item(menuItems: pizzaItems),
                   Item(menuItems: burgerItems),
@@ -132,8 +132,13 @@ class HomeView extends StatelessWidget {
               ),
               Text(
                 "FOOD AND DRINKS",
+<<<<<<< HEAD
                 style: context.bodyText2!.copyWith(
                     fontStyle: FontStyle.italic, fontWeight: FontWeight.w700),
+=======
+                style: context.bodyText2.copyWith(
+                    fontStyle: FontStyle.italic, fontWeight: FontWeight.w700, height: 6.2),
+>>>>>>> ddb64fe65b4c3680f5945a3a034f8288cda654bf
               ).padSym(0.0, 15.0),
               Text(
                 "Popular Today",

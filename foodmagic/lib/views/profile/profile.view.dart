@@ -85,7 +85,9 @@ class ProfileView extends StatelessWidget {
                                 Icons.favorite_border,
                                 color: Colors.red,
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+
+                              },
                             ),
                           )
                         ],
@@ -97,7 +99,11 @@ class ProfileView extends StatelessWidget {
                           Text("Lover", style: style2)
                         ],
                       ),
+<<<<<<< HEAD
                     ).padB(5),
+=======
+                    ).padB(1.0)
+>>>>>>> ddb64fe65b4c3680f5945a3a034f8288cda654bf
                   ).padSym(5.0, 5.0);
                 },
               )

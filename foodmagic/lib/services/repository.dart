@@ -92,12 +92,26 @@ class Repository {
     } catch (e) {}
   }
 
+<<<<<<< HEAD
   Future signInUser({required String password, required String email}) async {
+=======
+  Future signInUser({String password, String email}) async {
+   
+    try {
+      
+>>>>>>> ddb64fe65b4c3680f5945a3a034f8288cda654bf
     final Response session =
         await account.createSession(email: email, password: password);
     print(session);
     if (session.statusCode == 201) {
+<<<<<<< HEAD
       _store.record(SESSIONKEY).put(await (getDb()), session.data);
+=======
+       print("signin");
+      _store.record(SESSIONKEY).put(await getDb(), session.data);
+>>>>>>> ddb64fe65b4c3680f5945a3a034f8288cda654bf
+    }
+    } catch (e) {
     }
   }
 

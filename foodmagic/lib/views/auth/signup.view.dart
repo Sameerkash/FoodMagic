@@ -62,13 +62,22 @@ class SignUpView extends HookWidget {
           SizedBox(height: 0.08.sh),
           CustomTextButton(
             onPressed: () {
+              print("called");
               if (email.value.text.length > 0 &&
                   name.value.text.length > 0 &&
                   password.value.text.length > 0) {
+<<<<<<< HEAD
                 // auth.signUp(
                 //     email: email.value.text,
                 //     name: name.value.text,
                 //     password: password.value.text);
+=======
+                    print(email.value.text);
+               auth.signUp(
+                    email: email.value.text,
+                    name: name.value.text,
+                    password: password.value.text);
+>>>>>>> ddb64fe65b4c3680f5945a3a034f8288cda654bf
               }
             },
             text: "SIGN UP",
@@ -86,7 +95,7 @@ class SignUpView extends HookWidget {
                   style: context.bodyText1!.copyWith(color: Colors.amber),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      context.beamBack();
+                      //context.beamBack();
                     },
                 ),
               ],
