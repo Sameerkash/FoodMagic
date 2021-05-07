@@ -41,3 +41,4 @@ Images should go into the /data/images folder
   "imageName": ""
 }
 ```
+
