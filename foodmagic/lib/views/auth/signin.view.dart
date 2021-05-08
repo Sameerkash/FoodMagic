@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-
+import 'package:foodmagic/providers/auth.provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
 import '../../widgets/button.dart';
@@ -55,8 +56,10 @@ class SignInView extends HookWidget {
           CustomTextButton(
             onPressed: () {
               if (email.value.text.length > 0 &&
-                  password.value.text.length >
-                      0) {} // auth.signIn(email.value.text, password.value.text);
+                  password.value.text.length > 0) {
+                context.read(authProvider.notifier).signIn(
+                    email: email.value.text, password: password.value.text);
+              }
             },
             text: "SIGN IN",
             paddingH: 0.35.sw,
@@ -72,7 +75,6 @@ class SignInView extends HookWidget {
                   style: context.bodyText1!.copyWith(color: Colors.amber),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-
                       // context.beamToNamed('/signup', beamBackOnPop: true);
                     },
                 ),

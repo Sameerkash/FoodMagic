@@ -10,9 +10,8 @@ part 'auth.vm.freezed.dart';
 @freezed
 class AuthState with _$AuthState {
   const factory AuthState.loading() = _Loading;
-  const factory AuthState.authenticated({ User? user}) = _Authenticated;
-  const factory AuthState.unauthenticated() =
-      _UnAuthenticated;
+  const factory AuthState.authenticated({User? user}) = _Authenticated;
+  const factory AuthState.unauthenticated() = _UnAuthenticated;
 }
 
 class AuthVM extends StateNotifier<AuthState> {
@@ -23,11 +22,23 @@ class AuthVM extends StateNotifier<AuthState> {
     checkUserAuth();
   }
 
-Future<void> checkUserAuth() async {
+  Future<void> checkUserAuth() async {
     final res = await repo.getLoggedInUser();
+    print(res);
     if (res != null)
-      state = AuthState.authenticated( );
+      state = AuthState.authenticated();
     else
       state = AuthState.unauthenticated();
+  }
+
+  Future<void> signIn({required String email, required String password}) async {
+    await repo.signInUser(password: password, email: email);
+
+    checkUserAuth();
+  }
+
+  Future<void> logout() async {
+    await repo.signOut();
+    checkUserAuth();
   }
 }
