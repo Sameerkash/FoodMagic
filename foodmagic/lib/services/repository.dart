@@ -64,6 +64,8 @@ class Repository {
     try {
       final user = await (_store.record(SESSIONKEY).get(await (getDb())));
       // final appuser = User.fromJson(user);
+      print(user);
+
       if (user != null)
         return user;
       else
@@ -92,7 +94,8 @@ class Repository {
     } catch (e) {}
   }
 
-  Future signInUser({required String password, required String email}) async {
+  Future<void> signInUser(
+      {required String password, required String email}) async {
     final Response session =
         await account.createSession(email: email, password: password);
     print(session);
