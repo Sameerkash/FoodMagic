@@ -32,11 +32,11 @@ class ItemDetailView extends HookWidget {
           InkWell(
               onTap: () {},
               child: Container(child: Image.asset('3D'.png, height: 30))),
-          SizedBox(height: 0.03.sh),
+          SizedBox(height: 0.02.sh),
           InfoCard(size: size),
-          SizedBox(height: 0.04.sh),
+          SizedBox(height: 0.05.sh),
           ActionButtons(size: size),
-          SizedBox(height: 0.04.sh),
+          SizedBox(height: 0.05.sh),
           BottomBottons()
         ],
       ),
@@ -89,6 +89,7 @@ class InfoCard extends StatelessWidget {
             style: context.subtitle2!.copyWith(
                 fontWeight: FontWeight.bold, color: context.primaryColor),
           ).padSym(15, 0),
+          SizedBox(height: 0.025.sh),
           Text(
             'Flattened disk of bread dough topped with some combination of olive oil, oregano, tomato, olives, mozzarella or other cheese.',
             style: context.bodyText1,
@@ -115,6 +116,18 @@ class ActionButtons extends StatelessWidget {
       children: [
         TextButton(
           style: TextButton.styleFrom(
+              shape: CircleBorder(),
+              minimumSize: Size(50, 50),
+              backgroundColor: context.primaryColor),
+          onPressed: () {},
+          child: Text(
+            size.value[1],
+            style: context.bodyText2,
+          ),
+        ),
+        AddToCartOptions(),
+        TextButton(
+          style: TextButton.styleFrom(
             shape: CircleBorder(),
             minimumSize: Size(50, 50),
             backgroundColor: Colors.amber,
@@ -123,18 +136,6 @@ class ActionButtons extends StatelessWidget {
           child: Text(
             "599",
             style: context.bodyText2!.copyWith(color: Colors.white),
-          ),
-        ),
-        AddToCartOptions(),
-        TextButton(
-          style: TextButton.styleFrom(
-              shape: CircleBorder(),
-              minimumSize: Size(50, 50),
-              backgroundColor: context.primaryColor),
-          onPressed: () {},
-          child: Text(
-            size.value[1],
-            style: context.bodyText2,
           ),
         ),
       ],

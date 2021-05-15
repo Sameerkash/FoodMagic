@@ -9,12 +9,14 @@ class HomeItemCard extends StatelessWidget {
   final String title;
   final String subTitle;
   final String price;
+  final Function onPressed;
   const HomeItemCard({
     Key? key,
     required this.imageUrl,
     required this.title,
     required this.subTitle,
     required this.price,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -40,15 +42,12 @@ class HomeItemCard extends StatelessWidget {
               flex: 1,
             ),
             TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                  backgroundColor:context.primaryColor),
+              onPressed: onPressed as void Function()?,
+              style:
+                  TextButton.styleFrom(backgroundColor: context.primaryColor),
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 0.05.sw),
-                child: Text(
-                  "View",
-                  style: context.button
-                ),
+                child: Text("View", style: context.button),
               ),
             )
           ],

@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:auto_route/auto_route.dart';
 
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
@@ -146,6 +147,9 @@ class HomeView extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     return HomeItemCard(
+                      onPressed: () {
+                        context.router.pushNamed('/item-detail-view');
+                      },
                       imageUrl: "assets/p1.jpeg",
                       price: "\$27",
                       subTitle: "Jalepeno and Pepper",

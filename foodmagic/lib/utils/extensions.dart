@@ -51,3 +51,7 @@ extension CustomExtension on Widget {
   Widget padOnly(double t, double l, double b, double r) =>
       Padding(padding: EdgeInsets.fromLTRB(l, t, r, b), child: this);
 }
+
+// Routes
+
+extension Routes on BuildContext {}

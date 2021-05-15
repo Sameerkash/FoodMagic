@@ -21,7 +21,8 @@ class NavbarView extends HookWidget {
         controller: pageController,
         children: [
           HomeView(),
-          ItemDetailView(),
+          CartView(),
+          // ItemDetailView(),
           RecentsView(),
           ProfileView(),
         ],
