@@ -8,11 +8,14 @@
 import 'package:auto_route/annotations.dart';
 import 'package:foodmagic/views/app.view.dart';
 import 'package:foodmagic/views/home/Item.detail.view.dart';
+import 'package:foodmagic/views/order/order.view.dart';
 
 @CupertinoAutoRouter(
   routes: <AutoRoute>[
     AutoRoute(page: AppView, initial: true),
     AutoRoute(page: ItemDetailView),
+    AutoRoute(page: OrderView),
+
   ],
 )
 class $Router {}

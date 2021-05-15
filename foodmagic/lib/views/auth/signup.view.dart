@@ -1,4 +1,4 @@
-import 'package:beamer/beamer.dart';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -86,7 +86,7 @@ class SignUpView extends HookWidget {
                   style: context.bodyText1!.copyWith(color: Colors.amber),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      context.beamBack();
+
                     },
                 ),
               ],
