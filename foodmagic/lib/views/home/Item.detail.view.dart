@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodmagic/widgets/labels.dart';
+import 'package:sliding_sheet/sliding_sheet.dart';
 
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
@@ -15,90 +16,153 @@ class ItemDetailView extends HookWidget {
     var size = useState(sizes);
 
     return Scaffold(
-      body: CustomBackground(children: [
-        SizedBox(height: 0.12.sh),
-        Container(
-            child: Text(
-          "Chef's Special",
-          style: context.headline3!.copyWith(fontSize: 22),
-        )).padSym(0, 15),
-        SizedBox(height: 0.05.sh),
-        SizedBox(
-          height: 0.3.sh,
-          child: Container(
-            margin: EdgeInsets.all(20),
-            // width: 200,
-            width: 0.3.sh,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                  image: AssetImage("margherita".png), fit: BoxFit.contain),
-            ),
+      body: CustomBackground(
+        isScrollable: false,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(height: 0.05.sh),
+          Container(
+              child: Text(
+            "Chef's Special",
+            style: context.headline3!.copyWith(fontSize: 22),
+          )).padSym(0, 15),
+          ImageContainer(),
+          Container(),
+          VegLabel(),
+          InkWell(
+              onTap: () {},
+              child: Container(child: Image.asset('3D'.png, height: 30))),
+          SizedBox(height: 0.03.sh),
+          InfoCard(size: size),
+          SizedBox(height: 0.04.sh),
+          ActionButtons(size: size),
+          SizedBox(height: 0.04.sh),
+          BottomBottons()
+        ],
+      ),
+    );
+  }
+}
+
+class ImageContainer extends StatelessWidget {
+  const ImageContainer({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 0.3.sh,
+      child: Container(
+        margin: EdgeInsets.all(20),
+        width: 0.3.sh,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+              image: AssetImage("margherita".png), fit: BoxFit.contain),
+        ),
+      ),
+    );
+  }
+}
+
+class InfoCard extends StatelessWidget {
+  const InfoCard({
+    Key? key,
+    required this.size,
+  }) : super(key: key);
+
+  final ValueNotifier<List<String>> size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'Pizza Margherita',
+            style: context.headline2!.copyWith(fontSize: 24),
+          ),
+          Text(
+            "Cheese Burst . Italiano",
+            style: context.subtitle2!.copyWith(
+                fontWeight: FontWeight.bold, color: context.primaryColor),
+          ).padSym(15, 0),
+          Text(
+            'Flattened disk of bread dough topped with some combination of olive oil, oregano, tomato, olives, mozzarella or other cheese.',
+            style: context.bodyText1,
+            textAlign: TextAlign.left,
+          ).padSym(0, 0.12.sw),
+        ],
+      ),
+    );
+  }
+}
+
+class ActionButtons extends StatelessWidget {
+  const ActionButtons({
+    Key? key,
+    required this.size,
+  }) : super(key: key);
+
+  final ValueNotifier<List<String>> size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        TextButton(
+          style: TextButton.styleFrom(
+            shape: CircleBorder(),
+            minimumSize: Size(50, 50),
+            backgroundColor: Colors.amber,
+          ),
+          onPressed: null,
+          child: Text(
+            "599",
+            style: context.bodyText2!.copyWith(color: Colors.white),
           ),
         ),
-        Container(),
-        VegLabel(),
-        SizedBox(height: 0.01.sh),
-        Container(
-          height: 0.5.sh,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                'Pizza Margherita',
-                style: context.headline2!.copyWith(fontSize: 24),
-              ),
-              Text(
-                "Cheese Burst . Italiano",
-                style: context.subtitle2!.copyWith(
-                    fontWeight: FontWeight.bold, color: context.primaryColor),
-              ).padT(5),
-              Text(
-                '''
-              Description Loren ipsum asdjl as da sdniaskdlas
-              asdasldjasasd
-              asldkmasd
-              asldk
-              ''',
-                style: context.bodyText1,
-              ),
-              SizedBox(
-                height: 0.05.sh,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  TextButton(
-                    style: TextButton.styleFrom(
-                      shape: CircleBorder(),
-                      minimumSize: Size(50, 50),
-                      backgroundColor: Colors.amber,
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      "599",
-                      style: context.bodyText2!.copyWith(color: Colors.white),
-                    ),
-                  ),
-                  AddToCartOptions(),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                      shape: CircleBorder(),
-                      minimumSize: Size(50, 50),
-                      backgroundColor: context.primaryColor,
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      size.value[1],
-                      style: context.bodyText2,
-                    ),
-                  ),
-                ],
-              )
-            ],
+        AddToCartOptions(),
+        TextButton(
+          style: TextButton.styleFrom(
+              shape: CircleBorder(),
+              minimumSize: Size(50, 50),
+              backgroundColor: context.primaryColor),
+          onPressed: () {},
+          child: Text(
+            size.value[1],
+            style: context.bodyText2,
           ),
-        )
-      ]),
+        ),
+      ],
+    );
+  }
+}
+
+class BottomBottons extends StatelessWidget {
+  const BottomBottons({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Card(
+        elevation: 2,
+        child: Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text('Description', style: context.bodyText1),
+              Divider(color: Colors.black),
+              Text('Reviews', style: context.bodyText1)
+            ],
+          ).padAll(15),
+        ),
+      ),
     );
   }
 }
