@@ -84,7 +84,7 @@
     "arModelUrl": ""
   },
   {
-    "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679",
+    "itemId": "03df39bb-d568-47c5-945b-18b4e35c80f0",
     "name": "Crunchy Mexican Paneer Taco",
     "ingredients": ["Flour Tortilla", "Paneer Tikka", "Lettuce", "Ranch Sauce"],
     "price": 90,
@@ -98,7 +98,7 @@
     "arModelUrl": ""
   },
   {
-    "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679",
+    "itemId": "e0d5618a-93e7-4dde-8cf7-f4df030ca8a7",
     "name": "Soft Grilled Chicken Taco",
     "ingredients": [
       "Flour Tortilla",
@@ -117,7 +117,7 @@
     "arModelUrl": ""
   },
   {
-    "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679",
+    "itemId": "61dc974e-6382-4fcf-a6f2-d1ac4b70142b",
     "name": "Shrimp Taco",
     "ingredients": ["Tortilla", "Shrimp", "Lettuce", "Ranch Sauce"],
     "price": 115,
@@ -131,7 +131,7 @@
     "arModelUrl": ""
   },
   {
-    "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679",
+    "itemId": "5731dcae-7c28-4d33-a42e-0229b57865a3",
     "name": "Egg and Cheese Taco",
     "ingredients": ["Tortilla", "Egg", "Lettuce", "Ranch Sauce"],
     "price": 90,
@@ -145,7 +145,7 @@
     "arModelUrl": ""
   },
   {
-    "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679",
+    "itemId": "14bf88c9-4eee-4779-9fa2-e08ae38ef2be",
     "name": "Indie Chicken Tikka Taco",
     "ingredients": ["Chicken Tikka", "Onion", "Red Paprika", "Mint Mayo"],
     "price": 570,
@@ -159,7 +159,7 @@
     "arModelUrl": ""
   },
   {
-    "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679",
+    "itemId": "70d38800-69b9-4b5e-a0a8-cf75f1fa7eb4",
     "name": "Classic Veg Burger",
     "ingredients": ["Veg Patty", "Crispy Lettuce", "Onion", "Signature Sauce"],
     "price": 79,
@@ -173,7 +173,7 @@
     "arModelUrl": ""
   },
   {
-    "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679",
+    "itemId": "69b09356-5284-4de1-8668-28abd1846414",
     "name": "Classic Non-Veg Burger",
     "ingredients": ["Chicken Patty", "Crispy Lettuce", "Onion", "Mint Mayo"],
     "price": 99,
@@ -187,7 +187,7 @@
     "arModelUrl": ""
   },
   {
-    "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679",
+    "itemId": "925edff0-df84-41d2-b1da-900fbddacd43",
     "name": "Paneer Burger",
     "ingredients": [
       "Paneer Patty",
@@ -206,7 +206,7 @@
     "arModelUrl": ""
   },
   {
-    "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679",
+    "itemId": "41650ef1-803f-4ad7-b61a-c9defd749084",
     "name": "Barbeque Chicken Burger",
     "ingredients": [
       "Chicken Patty",
@@ -225,7 +225,7 @@
     "arModelUrl": ""
   },
   {
-    "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679",
+    "itemId": "7beea333-8d0e-4939-b928-d196e76fc60d",
     "name": "Aloo Tikki Burger",
     "ingredients": ["Aloo Patty", "Crispy Lettuce", "Onion", "Barbeque"],
     "price": 105,
