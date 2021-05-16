@@ -1,11 +1,12 @@
-import 'package:beamer/beamer.dart';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodmagic/router/router.dart';
+import 'package:foodmagic/router/router.gr.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'utils/theme.dart';
@@ -23,7 +24,9 @@ void main() async {
   );
 }
 
-class MyApp extends HookWidget {
+final _router = Router();
+
+class MyApp extends StatelessWidget {
   // final routerDelegate = BeamerRouterDelegate(
   //   initialPath: '/',
   //   locationBuilder: BeamerLocationBuilder(
@@ -34,22 +37,18 @@ class MyApp extends HookWidget {
   //     ],
   //   ),
   // );
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(2340, 1080),
-      builder: () => MaterialApp
-          // .router
-          (
+      builder: () => MaterialApp.router(
         builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
         title: 'Food Magic',
         theme: AppTheme.appTheme(),
-        home: AppView(),
-        // routerDelegate: routerDelegate,
-        // backButtonDispatcher:
-        //     BeamerBackButtonDispatcher(delegate: routerDelegate),
-        // routeInformationParser: BeamerRouteInformationParser(),
+        routerDelegate: _router.delegate(),
+        routeInformationParser: _router.defaultRouteParser(),
       ),
     );
   }

@@ -175,7 +175,7 @@
   {
     "itemId": "69b09356-5284-4de1-8668-28abd1846414",
     "name": "Classic Non-Veg Burger",
-    "ingredients": ["Chicken Patty", "Crispy Lettuce", "Onion", "Mint Mayo"],
+    "ingredients": ["Chicken Patty", "Crispy Lettuce", "Tomato", "Mint Mayo"],
     "price": 99,
     "tags": ["Recommended"],
     "isVeg": false,
