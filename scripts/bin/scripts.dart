@@ -17,6 +17,7 @@ void main() {
       .setKey(env['KEY']!);
 
   Database db = Database(client);
+  Storage storage = Storage(client);
 
   /// Upload fooditems
   createAndUploadFoodItems(db);
@@ -24,6 +25,8 @@ void main() {
   // TODO: create function to upload images to storage
   /// uploadImages
 }
+
+void uploadImages() {}
 
 void createAndUploadFoodItems(Database db) async {
   try {

@@ -18,5 +18,8 @@ class User with _$User {
     final String? bio,
   }) = _User;
 
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  factory User.fromJson(Map<String, dynamic> json)
+   => _$UserFromJson(json);
 }
+
+
