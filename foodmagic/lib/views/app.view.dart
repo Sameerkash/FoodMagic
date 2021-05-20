@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:foodmagic/providers/auth.provider.dart';
-import 'package:foodmagic/views/navbar.view.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../providers/auth.provider.dart';
 import 'auth/auth.view.dart';
+import 'navbar.view.dart';
 
 class AppView extends HookWidget {
   @override

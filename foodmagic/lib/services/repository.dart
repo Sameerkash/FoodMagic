@@ -1,6 +1,6 @@
 import 'package:appwrite/appwrite.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:foodmagic/models/fooditem/food.item.dart';
+import '../models/fooditem/food.item.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sembast/sembast.dart' as sembast;
 import 'package:sembast/sembast_io.dart';

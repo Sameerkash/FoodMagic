@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:foodmagic/providers/auth.provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../providers/auth.provider.dart';
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
 import '../../widgets/button.dart';

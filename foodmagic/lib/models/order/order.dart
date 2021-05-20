@@ -1,5 +1,5 @@
-import 'package:foodmagic/models/fooditem/food.item.dart';
-import 'package:foodmagic/models/user/user.dart';
+import '../fooditem/food.item.dart';
+import '../user/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'order.freezed.dart';
