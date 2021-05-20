@@ -1,5 +1,6 @@
 import 'package:appwrite/appwrite.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:foodmagic/models/fooditem/food.item.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sembast/sembast.dart' as sembast;
 import 'package:sembast/sembast_io.dart';
@@ -14,15 +15,15 @@ class Repository {
 
   /// Appwrite database serivce
 
-  Database? database;
+  late Database database;
 
   /// Appwrite storage service
 
-  Storage? storage;
+  late Storage storage;
 
   /// Sembast local database serivce
 
-  sembast.Database? _db;
+  late sembast.Database? _db;
 
   /// File path to a file in the current directory
   String dbName = 'foodmagic.db';
@@ -112,13 +113,13 @@ class Repository {
     } catch (e) {}
   }
 
-  Future<Map<String, Object>?> getFoodItems() async {
+  Future<List<FoodItem>?> getFoodItems() async {
     try {
-      final result = await database!.
+      final result = await database.
       listDocuments(collectionId: '608adfe8f0dc4');
 
       if (result.statusCode == 200) {
-        return result.data;
+        // return result.data;
       }
     } catch (e) {
       print(e);

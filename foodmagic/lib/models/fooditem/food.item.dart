@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -9,27 +8,20 @@ part 'food.item.freezed.dart';
 class FoodItem with _$FoodItem {
   const factory FoodItem({
     required String itemId,
-    required Category category,
+    required String category,
     required String name,
     final List<String>? ingredients,
-    required String price,
-    final String? tag,
+    required int price,
+    final List<String>? tags,
     final String? type,
+    final String? style,
+    final int? discount,
+    final String? imageUrl,
+    @Default(false) final bool isEgg,
+    @Default(true) final bool isVeg,
+
   }) = _FoodItem;
 
   factory FoodItem.fromJson(Map<String, dynamic> json) =>
       _$FoodItemFromJson(json);
-
-
-}
-
-@freezed
-class Category with _$Category {
-  const factory Category({
-    required String categoryId,
-    final String? name,
-  }) = _Category;
-
-  factory Category.fromJson(Map<String, dynamic> json) =>
-      _$CategoryFromJson(json);
 }

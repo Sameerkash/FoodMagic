@@ -22,20 +22,30 @@ class _$FoodItemTearOff {
 
   _FoodItem call(
       {required String itemId,
-      required Category category,
+      required String category,
       required String name,
       List<String>? ingredients,
-      required String price,
-      String? tag,
-      String? type}) {
+      required int price,
+      List<String>? tags,
+      String? type,
+      String? style,
+      int? discount,
+      String? imageUrl,
+      bool isEgg = false,
+      bool isVeg = true}) {
     return _FoodItem(
       itemId: itemId,
       category: category,
       name: name,
       ingredients: ingredients,
       price: price,
-      tag: tag,
+      tags: tags,
       type: type,
+      style: style,
+      discount: discount,
+      imageUrl: imageUrl,
+      isEgg: isEgg,
+      isVeg: isVeg,
     );
   }
 
@@ -50,12 +60,17 @@ const $FoodItem = _$FoodItemTearOff();
 /// @nodoc
 mixin _$FoodItem {
   String get itemId => throw _privateConstructorUsedError;
-  Category get category => throw _privateConstructorUsedError;
+  String get category => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   List<String>? get ingredients => throw _privateConstructorUsedError;
-  String get price => throw _privateConstructorUsedError;
-  String? get tag => throw _privateConstructorUsedError;
+  int get price => throw _privateConstructorUsedError;
+  List<String>? get tags => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
+  String? get style => throw _privateConstructorUsedError;
+  int? get discount => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
+  bool get isEgg => throw _privateConstructorUsedError;
+  bool get isVeg => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -69,14 +84,17 @@ abstract class $FoodItemCopyWith<$Res> {
       _$FoodItemCopyWithImpl<$Res>;
   $Res call(
       {String itemId,
-      Category category,
+      String category,
       String name,
       List<String>? ingredients,
-      String price,
-      String? tag,
-      String? type});
-
-  $CategoryCopyWith<$Res> get category;
+      int price,
+      List<String>? tags,
+      String? type,
+      String? style,
+      int? discount,
+      String? imageUrl,
+      bool isEgg,
+      bool isVeg});
 }
 
 /// @nodoc
@@ -94,8 +112,13 @@ class _$FoodItemCopyWithImpl<$Res> implements $FoodItemCopyWith<$Res> {
     Object? name = freezed,
     Object? ingredients = freezed,
     Object? price = freezed,
-    Object? tag = freezed,
+    Object? tags = freezed,
     Object? type = freezed,
+    Object? style = freezed,
+    Object? discount = freezed,
+    Object? imageUrl = freezed,
+    Object? isEgg = freezed,
+    Object? isVeg = freezed,
   }) {
     return _then(_value.copyWith(
       itemId: itemId == freezed
@@ -105,7 +128,7 @@ class _$FoodItemCopyWithImpl<$Res> implements $FoodItemCopyWith<$Res> {
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as Category,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -117,23 +140,36 @@ class _$FoodItemCopyWithImpl<$Res> implements $FoodItemCopyWith<$Res> {
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String,
-      tag: tag == freezed
-          ? _value.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
+      style: style == freezed
+          ? _value.style
+          : style // ignore: cast_nullable_to_non_nullable
+              as String?,
+      discount: discount == freezed
+          ? _value.discount
+          : discount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      imageUrl: imageUrl == freezed
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isEgg: isEgg == freezed
+          ? _value.isEgg
+          : isEgg // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isVeg: isVeg == freezed
+          ? _value.isVeg
+          : isVeg // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
-  }
-
-  @override
-  $CategoryCopyWith<$Res> get category {
-    return $CategoryCopyWith<$Res>(_value.category, (value) {
-      return _then(_value.copyWith(category: value));
-    });
   }
 }
 
@@ -144,15 +180,17 @@ abstract class _$FoodItemCopyWith<$Res> implements $FoodItemCopyWith<$Res> {
   @override
   $Res call(
       {String itemId,
-      Category category,
+      String category,
       String name,
       List<String>? ingredients,
-      String price,
-      String? tag,
-      String? type});
-
-  @override
-  $CategoryCopyWith<$Res> get category;
+      int price,
+      List<String>? tags,
+      String? type,
+      String? style,
+      int? discount,
+      String? imageUrl,
+      bool isEgg,
+      bool isVeg});
 }
 
 /// @nodoc
@@ -171,8 +209,13 @@ class __$FoodItemCopyWithImpl<$Res> extends _$FoodItemCopyWithImpl<$Res>
     Object? name = freezed,
     Object? ingredients = freezed,
     Object? price = freezed,
-    Object? tag = freezed,
+    Object? tags = freezed,
     Object? type = freezed,
+    Object? style = freezed,
+    Object? discount = freezed,
+    Object? imageUrl = freezed,
+    Object? isEgg = freezed,
+    Object? isVeg = freezed,
   }) {
     return _then(_FoodItem(
       itemId: itemId == freezed
@@ -182,7 +225,7 @@ class __$FoodItemCopyWithImpl<$Res> extends _$FoodItemCopyWithImpl<$Res>
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as Category,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -194,15 +237,35 @@ class __$FoodItemCopyWithImpl<$Res> extends _$FoodItemCopyWithImpl<$Res>
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String,
-      tag: tag == freezed
-          ? _value.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
+      style: style == freezed
+          ? _value.style
+          : style // ignore: cast_nullable_to_non_nullable
+              as String?,
+      discount: discount == freezed
+          ? _value.discount
+          : discount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      imageUrl: imageUrl == freezed
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isEgg: isEgg == freezed
+          ? _value.isEgg
+          : isEgg // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isVeg: isVeg == freezed
+          ? _value.isVeg
+          : isVeg // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -216,8 +279,13 @@ class _$_FoodItem implements _FoodItem {
       required this.name,
       this.ingredients,
       required this.price,
-      this.tag,
-      this.type});
+      this.tags,
+      this.type,
+      this.style,
+      this.discount,
+      this.imageUrl,
+      this.isEgg = false,
+      this.isVeg = true});
 
   factory _$_FoodItem.fromJson(Map<String, dynamic> json) =>
       _$_$_FoodItemFromJson(json);
@@ -225,21 +293,33 @@ class _$_FoodItem implements _FoodItem {
   @override
   final String itemId;
   @override
-  final Category category;
+  final String category;
   @override
   final String name;
   @override
   final List<String>? ingredients;
   @override
-  final String price;
+  final int price;
   @override
-  final String? tag;
+  final List<String>? tags;
   @override
   final String? type;
+  @override
+  final String? style;
+  @override
+  final int? discount;
+  @override
+  final String? imageUrl;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool isEgg;
+  @JsonKey(defaultValue: true)
+  @override
+  final bool isVeg;
 
   @override
   String toString() {
-    return 'FoodItem(itemId: $itemId, category: $category, name: $name, ingredients: $ingredients, price: $price, tag: $tag, type: $type)';
+    return 'FoodItem(itemId: $itemId, category: $category, name: $name, ingredients: $ingredients, price: $price, tags: $tags, type: $type, style: $style, discount: $discount, imageUrl: $imageUrl, isEgg: $isEgg, isVeg: $isVeg)';
   }
 
   @override
@@ -258,10 +338,22 @@ class _$_FoodItem implements _FoodItem {
                     .equals(other.ingredients, ingredients)) &&
             (identical(other.price, price) ||
                 const DeepCollectionEquality().equals(other.price, price)) &&
-            (identical(other.tag, tag) ||
-                const DeepCollectionEquality().equals(other.tag, tag)) &&
+            (identical(other.tags, tags) ||
+                const DeepCollectionEquality().equals(other.tags, tags)) &&
             (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.style, style) ||
+                const DeepCollectionEquality().equals(other.style, style)) &&
+            (identical(other.discount, discount) ||
+                const DeepCollectionEquality()
+                    .equals(other.discount, discount)) &&
+            (identical(other.imageUrl, imageUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageUrl, imageUrl)) &&
+            (identical(other.isEgg, isEgg) ||
+                const DeepCollectionEquality().equals(other.isEgg, isEgg)) &&
+            (identical(other.isVeg, isVeg) ||
+                const DeepCollectionEquality().equals(other.isVeg, isVeg)));
   }
 
   @override
@@ -272,8 +364,13 @@ class _$_FoodItem implements _FoodItem {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(ingredients) ^
       const DeepCollectionEquality().hash(price) ^
-      const DeepCollectionEquality().hash(tag) ^
-      const DeepCollectionEquality().hash(type);
+      const DeepCollectionEquality().hash(tags) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(style) ^
+      const DeepCollectionEquality().hash(discount) ^
+      const DeepCollectionEquality().hash(imageUrl) ^
+      const DeepCollectionEquality().hash(isEgg) ^
+      const DeepCollectionEquality().hash(isVeg);
 
   @JsonKey(ignore: true)
   @override
@@ -289,195 +386,46 @@ class _$_FoodItem implements _FoodItem {
 abstract class _FoodItem implements FoodItem {
   const factory _FoodItem(
       {required String itemId,
-      required Category category,
+      required String category,
       required String name,
       List<String>? ingredients,
-      required String price,
-      String? tag,
-      String? type}) = _$_FoodItem;
+      required int price,
+      List<String>? tags,
+      String? type,
+      String? style,
+      int? discount,
+      String? imageUrl,
+      bool isEgg,
+      bool isVeg}) = _$_FoodItem;
 
   factory _FoodItem.fromJson(Map<String, dynamic> json) = _$_FoodItem.fromJson;
 
   @override
   String get itemId => throw _privateConstructorUsedError;
   @override
-  Category get category => throw _privateConstructorUsedError;
+  String get category => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override
   List<String>? get ingredients => throw _privateConstructorUsedError;
   @override
-  String get price => throw _privateConstructorUsedError;
+  int get price => throw _privateConstructorUsedError;
   @override
-  String? get tag => throw _privateConstructorUsedError;
+  List<String>? get tags => throw _privateConstructorUsedError;
   @override
   String? get type => throw _privateConstructorUsedError;
   @override
+  String? get style => throw _privateConstructorUsedError;
+  @override
+  int? get discount => throw _privateConstructorUsedError;
+  @override
+  String? get imageUrl => throw _privateConstructorUsedError;
+  @override
+  bool get isEgg => throw _privateConstructorUsedError;
+  @override
+  bool get isVeg => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   _$FoodItemCopyWith<_FoodItem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Category _$CategoryFromJson(Map<String, dynamic> json) {
-  return _Category.fromJson(json);
-}
-
-/// @nodoc
-class _$CategoryTearOff {
-  const _$CategoryTearOff();
-
-  _Category call({required String categoryId, String? name}) {
-    return _Category(
-      categoryId: categoryId,
-      name: name,
-    );
-  }
-
-  Category fromJson(Map<String, Object> json) {
-    return Category.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Category = _$CategoryTearOff();
-
-/// @nodoc
-mixin _$Category {
-  String get categoryId => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CategoryCopyWith<Category> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CategoryCopyWith<$Res> {
-  factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
-      _$CategoryCopyWithImpl<$Res>;
-  $Res call({String categoryId, String? name});
-}
-
-/// @nodoc
-class _$CategoryCopyWithImpl<$Res> implements $CategoryCopyWith<$Res> {
-  _$CategoryCopyWithImpl(this._value, this._then);
-
-  final Category _value;
-  // ignore: unused_field
-  final $Res Function(Category) _then;
-
-  @override
-  $Res call({
-    Object? categoryId = freezed,
-    Object? name = freezed,
-  }) {
-    return _then(_value.copyWith(
-      categoryId: categoryId == freezed
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$CategoryCopyWith<$Res> implements $CategoryCopyWith<$Res> {
-  factory _$CategoryCopyWith(_Category value, $Res Function(_Category) then) =
-      __$CategoryCopyWithImpl<$Res>;
-  @override
-  $Res call({String categoryId, String? name});
-}
-
-/// @nodoc
-class __$CategoryCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res>
-    implements _$CategoryCopyWith<$Res> {
-  __$CategoryCopyWithImpl(_Category _value, $Res Function(_Category) _then)
-      : super(_value, (v) => _then(v as _Category));
-
-  @override
-  _Category get _value => super._value as _Category;
-
-  @override
-  $Res call({
-    Object? categoryId = freezed,
-    Object? name = freezed,
-  }) {
-    return _then(_Category(
-      categoryId: categoryId == freezed
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_Category implements _Category {
-  const _$_Category({required this.categoryId, this.name});
-
-  factory _$_Category.fromJson(Map<String, dynamic> json) =>
-      _$_$_CategoryFromJson(json);
-
-  @override
-  final String categoryId;
-  @override
-  final String? name;
-
-  @override
-  String toString() {
-    return 'Category(categoryId: $categoryId, name: $name)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Category &&
-            (identical(other.categoryId, categoryId) ||
-                const DeepCollectionEquality()
-                    .equals(other.categoryId, categoryId)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(categoryId) ^
-      const DeepCollectionEquality().hash(name);
-
-  @JsonKey(ignore: true)
-  @override
-  _$CategoryCopyWith<_Category> get copyWith =>
-      __$CategoryCopyWithImpl<_Category>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_CategoryToJson(this);
-  }
-}
-
-abstract class _Category implements Category {
-  const factory _Category({required String categoryId, String? name}) =
-      _$_Category;
-
-  factory _Category.fromJson(Map<String, dynamic> json) = _$_Category.fromJson;
-
-  @override
-  String get categoryId => throw _privateConstructorUsedError;
-  @override
-  String? get name => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  _$CategoryCopyWith<_Category> get copyWith =>
       throw _privateConstructorUsedError;
 }
