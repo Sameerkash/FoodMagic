@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:auto_route/auto_route.dart';
+
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
 import '../../widgets/button.dart';
@@ -24,7 +26,12 @@ class CartView extends StatelessWidget {
           child: const SizedBox(),
         ),
         actions: [
-          Icon(Icons.shopping_cart).padR(15.0),
+          IconButton(
+            onPressed: () {
+              context.router.pushNamed('/order-view');
+            },
+            icon: Icon(Icons.shopping_bag).padR(20.0),
+          )
         ],
       ),
       body: CustomBackground(
@@ -64,7 +71,6 @@ class CartContent extends StatelessWidget {
               title: "Marghrita",
               subTitle: '',
               price: '',
-              // price: "1234",
             ),
             itemCount: 3,
           ),

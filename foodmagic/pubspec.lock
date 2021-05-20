@@ -50,6 +50,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.5.0"
+  auto_route:
+    dependency: "direct main"
+    description:
+      name: auto_route
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.0"
+  auto_route_generator:
+    dependency: "direct dev"
+    description:
+      name: auto_route_generator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   auto_size_text:
     dependency: "direct main"
     description:
@@ -64,13 +78,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0-nullsafety.1"
-  beamer:
-    dependency: "direct main"
-    description:
-      name: beamer
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.12.4"
   boolean_selector:
     dependency: transitive
     description:
@@ -831,6 +838,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  sliding_sheet:
+    dependency: "direct main"
+    description:
+      name: sliding_sheet
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.0"
   source_gen:
     dependency: transitive
     description:
@@ -915,6 +929,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.0"
+  timelines:
+    dependency: "direct main"
+    description:
+      name: timelines
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0"
   timing:
     dependency: transitive
     description:
