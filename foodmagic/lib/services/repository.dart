@@ -111,4 +111,18 @@ class Repository {
       await _store.record(SESSIONKEY).delete(await (getDb()));
     } catch (e) {}
   }
+
+  Future<Map<String, Object>?> getFoodItems() async {
+    try {
+      final result = await database!.
+      listDocuments(collectionId: '608adfe8f0dc4');
+
+      if (result.statusCode == 200) {
+        return result.data;
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
 }
+

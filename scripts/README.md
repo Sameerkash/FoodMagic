@@ -20,6 +20,7 @@ FoodItem
 {
   "itemId": "", // UUID v4 must be generated from https://www.uuidgenerator.net/version4
   "name": "", // ex: Margheritta, Veg Loaded, Corn , Cheese
+ "category" : "pizza", // "burger" , "dessert"
   "ingreditents": [], //ex : "Jalepeno", "chilli", "peppers", "zuchini"
   "price": , // ex : in rupees 199, 439
   "tags": [], // ex : Meal of the day, hot , trending
@@ -41,4 +42,3 @@ Images should go into the /data/images folder
   "imageName": ""
 }
 ```
-
