@@ -9,12 +9,16 @@
   },
   {
     "imageId": "306805b1-72ab-4316-ad4c-37957d821ce2",
-    "imageName": "Crunchy-Mexican-Paneer-Taco.png"
+    "imageName": "veggie-paradise.png"
   },
-
-
-  
-
+  {
+    "imageId": "000df111-5080-4383-ada6-abf6111a375f",
+    "imageName": "Mushroom-Fiesta.png"
+  },
+  {
+    "imageId": "df0c061b-9ba6-4ad9-9807-a10a2ae257d8",
+    "imageName": "Indie-Chicken-Tikka.png"
+  },
   {
     "imageId": "4388ce02-139e-484e-838e-b0c3c0d0030a",
     "imageName": "classic-veg-burger.png"
@@ -29,39 +33,19 @@
     "imageName": "paneer-burger.png"
   },
   {
-    "imageId": "e461aa51-bffe-44d0-88e5-c7c5d92eb316",
-    "imageName": "veggie-paradise.png"
-  },
-  {
-    "imageId": "000df111-5080-4383-ada6-abf6111a375f",
-    "imageName": "Mushroom-Fiesta.png"
-  },
-  {
-    "imageId": "df0c061b-9ba6-4ad9-9807-a10a2ae257d8",
-    "imageName": "Indie-Chicken-Tikka.png"
-  },
-  {
-    "imageId": "bbfe581f-dbb8-447b-9104-e4c1bfd688d3",
-    "imageName": "Soft-Grilled-Chicken-Taco.png"
-  },
-  {
-    "imageId": "09c8f333-d437-4702-b1ee-006994298e8b",
-    "imageName": "Shrimp-Tacos.png"
-  },
-  {
-    "imageId": "e460f52c-3319-4695-8e08-ed5eee137ce8",
-    "imageName": "Indie-Chicken-Tikka-Taco.png"
-  },
-  {
-    "imageId": "0fbaceaa-9583-44b3-89a6-8de898aed59c",
-    "imageName": "Egg-Cheese-Taco.png"
-  },
-  {
     "imageId": "3e4207d5-077c-41a5-8bba-2b4c06a1c84a",
     "imageName": "Barbeque-C-Burger.png"
   },
   {
     "imageId": "87eae49a-b9b2-4031-a2b1-4e8076133b99",
     "imageName": "Aloo-Tikki-Burger.png"
+  },
+  {
+    "imageId": "0fbaceaa-9583-44b3-89a6-8de898aed59c",
+    "imageName": "ChocolateDonut.png"
+  },
+  {
+    "imageId": "e460f52c-3319-4695-8e08-ed5eee137ce8",
+    "imageName": "StrawberryDonut.png"
   }
 ]
