@@ -32,9 +32,18 @@ class AuthVM extends StateNotifier<AuthState> {
   }
 
   Future<void> signIn({required String email, required String password}) async {
-    await repo.signInUser(password: password, email: email);
+      await repo.signInUser(password: password, email: email);
 
     checkUserAuth();
+  }
+
+  Future<void> signUp(
+      {required String email,
+      required String password,
+      required String name}) async {
+    await repo.createUser(name: name, password: password, email: email);
+    checkUserAuth();
+
   }
 
   Future<void> logout() async {

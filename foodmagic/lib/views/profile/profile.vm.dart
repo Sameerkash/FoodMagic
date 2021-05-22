@@ -20,4 +20,10 @@ class ProfileVM extends StateNotifier<ProfileState> {
   ProfileVM(ProviderReference ref)
       : repo = ref.read(repoProvider),
         super(ProfileState.loading());
+
+  void getUserProfile() async {
+
+
+
+  }
 }

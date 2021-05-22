@@ -8,9 +8,9 @@ part 'order.g.dart';
 @freezed
 class Order with _$Order {
   const factory Order({
-    required String orderId,
-    @JsonSerializable(explicitToJson: true)
-    required OrderItem orderItem,
+    @JsonKey(name: '\$id') required String orderId,
+    @Default('Received') String orderStatus,
+    @JsonSerializable(explicitToJson: true) required List<OrderItem> orderItem,
     required User user,
     required int total,
     final int? discount,
@@ -19,15 +19,14 @@ class Order with _$Order {
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
 
-  // Map<String, dynamic> toJson() => _$_$_OrderToJson();
+  // Map<String, dynamic> toJson() => _$_$_OrderToJson(this);
 }
 
 @freezed
 class OrderItem with _$OrderItem {
   const factory OrderItem({
     required int quanity,
-    @JsonSerializable(explicitToJson: true)
-    required FoodItem foodItem,
+    @JsonSerializable(explicitToJson: true) required FoodItem foodItem,
     required int subTotal,
   }) = _OrderItem;
 

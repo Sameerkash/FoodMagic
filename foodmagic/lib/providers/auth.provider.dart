@@ -1,3 +1,4 @@
+import 'package:foodmagic/views/home/home.vm.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../services/repository.dart';
@@ -8,3 +9,7 @@ final authProvider = StateNotifierProvider<AuthVM, AuthState>((ref) {
 });
 
 final repoProvider = Provider<Repository>((ref) => Repository());
+
+final homeProvider = StateNotifierProvider<HomeVM, HomeState>((ref) {
+  return HomeVM(ref);
+});

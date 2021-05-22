@@ -2,61 +2,22 @@ import 'package:auto_route/auto_route.dart';
 import 'package:badges/badges.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import 'package:foodmagic/models/fooditem/food.item.dart';
+import 'package:foodmagic/providers/auth.provider.dart';
 
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
 import '../../widgets/cards.dart';
 import '../../widgets/containers.dart';
 
-class HomeView extends StatelessWidget {
-// Temporary data
-//
-  final List<MenuItemContainer> pizzaItems = [
-    MenuItemContainer(
-      imageUrl: "assets/p1.jpeg",
-      price: "\$27",
-      subTitle: "Jalepeno and Pepper",
-      title: "Margherita",
-    ),
-    MenuItemContainer(
-      imageUrl: "assets/p1.jpeg",
-      price: "\$27",
-      subTitle: "Jalepeno and Pepper",
-      title: "Margherita",
-    ),
-  ];
-
-  final List<MenuItemContainer> burgerItems = [
-    MenuItemContainer(
-      imageUrl: "assets/burger.png",
-      price: "\$27",
-      subTitle: "cutlet with seasoning",
-      title: "McVeggie",
-    ),
-    MenuItemContainer(
-      imageUrl: "assets/burger.png",
-      price: "\$27",
-      subTitle: "cutlet with seasoning",
-      title: "McVeggie",
-    ),
-  ];
-
-  final List<MenuItemContainer> tacoItems = [
-    MenuItemContainer(
-      imageUrl: "assets/taco.png",
-      price: "\$27",
-      subTitle: "spices, garlic",
-      title: "Buritto",
-    ),
-    MenuItemContainer(
-      imageUrl: "assets/taco.png",
-      price: "\$27",
-      subTitle: "spices, garlic",
-      title: "Buritto",
-    ),
-  ];
+class HomeView extends HookWidget {
+  final home = useProvider(homeProvider);
+  final h = useProvider(homeProvider.notifier);
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +54,7 @@ class HomeView extends StatelessWidget {
                       tabs: <Widget>[
                         const Tab(text: "Pizza"),
                         const Tab(text: "Burger"),
-                        const Tab(text: "Tacos"),
+                        const Tab(text: "Dessert"),
                       ],
                     ),
                     Spacer(flex: 1),
@@ -119,46 +80,16 @@ class HomeView extends StatelessWidget {
           ),
         ),
         body: CustomBackground(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 0.37.sh,
-                child: TabBarView(children: [
-                  Item(menuItems: pizzaItems),
-                  Item(menuItems: burgerItems),
-                  Item(menuItems: tacoItems),
-                ]),
-              ),
-              Text(
-                "FOOD AND DRINKS",
-                style: context.bodyText2!.copyWith(
-                    fontStyle: FontStyle.italic, fontWeight: FontWeight.w700),
-              ).padSym(0.0, 15.0),
-              Text(
-                "Popular Today",
-                style: context.bodyText1!.copyWith(fontWeight: FontWeight.bold),
-              ).padSym(0.0, 15.0),
-              Container(
-                height: 0.32.sh,
-                child: ListView.builder(
-                  itemCount: 5,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return HomeItemCard(
-                      onPressed: () {
-                        context.router.pushNamed('/item-detail-view');
-                      },
-                      imageUrl: "assets/p1.jpeg",
-                      price: "\$27",
-                      subTitle: "Jalepeno and Pepper",
-                      title: "Margherita",
-                    );
-                  },
-                ),
-              )
-            ],
+          child: home.map(
+            loading: (_) => Center(child: CircularProgressIndicator()),
+            data: (data) => MenuItems(
+              getFileView: h.repo.getImage,
+              popularToday: data.popularToday,
+              burgerItems: data.burger,
+              dessertItems: data.dessert,
+              pizzaItems: data.pizza,
+            ),
+            error: (_) => Container(),
           ),
         ),
       ),
@@ -166,12 +97,86 @@ class HomeView extends StatelessWidget {
   }
 }
 
+class MenuItems extends StatelessWidget {
+  final List<FoodItem> pizzaItems;
+  final List<FoodItem> burgerItems;
+  final List<FoodItem> dessertItems;
+  final List<FoodItem> popularToday;
+  final Function getFileView;
+
+  const MenuItems({
+    Key? key,
+    required this.pizzaItems,
+    required this.burgerItems,
+    required this.dessertItems,
+    required this.popularToday,
+    required this.getFileView,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          height: 0.37.sh,
+          child: TabBarView(children: [
+            Item(
+              menuItems: pizzaItems,
+              getFileView: getFileView,
+            ),
+            Item(
+              menuItems: burgerItems,
+              getFileView: getFileView,
+            ),
+            Item(
+              menuItems: dessertItems,
+              getFileView: getFileView,
+            ),
+          ]),
+        ),
+        Text(
+          "FOOD AND DRINKS",
+          style: context.bodyText2!.copyWith(
+              fontStyle: FontStyle.italic, fontWeight: FontWeight.w700),
+        ).padSym(0.0, 15.0),
+        Text(
+          "Popular Today",
+          style: context.bodyText1!.copyWith(fontWeight: FontWeight.bold),
+        ).padSym(0.0, 15.0),
+        Container(
+          height: 0.32.sh,
+          child: ListView.builder(
+            itemCount: 5,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, i) {
+              return HomeItemCard(
+                fileView: getFileView(fileId: popularToday[i].imageUrl!),
+                onPressed: () {
+                  context.router.pushNamed('/item-detail-view');
+                },
+                imageUrl: popularToday[i].imageUrl!,
+                price: popularToday[i].price,
+                subTitle: popularToday[i].style!,
+                title: popularToday[i].name,
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 /// Items that are showed in each TabBarView of the app
 class Item extends StatelessWidget {
-  final List<MenuItemContainer>? menuItems;
+  final Function getFileView;
+  final List<FoodItem> menuItems;
   const Item({
     Key? key,
-    this.menuItems,
+    required this.getFileView,
+    required this.menuItems,
   }) : super(key: key);
 
   @override
@@ -184,10 +189,16 @@ class Item extends StatelessWidget {
             initialPage: 0,
             enableInfiniteScroll: false,
           ),
-          items: menuItems!
+          items: menuItems
               .map(
                 (e) => Builder(
-                  builder: (_) => e,
+                  builder: (_) => MenuItemContainer(
+                    fileView: getFileView(fileId: e.imageUrl!),
+                    imageUrl: e.imageUrl!,
+                    price: e.price,
+                    subTitle: e.style!,
+                    title: e.name,
+                  ),
                 ),
               )
               .toList()),

@@ -1,9 +1,10 @@
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:foodmagic/providers/auth.provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
@@ -17,6 +18,7 @@ class SignUpView extends HookWidget {
     TextEditingController? password = useTextEditingController();
     TextEditingController? email = useTextEditingController();
 
+    final auth = useProvider(authProvider.notifier);
 
     return Scaffold(
       body: CustomBackground(
@@ -65,10 +67,10 @@ class SignUpView extends HookWidget {
               if (email.value.text.length > 0 &&
                   name.value.text.length > 0 &&
                   password.value.text.length > 0) {
-                // auth.signUp(
-                //     email: email.value.text,
-                //     name: name.value.text,
-                //     password: password.value.text);
+                auth.signUp(
+                    email: email.value.text,
+                    name: name.value.text,
+                    password: password.value.text);
               }
             },
             text: "SIGN UP",
@@ -84,10 +86,7 @@ class SignUpView extends HookWidget {
                 TextSpan(
                   text: "Sign In",
                   style: context.bodyText1!.copyWith(color: Colors.amber),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-
-                    },
+                  recognizer: TapGestureRecognizer()..onTap = () {},
                 ),
               ],
             ),

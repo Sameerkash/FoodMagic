@@ -7,7 +7,8 @@ part 'food.item.g.dart';
 @freezed
 class FoodItem with _$FoodItem {
   const factory FoodItem({
-    required String itemId,
+    @JsonKey(name: '\$id', defaultValue: '', ignore: false)
+        required String itemId,
     required String category,
     required String name,
     final List<String>? ingredients,
@@ -19,9 +20,19 @@ class FoodItem with _$FoodItem {
     final String? imageUrl,
     @Default(false) final bool isEgg,
     @Default(true) final bool isVeg,
-
   }) = _FoodItem;
 
   factory FoodItem.fromJson(Map<String, dynamic> json) =>
       _$FoodItemFromJson(json);
+}
+
+@freezed
+class FoodItemDS with _$FoodItemDS {
+  const factory FoodItemDS(
+      {@JsonSerializable(explicitToJson: true)
+      @JsonKey(name: 'documents')
+          required List<FoodItem> items}) = _FoodItemDS;
+
+  factory FoodItemDS.fromJson(Map<String, dynamic> json) =>
+      _$FoodItemDSFromJson(json);
 }

@@ -21,14 +21,18 @@ class _$OrderTearOff {
   const _$OrderTearOff();
 
   _Order call(
-      {required String orderId,
-      @JsonSerializable(explicitToJson: true) required OrderItem orderItem,
+      {@JsonKey(name: '\$id')
+          required String orderId,
+      String orderStatus = 'Received',
+      @JsonSerializable(explicitToJson: true)
+          required List<OrderItem> orderItem,
       required User user,
       required int total,
       int? discount,
       DateTime? time}) {
     return _Order(
       orderId: orderId,
+      orderStatus: orderStatus,
       orderItem: orderItem,
       user: user,
       total: total,
@@ -47,9 +51,11 @@ const $Order = _$OrderTearOff();
 
 /// @nodoc
 mixin _$Order {
+  @JsonKey(name: '\$id')
   String get orderId => throw _privateConstructorUsedError;
+  String get orderStatus => throw _privateConstructorUsedError;
   @JsonSerializable(explicitToJson: true)
-  OrderItem get orderItem => throw _privateConstructorUsedError;
+  List<OrderItem> get orderItem => throw _privateConstructorUsedError;
   User get user => throw _privateConstructorUsedError;
   int get total => throw _privateConstructorUsedError;
   int? get discount => throw _privateConstructorUsedError;
@@ -65,14 +71,14 @@ abstract class $OrderCopyWith<$Res> {
   factory $OrderCopyWith(Order value, $Res Function(Order) then) =
       _$OrderCopyWithImpl<$Res>;
   $Res call(
-      {String orderId,
-      @JsonSerializable(explicitToJson: true) OrderItem orderItem,
+      {@JsonKey(name: '\$id') String orderId,
+      String orderStatus,
+      @JsonSerializable(explicitToJson: true) List<OrderItem> orderItem,
       User user,
       int total,
       int? discount,
       DateTime? time});
 
-  $OrderItemCopyWith<$Res> get orderItem;
   $UserCopyWith<$Res> get user;
 }
 
@@ -87,6 +93,7 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
   @override
   $Res call({
     Object? orderId = freezed,
+    Object? orderStatus = freezed,
     Object? orderItem = freezed,
     Object? user = freezed,
     Object? total = freezed,
@@ -98,10 +105,14 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as String,
+      orderStatus: orderStatus == freezed
+          ? _value.orderStatus
+          : orderStatus // ignore: cast_nullable_to_non_nullable
+              as String,
       orderItem: orderItem == freezed
           ? _value.orderItem
           : orderItem // ignore: cast_nullable_to_non_nullable
-              as OrderItem,
+              as List<OrderItem>,
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -122,13 +133,6 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
   }
 
   @override
-  $OrderItemCopyWith<$Res> get orderItem {
-    return $OrderItemCopyWith<$Res>(_value.orderItem, (value) {
-      return _then(_value.copyWith(orderItem: value));
-    });
-  }
-
-  @override
   $UserCopyWith<$Res> get user {
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
@@ -142,15 +146,14 @@ abstract class _$OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
       __$OrderCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String orderId,
-      @JsonSerializable(explicitToJson: true) OrderItem orderItem,
+      {@JsonKey(name: '\$id') String orderId,
+      String orderStatus,
+      @JsonSerializable(explicitToJson: true) List<OrderItem> orderItem,
       User user,
       int total,
       int? discount,
       DateTime? time});
 
-  @override
-  $OrderItemCopyWith<$Res> get orderItem;
   @override
   $UserCopyWith<$Res> get user;
 }
@@ -167,6 +170,7 @@ class __$OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
   @override
   $Res call({
     Object? orderId = freezed,
+    Object? orderStatus = freezed,
     Object? orderItem = freezed,
     Object? user = freezed,
     Object? total = freezed,
@@ -178,10 +182,14 @@ class __$OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as String,
+      orderStatus: orderStatus == freezed
+          ? _value.orderStatus
+          : orderStatus // ignore: cast_nullable_to_non_nullable
+              as String,
       orderItem: orderItem == freezed
           ? _value.orderItem
           : orderItem // ignore: cast_nullable_to_non_nullable
-              as OrderItem,
+              as List<OrderItem>,
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -206,7 +214,8 @@ class __$OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Order implements _Order {
   const _$_Order(
-      {required this.orderId,
+      {@JsonKey(name: '\$id') required this.orderId,
+      this.orderStatus = 'Received',
       @JsonSerializable(explicitToJson: true) required this.orderItem,
       required this.user,
       required this.total,
@@ -217,10 +226,14 @@ class _$_Order implements _Order {
       _$_$_OrderFromJson(json);
 
   @override
+  @JsonKey(name: '\$id')
   final String orderId;
+  @JsonKey(defaultValue: 'Received')
+  @override
+  final String orderStatus;
   @override
   @JsonSerializable(explicitToJson: true)
-  final OrderItem orderItem;
+  final List<OrderItem> orderItem;
   @override
   final User user;
   @override
@@ -232,7 +245,7 @@ class _$_Order implements _Order {
 
   @override
   String toString() {
-    return 'Order(orderId: $orderId, orderItem: $orderItem, user: $user, total: $total, discount: $discount, time: $time)';
+    return 'Order(orderId: $orderId, orderStatus: $orderStatus, orderItem: $orderItem, user: $user, total: $total, discount: $discount, time: $time)';
   }
 
   @override
@@ -242,6 +255,9 @@ class _$_Order implements _Order {
             (identical(other.orderId, orderId) ||
                 const DeepCollectionEquality()
                     .equals(other.orderId, orderId)) &&
+            (identical(other.orderStatus, orderStatus) ||
+                const DeepCollectionEquality()
+                    .equals(other.orderStatus, orderStatus)) &&
             (identical(other.orderItem, orderItem) ||
                 const DeepCollectionEquality()
                     .equals(other.orderItem, orderItem)) &&
@@ -260,6 +276,7 @@ class _$_Order implements _Order {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(orderId) ^
+      const DeepCollectionEquality().hash(orderStatus) ^
       const DeepCollectionEquality().hash(orderItem) ^
       const DeepCollectionEquality().hash(user) ^
       const DeepCollectionEquality().hash(total) ^
@@ -279,8 +296,11 @@ class _$_Order implements _Order {
 
 abstract class _Order implements Order {
   const factory _Order(
-      {required String orderId,
-      @JsonSerializable(explicitToJson: true) required OrderItem orderItem,
+      {@JsonKey(name: '\$id')
+          required String orderId,
+      String orderStatus,
+      @JsonSerializable(explicitToJson: true)
+          required List<OrderItem> orderItem,
       required User user,
       required int total,
       int? discount,
@@ -289,10 +309,13 @@ abstract class _Order implements Order {
   factory _Order.fromJson(Map<String, dynamic> json) = _$_Order.fromJson;
 
   @override
+  @JsonKey(name: '\$id')
   String get orderId => throw _privateConstructorUsedError;
   @override
+  String get orderStatus => throw _privateConstructorUsedError;
+  @override
   @JsonSerializable(explicitToJson: true)
-  OrderItem get orderItem => throw _privateConstructorUsedError;
+  List<OrderItem> get orderItem => throw _privateConstructorUsedError;
   @override
   User get user => throw _privateConstructorUsedError;
   @override

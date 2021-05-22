@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:auto_route/auto_route.dart';
 
 import '../../providers/auth.provider.dart';
 import '../../utils/extensions.dart';
@@ -76,6 +77,7 @@ class SignInView extends HookWidget {
                   style: context.bodyText1!.copyWith(color: Colors.amber),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
+                      context.router.pushNamed('/sign-up-view');
                       // context.beamToNamed('/signup', beamBackOnPop: true);
                     },
                 ),

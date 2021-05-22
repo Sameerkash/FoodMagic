@@ -8,7 +8,7 @@ part of 'food.item.dart';
 
 _$_FoodItem _$_$_FoodItemFromJson(Map<String, dynamic> json) {
   return _$_FoodItem(
-    itemId: json['itemId'] as String,
+    itemId: json[r'$id'] as String? ?? '',
     category: json['category'] as String,
     name: json['name'] as String,
     ingredients: (json['ingredients'] as List<dynamic>?)
@@ -27,7 +27,7 @@ _$_FoodItem _$_$_FoodItemFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$_FoodItemToJson(_$_FoodItem instance) =>
     <String, dynamic>{
-      'itemId': instance.itemId,
+      r'$id': instance.itemId,
       'category': instance.category,
       'name': instance.name,
       'ingredients': instance.ingredients,
@@ -39,4 +39,17 @@ Map<String, dynamic> _$_$_FoodItemToJson(_$_FoodItem instance) =>
       'imageUrl': instance.imageUrl,
       'isEgg': instance.isEgg,
       'isVeg': instance.isVeg,
+    };
+
+_$_FoodItemDS _$_$_FoodItemDSFromJson(Map<String, dynamic> json) {
+  return _$_FoodItemDS(
+    items: (json['documents'] as List<dynamic>)
+        .map((e) => FoodItem.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_FoodItemDSToJson(_$_FoodItemDS instance) =>
+    <String, dynamic>{
+      'documents': instance.items,
     };

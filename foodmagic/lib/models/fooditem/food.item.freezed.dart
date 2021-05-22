@@ -21,7 +21,8 @@ class _$FoodItemTearOff {
   const _$FoodItemTearOff();
 
   _FoodItem call(
-      {required String itemId,
+      {@JsonKey(name: '\$id', defaultValue: '', ignore: false)
+          required String itemId,
       required String category,
       required String name,
       List<String>? ingredients,
@@ -59,6 +60,7 @@ const $FoodItem = _$FoodItemTearOff();
 
 /// @nodoc
 mixin _$FoodItem {
+  @JsonKey(name: '\$id', defaultValue: '', ignore: false)
   String get itemId => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -83,7 +85,7 @@ abstract class $FoodItemCopyWith<$Res> {
   factory $FoodItemCopyWith(FoodItem value, $Res Function(FoodItem) then) =
       _$FoodItemCopyWithImpl<$Res>;
   $Res call(
-      {String itemId,
+      {@JsonKey(name: '\$id', defaultValue: '', ignore: false) String itemId,
       String category,
       String name,
       List<String>? ingredients,
@@ -179,7 +181,7 @@ abstract class _$FoodItemCopyWith<$Res> implements $FoodItemCopyWith<$Res> {
       __$FoodItemCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String itemId,
+      {@JsonKey(name: '\$id', defaultValue: '', ignore: false) String itemId,
       String category,
       String name,
       List<String>? ingredients,
@@ -274,7 +276,8 @@ class __$FoodItemCopyWithImpl<$Res> extends _$FoodItemCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FoodItem implements _FoodItem {
   const _$_FoodItem(
-      {required this.itemId,
+      {@JsonKey(name: '\$id', defaultValue: '', ignore: false)
+          required this.itemId,
       required this.category,
       required this.name,
       this.ingredients,
@@ -291,6 +294,7 @@ class _$_FoodItem implements _FoodItem {
       _$_$_FoodItemFromJson(json);
 
   @override
+  @JsonKey(name: '\$id', defaultValue: '', ignore: false)
   final String itemId;
   @override
   final String category;
@@ -385,7 +389,8 @@ class _$_FoodItem implements _FoodItem {
 
 abstract class _FoodItem implements FoodItem {
   const factory _FoodItem(
-      {required String itemId,
+      {@JsonKey(name: '\$id', defaultValue: '', ignore: false)
+          required String itemId,
       required String category,
       required String name,
       List<String>? ingredients,
@@ -401,6 +406,7 @@ abstract class _FoodItem implements FoodItem {
   factory _FoodItem.fromJson(Map<String, dynamic> json) = _$_FoodItem.fromJson;
 
   @override
+  @JsonKey(name: '\$id', defaultValue: '', ignore: false)
   String get itemId => throw _privateConstructorUsedError;
   @override
   String get category => throw _privateConstructorUsedError;
@@ -427,5 +433,172 @@ abstract class _FoodItem implements FoodItem {
   @override
   @JsonKey(ignore: true)
   _$FoodItemCopyWith<_FoodItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+FoodItemDS _$FoodItemDSFromJson(Map<String, dynamic> json) {
+  return _FoodItemDS.fromJson(json);
+}
+
+/// @nodoc
+class _$FoodItemDSTearOff {
+  const _$FoodItemDSTearOff();
+
+  _FoodItemDS call(
+      {@JsonSerializable(explicitToJson: true)
+      @JsonKey(name: 'documents')
+          required List<FoodItem> items}) {
+    return _FoodItemDS(
+      items: items,
+    );
+  }
+
+  FoodItemDS fromJson(Map<String, Object> json) {
+    return FoodItemDS.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $FoodItemDS = _$FoodItemDSTearOff();
+
+/// @nodoc
+mixin _$FoodItemDS {
+  @JsonSerializable(explicitToJson: true)
+  @JsonKey(name: 'documents')
+  List<FoodItem> get items => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FoodItemDSCopyWith<FoodItemDS> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FoodItemDSCopyWith<$Res> {
+  factory $FoodItemDSCopyWith(
+          FoodItemDS value, $Res Function(FoodItemDS) then) =
+      _$FoodItemDSCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonSerializable(explicitToJson: true)
+      @JsonKey(name: 'documents')
+          List<FoodItem> items});
+}
+
+/// @nodoc
+class _$FoodItemDSCopyWithImpl<$Res> implements $FoodItemDSCopyWith<$Res> {
+  _$FoodItemDSCopyWithImpl(this._value, this._then);
+
+  final FoodItemDS _value;
+  // ignore: unused_field
+  final $Res Function(FoodItemDS) _then;
+
+  @override
+  $Res call({
+    Object? items = freezed,
+  }) {
+    return _then(_value.copyWith(
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<FoodItem>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$FoodItemDSCopyWith<$Res> implements $FoodItemDSCopyWith<$Res> {
+  factory _$FoodItemDSCopyWith(
+          _FoodItemDS value, $Res Function(_FoodItemDS) then) =
+      __$FoodItemDSCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonSerializable(explicitToJson: true)
+      @JsonKey(name: 'documents')
+          List<FoodItem> items});
+}
+
+/// @nodoc
+class __$FoodItemDSCopyWithImpl<$Res> extends _$FoodItemDSCopyWithImpl<$Res>
+    implements _$FoodItemDSCopyWith<$Res> {
+  __$FoodItemDSCopyWithImpl(
+      _FoodItemDS _value, $Res Function(_FoodItemDS) _then)
+      : super(_value, (v) => _then(v as _FoodItemDS));
+
+  @override
+  _FoodItemDS get _value => super._value as _FoodItemDS;
+
+  @override
+  $Res call({
+    Object? items = freezed,
+  }) {
+    return _then(_FoodItemDS(
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<FoodItem>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_FoodItemDS implements _FoodItemDS {
+  const _$_FoodItemDS(
+      {@JsonSerializable(explicitToJson: true)
+      @JsonKey(name: 'documents')
+          required this.items});
+
+  factory _$_FoodItemDS.fromJson(Map<String, dynamic> json) =>
+      _$_$_FoodItemDSFromJson(json);
+
+  @override
+  @JsonSerializable(explicitToJson: true)
+  @JsonKey(name: 'documents')
+  final List<FoodItem> items;
+
+  @override
+  String toString() {
+    return 'FoodItemDS(items: $items)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FoodItemDS &&
+            (identical(other.items, items) ||
+                const DeepCollectionEquality().equals(other.items, items)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(items);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FoodItemDSCopyWith<_FoodItemDS> get copyWith =>
+      __$FoodItemDSCopyWithImpl<_FoodItemDS>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_FoodItemDSToJson(this);
+  }
+}
+
+abstract class _FoodItemDS implements FoodItemDS {
+  const factory _FoodItemDS(
+      {@JsonSerializable(explicitToJson: true)
+      @JsonKey(name: 'documents')
+          required List<FoodItem> items}) = _$_FoodItemDS;
+
+  factory _FoodItemDS.fromJson(Map<String, dynamic> json) =
+      _$_FoodItemDS.fromJson;
+
+  @override
+  @JsonSerializable(explicitToJson: true)
+  @JsonKey(name: 'documents')
+  List<FoodItem> get items => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$FoodItemDSCopyWith<_FoodItemDS> get copyWith =>
       throw _privateConstructorUsedError;
 }

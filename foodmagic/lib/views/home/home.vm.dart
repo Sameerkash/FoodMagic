@@ -24,5 +24,38 @@ class HomeVM extends StateNotifier<HomeState> {
 
   HomeVM(ProviderReference ref)
       : repo = ref.read(repoProvider),
-        super(HomeState.loading());
+        super(HomeState.loading()) {
+    getItems();
+  }
+
+  Future<void> getItems() async {
+    final result = await repo.getFoodItems();
+    List<FoodItem> pizza = [];
+    List<FoodItem> burger = [];
+    List<FoodItem> dessert = [];
+    List<FoodItem> popularToday = [];
+    if (result.isNotEmpty) {
+      result.forEach((f) {
+        if (f.category == 'pizza') {
+          pizza.add(f);
+        } else if (f.category == 'burger') {
+          burger.add(f);
+        } else {
+          dessert.add(f);
+        }
+
+        if (f.tags!.contains('Popular Today')) {
+          popularToday.add(f);
+        }
+      });
+
+      state = HomeState.data(
+          pizza: pizza,
+          burger: burger,
+          dessert: dessert,
+          popularToday: popularToday);
+    } else {
+      state = HomeState.error('Error');
+    }
+  }
 }
