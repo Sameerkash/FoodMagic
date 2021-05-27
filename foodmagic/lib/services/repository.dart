@@ -2,12 +2,14 @@ import 'dart:typed_data';
 
 import 'package:appwrite/appwrite.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:foodmagic/models/order/order.dart';
-import 'package:foodmagic/models/user/user.dart';
-import '../models/fooditem/food.item.dart';
+import 'package:foodmagic/models/cartitem/cart.item.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sembast/sembast.dart' as sembast;
 import 'package:sembast/sembast_io.dart';
+
+import '../models/fooditem/food.item.dart';
+import '../models/order/order.dart';
+import '../models/user/user.dart';
 
 class Repository {
   /// Appwrite client
@@ -80,7 +82,7 @@ class Repository {
   Future<Map<String, Object?>?> getLoggedInUser() async {
     try {
       final result = await account.get();
-
+      print("LOGGEDINUSER : $result");
       if (result.statusCode == 200) {
         return result.data;
       } else
@@ -107,7 +109,7 @@ class Repository {
     return user;
   }
 
-  Future<void> createUser(
+  Future<String?> createUser(
       {required String name,
       required String password,
       required String email}) async {
@@ -115,12 +117,11 @@ class Repository {
       final Response user =
           await account.create(email: email, password: password, name: name);
       print(user.statusCode);
+      print("USER $USER_COLLECTION");
 
       if (user.statusCode == 201) {
-        final Response session =
-            await account.createSession(email: email, password: password);
-
-        print(session.data);
+        // final Response session =
+        await account.createSession(email: email, password: password);
 
         final res = await database.createDocument(
             collectionId: USER_COLLECTION,
@@ -128,9 +129,15 @@ class Repository {
             read: read,
             write: write);
 
+        print("USERCREATE : $res");
+
         await _store.record(USERKEY).put(await getDb(), res.data);
       }
-    } catch (e) {}
+      return "success";
+    } on AppwriteException catch (e) {
+      print(e.message);
+      return null;
+    }
   }
 
   Future<void> signInUser(
@@ -169,21 +176,23 @@ class Repository {
     }
   }
 
-  Future<List<FoodItem>> getCart() async {
+  Future<CartData?> getCart() async {
     try {
-      List<FoodItem> food = [];
+      CartData? cart;
+
       final result =
           await database.listDocuments(collectionId: FOOD_COLLECTION);
 
       if (result.statusCode == 200) {
-        final items = FoodItemDS.fromJson(result.data);
-        food.addAll(items.items);
+        cart = CartData.fromJson(result.data);
       }
-
-      return food;
+      if (cart != null && cart.quantity != 0) {
+        return cart;
+      }
+      return null;
     } catch (e) {
       print(e);
-      return [];
+      return null;
     }
   }
 

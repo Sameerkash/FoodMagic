@@ -1,8 +1,10 @@
-import 'package:foodmagic/models/order/order.dart';
-import 'package:foodmagic/providers/auth.provider.dart';
-import 'package:foodmagic/services/repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../models/order/order.dart';
+import '../../providers/auth.provider.dart';
+import '../../services/repository.dart';
+
 part 'order.vm.freezed.dart';
 
 @freezed

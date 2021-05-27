@@ -1,4 +1,4 @@
-import 'package:foodmagic/views/home/home.vm.dart';
+import '../views/home/home.vm.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../services/repository.dart';

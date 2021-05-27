@@ -19,7 +19,6 @@ class Order with _$Order {
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
 
-  // Map<String, dynamic> toJson() => _$_$_OrderToJson(this);
 }
 
 @freezed

@@ -12,9 +12,8 @@ class AppView extends HookWidget {
     final auth = useProvider(authProvider);
 
     return auth.map(
-        loading: (_) => Center(
-              child: CircularProgressIndicator(),
-            ),
+        loading: (_) =>
+            Scaffold(body: Center(child: CircularProgressIndicator())),
         authenticated: (_) => NavbarView(),
         unauthenticated: (_) => AuthView());
   }

@@ -20,9 +20,9 @@ class _$CartStateTearOff {
     return const _Loading();
   }
 
-  _Data data({required List<Order> orderItems}) {
+  _Data data({required CartData cart}) {
     return _Data(
-      orderItems: orderItems,
+      cart: cart,
     );
   }
 
@@ -39,14 +39,14 @@ mixin _$CartState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Order> orderItems) data,
+    required TResult Function(CartData cart) data,
     required TResult Function() empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Order> orderItems)? data,
+    TResult Function(CartData cart)? data,
     TResult Function()? empty,
     required TResult orElse(),
   }) =>
@@ -121,7 +121,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Order> orderItems) data,
+    required TResult Function(CartData cart) data,
     required TResult Function() empty,
   }) {
     return loading();
@@ -131,7 +131,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Order> orderItems)? data,
+    TResult Function(CartData cart)? data,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -174,7 +174,9 @@ abstract class _Loading implements CartState {
 abstract class _$DataCopyWith<$Res> {
   factory _$DataCopyWith(_Data value, $Res Function(_Data) then) =
       __$DataCopyWithImpl<$Res>;
-  $Res call({List<Order> orderItems});
+  $Res call({CartData cart});
+
+  $CartDataCopyWith<$Res> get cart;
 }
 
 /// @nodoc
@@ -188,42 +190,48 @@ class __$DataCopyWithImpl<$Res> extends _$CartStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? orderItems = freezed,
+    Object? cart = freezed,
   }) {
     return _then(_Data(
-      orderItems: orderItems == freezed
-          ? _value.orderItems
-          : orderItems // ignore: cast_nullable_to_non_nullable
-              as List<Order>,
+      cart: cart == freezed
+          ? _value.cart
+          : cart // ignore: cast_nullable_to_non_nullable
+              as CartData,
     ));
+  }
+
+  @override
+  $CartDataCopyWith<$Res> get cart {
+    return $CartDataCopyWith<$Res>(_value.cart, (value) {
+      return _then(_value.copyWith(cart: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_Data implements _Data {
-  const _$_Data({required this.orderItems});
+  const _$_Data({required this.cart});
 
   @override
-  final List<Order> orderItems;
+  final CartData cart;
 
   @override
   String toString() {
-    return 'CartState.data(orderItems: $orderItems)';
+    return 'CartState.data(cart: $cart)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Data &&
-            (identical(other.orderItems, orderItems) ||
-                const DeepCollectionEquality()
-                    .equals(other.orderItems, orderItems)));
+            (identical(other.cart, cart) ||
+                const DeepCollectionEquality().equals(other.cart, cart)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(orderItems);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(cart);
 
   @JsonKey(ignore: true)
   @override
@@ -234,22 +242,22 @@ class _$_Data implements _Data {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Order> orderItems) data,
+    required TResult Function(CartData cart) data,
     required TResult Function() empty,
   }) {
-    return data(orderItems);
+    return data(cart);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Order> orderItems)? data,
+    TResult Function(CartData cart)? data,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(orderItems);
+      return data(cart);
     }
     return orElse();
   }
@@ -280,9 +288,9 @@ class _$_Data implements _Data {
 }
 
 abstract class _Data implements CartState {
-  const factory _Data({required List<Order> orderItems}) = _$_Data;
+  const factory _Data({required CartData cart}) = _$_Data;
 
-  List<Order> get orderItems => throw _privateConstructorUsedError;
+  CartData get cart => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$DataCopyWith<_Data> get copyWith => throw _privateConstructorUsedError;
 }
@@ -325,7 +333,7 @@ class _$_Empty implements _Empty {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Order> orderItems) data,
+    required TResult Function(CartData cart) data,
     required TResult Function() empty,
   }) {
     return empty();
@@ -335,7 +343,7 @@ class _$_Empty implements _Empty {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Order> orderItems)? data,
+    TResult Function(CartData cart)? data,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
