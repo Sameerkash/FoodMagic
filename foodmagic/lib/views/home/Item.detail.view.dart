@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,14 +41,21 @@ class ItemDetailView extends HookWidget {
             imageUrl: item.imageUrl!,
           ),
           Container(),
-          VegLabel(),
+          if (item.isVeg) VegLabel(),
+          if (item.isEgg) EggLabel(),
+          if (!item.isVeg) NonVegLabel(),
           InkWell(
               onTap: () {},
               child: Container(child: Image.asset('3D'.png, height: 30))),
           SizedBox(height: 0.02.sh),
-          InfoCard(size: size),
+          InfoCard(
+            size: size,
+            title: item.name,
+            style: item.style!,
+            type: item.type!,
+          ),
           SizedBox(height: 0.05.sh),
-          ActionButtons(size: size),
+          ActionButtons(size: size, price: item.price),
           SizedBox(height: 0.05.sh),
           BottomBottons()
         ],
@@ -57,11 +65,9 @@ class ItemDetailView extends HookWidget {
 }
 
 class ImageContainer extends StatelessWidget {
-
   final String imageUrl;
   const ImageContainer({
     Key? key,
-
     required this.imageUrl,
   }) : super(key: key);
 
@@ -69,12 +75,16 @@ class ImageContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 0.3.sh,
-      child: Container(
-        margin: EdgeInsets.all(20),
-        width: 0.3.sh,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          image: DecorationImage(image: NetworkImage(imageUrl), fit: BoxFit.contain),
+      child: CachedNetworkImage(
+        imageUrl: imageUrl,
+        progressIndicatorBuilder: (_, ___, __) => CircularProgressIndicator(),
+        imageBuilder: (_, img) => Container(
+          margin: EdgeInsets.all(20),
+          width: 0.3.sh,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(image: img, fit: BoxFit.contain),
+          ),
         ),
       ),
     );
@@ -82,8 +92,16 @@ class ImageContainer extends StatelessWidget {
 }
 
 class InfoCard extends StatelessWidget {
+  final String title;
+  final String style;
+  final String type;
+  final String? description;
   const InfoCard({
     Key? key,
+    required this.title,
+    required this.style,
+    required this.type,
+    this.description,
     required this.size,
   }) : super(key: key);
 
@@ -96,11 +114,11 @@ class InfoCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'Pizza Margherita',
+            title,
             style: context.headline2!.copyWith(fontSize: 24),
           ),
           Text(
-            "Cheese Burst . Italiano",
+            "$type . $style",
             style: context.subtitle2!.copyWith(
                 fontWeight: FontWeight.bold, color: context.primaryColor),
           ).padSym(15, 0),
@@ -117,8 +135,10 @@ class InfoCard extends StatelessWidget {
 }
 
 class ActionButtons extends StatelessWidget {
+  final int price;
   const ActionButtons({
     Key? key,
+    required this.price,
     required this.size,
   }) : super(key: key);
 
@@ -149,7 +169,7 @@ class ActionButtons extends StatelessWidget {
           ),
           onPressed: null,
           child: Text(
-            "599",
+            "₹$price",
             style: context.bodyText2!.copyWith(color: Colors.white),
           ),
         ),

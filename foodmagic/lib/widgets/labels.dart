@@ -23,15 +23,15 @@ class NonVegLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Chip(
-      label: Text('Non-Veg'),
+      label: Text('Non-Veg', style: TextStyle(color: Colors.white)),
       backgroundColor: Colors.red,
       padding: EdgeInsets.symmetric(horizontal: 10),
     );
   }
 }
 
-class EggLbael extends StatelessWidget {
-  const EggLbael({
+class EggLabel extends StatelessWidget {
+  const EggLabel({
     Key? key,
   }) : super(key: key);
 

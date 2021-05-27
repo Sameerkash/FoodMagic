@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,10 +28,15 @@ class HomeItemCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 0.02.sh, horizontal: 0.03.sw),
         child: Column(
           children: [
-            CircleAvatar(
-              backgroundColor: Colors.transparent,
-              radius: 0.15.sw,
-              backgroundImage: NetworkImage(imageUrl),
+            CachedNetworkImage(
+              imageUrl: imageUrl,
+              progressIndicatorBuilder: (_, ___, __) =>
+                  CircularProgressIndicator(),
+              imageBuilder: (_, img) => CircleAvatar(
+                backgroundColor: Colors.transparent,
+                radius: 0.15.sw,
+                backgroundImage: img,
+              ),
             ),
             Text(
               title,

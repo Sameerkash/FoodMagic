@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -36,6 +37,7 @@ class MenuItemContainer extends StatelessWidget {
   final String title;
   final String subTitle;
   final int price;
+  final void Function()? onTap;
 
   const MenuItemContainer({
     Key? key,
@@ -43,6 +45,7 @@ class MenuItemContainer extends StatelessWidget {
     required this.title,
     required this.subTitle,
     required this.price,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -63,10 +66,18 @@ class MenuItemContainer extends StatelessWidget {
               SizedBox(
                 width: 0.08.sw,
               ),
-              CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  radius: 0.17.sw,
-                  backgroundImage: NetworkImage(imageUrl)),
+              InkWell(
+                onTap: onTap,
+                child: CachedNetworkImage(
+                  imageUrl: imageUrl,
+                  progressIndicatorBuilder: (_, ___, __) =>
+                      CircularProgressIndicator(),
+                  imageBuilder: (_, img) => CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 0.17.sw,
+                      backgroundImage: img),
+                ),
+              ),
               SizedBox(
                 width: 0.08.sw,
               ),
@@ -85,7 +96,7 @@ class MenuItemContainer extends StatelessWidget {
             height: 0.01.sh,
           ),
           Text(
-            '$price',
+            '₹ $price',
             style: context.caption,
           ),
         ],

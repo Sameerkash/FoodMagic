@@ -194,7 +194,9 @@ class Item extends StatelessWidget {
               .map(
                 (e) => Builder(
                   builder: (_) => MenuItemContainer(
-
+                    onTap: () {
+                      context.router.push(ItemDetailViewRoute(item: e));
+                    },
                     imageUrl: e.imageUrl!,
                     price: e.price,
                     subTitle: e.style!,
