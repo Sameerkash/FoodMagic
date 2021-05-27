@@ -36,14 +36,13 @@ class MenuItemContainer extends StatelessWidget {
   final String title;
   final String subTitle;
   final int price;
-  final Future fileView;
+
   const MenuItemContainer({
     Key? key,
     required this.imageUrl,
     required this.title,
     required this.subTitle,
     required this.price,
-    required this.fileView,
   }) : super(key: key);
 
   @override
@@ -64,19 +63,10 @@ class MenuItemContainer extends StatelessWidget {
               SizedBox(
                 width: 0.08.sw,
               ),
-              FutureBuilder(
-                future: fileView,
-                builder: (context, snapshot) {
-                  final res = snapshot.data as dynamic;
-
-                  return snapshot.hasData && snapshot.data != null
-                      ? (CircleAvatar(
-                          radius: 0.17.sw,
-                          backgroundImage: MemoryImage(res),
-                        ))
-                      : CircularProgressIndicator();
-                },
-              ),
+              CircleAvatar(
+                  backgroundColor: Colors.transparent,
+                  radius: 0.17.sw,
+                  backgroundImage: NetworkImage(imageUrl)),
               SizedBox(
                 width: 0.08.sw,
               ),

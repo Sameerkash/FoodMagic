@@ -79,6 +79,57 @@ void createAndUploadFoodItems(Database db, String collectionId,
   }
 }
 
+const userRules = [
+  {
+    "type": "text",
+    "key": "userName",
+    "label": "userName",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "email",
+    "key": "email",
+    "label": "email",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "numeric",
+    "key": "phone",
+    "label": "phone",
+    "default": "",
+    "array": false,
+    "required": false,
+  },
+  {
+    "type": "text",
+    "key": "address",
+    "label": "address",
+    "default": "",
+    "array": false,
+    "required": false,
+  },
+  {
+    "type": "text",
+    "key": "imageUrl",
+    "label": "imageUrl",
+    "default": "",
+    "array": false,
+    "required": false,
+  },
+  {
+    "type": "text",
+    "key": "bio",
+    "label": "bio",
+    "default": "",
+    "array": false,
+    "required": false,
+  },
+];
+
 /// Item schema and rules
 const foodRules = [
   {

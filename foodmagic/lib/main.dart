@@ -1,3 +1,4 @@
+import 'dart:io';
 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart' hide Router;
@@ -8,8 +9,18 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'router/router.gr.dart';
 import 'utils/theme.dart';
 
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
+
 void main() async {
   await load();
+
   runApp(
     DevicePreview(
       enabled: false,

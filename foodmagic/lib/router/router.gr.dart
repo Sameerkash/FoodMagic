@@ -7,6 +7,7 @@
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
 
+import '../models/fooditem/food.item.dart' as _i7;
 import '../views/app.view.dart' as _i3;
 import '../views/auth/signup.view.dart' as _i4;
 import '../views/home/Item.detail.view.dart' as _i5;
@@ -30,8 +31,9 @@ class Router extends _i1.RootStackRouter {
         }),
     ItemDetailViewRoute.name: (routeData) => _i1.CupertinoPageX<dynamic>(
         routeData: routeData,
-        builder: (_) {
-          return _i5.ItemDetailView();
+        builder: (data) {
+          final args = data.argsAs<ItemDetailViewRouteArgs>();
+          return _i5.ItemDetailView(item: args.item);
         }),
     OrderViewRoute.name: (routeData) => _i1.CupertinoPageX<dynamic>(
         routeData: routeData,
@@ -61,10 +63,19 @@ class SignUpViewRoute extends _i1.PageRouteInfo {
   static const String name = 'SignUpViewRoute';
 }
 
-class ItemDetailViewRoute extends _i1.PageRouteInfo {
-  const ItemDetailViewRoute() : super(name, path: '/item-detail-view');
+class ItemDetailViewRoute extends _i1.PageRouteInfo<ItemDetailViewRouteArgs> {
+  ItemDetailViewRoute({required _i7.FoodItem item})
+      : super(name,
+            path: '/item-detail-view',
+            args: ItemDetailViewRouteArgs(item: item));
 
   static const String name = 'ItemDetailViewRoute';
+}
+
+class ItemDetailViewRouteArgs {
+  const ItemDetailViewRouteArgs({required this.item});
+
+  final _i7.FoodItem item;
 }
 
 class OrderViewRoute extends _i1.PageRouteInfo {

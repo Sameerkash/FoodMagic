@@ -9,7 +9,6 @@ class HomeItemCard extends StatelessWidget {
   final String title;
   final String subTitle;
   final int price;
-  final Future fileView;
   final Function onPressed;
   const HomeItemCard({
     Key? key,
@@ -17,7 +16,6 @@ class HomeItemCard extends StatelessWidget {
     required this.title,
     required this.subTitle,
     required this.price,
-    required this.fileView,
     required this.onPressed,
   }) : super(key: key);
 
@@ -29,18 +27,10 @@ class HomeItemCard extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 0.02.sh, horizontal: 0.03.sw),
         child: Column(
           children: [
-            FutureBuilder(
-              future: fileView,
-              builder: (context, snapshot) {
-                final res = snapshot.data as dynamic;
-
-                return snapshot.hasData && snapshot.data != null
-                    ? (CircleAvatar(
-                        radius: 0.15.sw,
-                        backgroundImage: MemoryImage(res),
-                      ))
-                    : CircularProgressIndicator();
-              },
+            CircleAvatar(
+              backgroundColor: Colors.transparent,
+              radius: 0.15.sw,
+              backgroundImage: NetworkImage(imageUrl),
             ),
             Text(
               title,

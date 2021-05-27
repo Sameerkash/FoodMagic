@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:foodmagic/router/router.gr.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:foodmagic/models/fooditem/food.item.dart';
@@ -152,9 +153,9 @@ class MenuItems extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, i) {
               return HomeItemCard(
-                fileView: getFileView(fileId: popularToday[i].imageUrl!),
                 onPressed: () {
-                  context.router.pushNamed('/item-detail-view');
+                  context.router
+                      .push(ItemDetailViewRoute(item: popularToday[i]));
                 },
                 imageUrl: popularToday[i].imageUrl!,
                 price: popularToday[i].price,
@@ -193,7 +194,7 @@ class Item extends StatelessWidget {
               .map(
                 (e) => Builder(
                   builder: (_) => MenuItemContainer(
-                    fileView: getFileView(fileId: e.imageUrl!),
+
                     imageUrl: e.imageUrl!,
                     price: e.price,
                     subTitle: e.style!,

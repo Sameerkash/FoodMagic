@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import 'package:foodmagic/models/fooditem/food.item.dart';
+import 'package:foodmagic/providers/auth.provider.dart';
 
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
 import '../../widgets/labels.dart';
 
 class ItemDetailView extends HookWidget {
+  final FoodItem item;
+  ItemDetailView({
+    required this.item,
+  });
+
   @override
   Widget build(BuildContext context) {
+    final home = useProvider(homeProvider.notifier);
+
     const sizes = ["M", "L", "S"];
     const priceUp = [29, 39, 10];
 
@@ -22,10 +33,12 @@ class ItemDetailView extends HookWidget {
           SizedBox(height: 0.05.sh),
           Container(
               child: Text(
-            "Chef's Special",
+            item.tags![0],
             style: context.headline3!.copyWith(fontSize: 22),
           )).padSym(0, 15),
-          ImageContainer(),
+          ImageContainer(
+            imageUrl: item.imageUrl!,
+          ),
           Container(),
           VegLabel(),
           InkWell(
@@ -44,8 +57,12 @@ class ItemDetailView extends HookWidget {
 }
 
 class ImageContainer extends StatelessWidget {
+
+  final String imageUrl;
   const ImageContainer({
     Key? key,
+
+    required this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -57,8 +74,7 @@ class ImageContainer extends StatelessWidget {
         width: 0.3.sh,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          image: DecorationImage(
-              image: AssetImage("margherita".png), fit: BoxFit.contain),
+          image: DecorationImage(image: NetworkImage(imageUrl), fit: BoxFit.contain),
         ),
       ),
     );
