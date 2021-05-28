@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelines/timelines.dart';
 
-import 'package:foodmagic/widgets/background.dart';
-
 import '../../utils/extensions.dart';
+import '../../widgets/background.dart';
 
 class OrderView extends StatelessWidget {
   @override

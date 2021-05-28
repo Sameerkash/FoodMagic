@@ -1,35 +1,38 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'food.item.g.dart';
 part 'food.item.freezed.dart';
+part 'food.item.g.dart';
 
 @freezed
 class FoodItem with _$FoodItem {
   const factory FoodItem({
-    required String itemId,
-    required Category category,
+    @JsonKey(name: '\$id', defaultValue: '', ignore: false)
+        required String itemId,
+    required String category,
     required String name,
     final List<String>? ingredients,
-    required String price,
-    final String? tag,
+    required int price,
+    final List<String>? tags,
     final String? type,
+    final String? style,
+    final int? discount,
+    final String? imageUrl,
+    @Default(false) final bool isEgg,
+    @Default(true) final bool isVeg,
   }) = _FoodItem;
 
   factory FoodItem.fromJson(Map<String, dynamic> json) =>
       _$FoodItemFromJson(json);
-
-
 }
 
 @freezed
-class Category with _$Category {
-  const factory Category({
-    required String categoryId,
-    final String? name,
-  }) = _Category;
+class FoodItemDS with _$FoodItemDS {
+  const factory FoodItemDS(
+      {@JsonSerializable(explicitToJson: true)
+      @JsonKey(name: 'documents')
+          required List<FoodItem> items}) = _FoodItemDS;
 
-  factory Category.fromJson(Map<String, dynamic> json) =>
-      _$CategoryFromJson(json);
+  factory FoodItemDS.fromJson(Map<String, dynamic> json) =>
+      _$FoodItemDSFromJson(json);
 }

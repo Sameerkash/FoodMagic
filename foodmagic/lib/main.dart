@@ -1,19 +1,26 @@
+import 'dart:io';
 
 import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:foodmagic/router/router.dart';
-import 'package:foodmagic/router/router.gr.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'router/router.gr.dart';
 import 'utils/theme.dart';
-import 'views/app.view.dart';
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
 
 void main() async {
   await load();
+
   runApp(
     DevicePreview(
       enabled: false,

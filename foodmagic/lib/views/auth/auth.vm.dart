@@ -1,9 +1,9 @@
-import 'package:foodmagic/providers/auth.provider.dart';
-import 'package:foodmagic/services/repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../models/user/user.dart';
+import '../../providers/auth.provider.dart';
+import '../../services/repository.dart';
 
 part 'auth.vm.freezed.dart';
 
@@ -32,9 +32,18 @@ class AuthVM extends StateNotifier<AuthState> {
   }
 
   Future<void> signIn({required String email, required String password}) async {
-    await repo.signInUser(password: password, email: email);
+      await repo.signInUser(password: password, email: email);
 
     checkUserAuth();
+  }
+
+  Future<void> signUp(
+      {required String email,
+      required String password,
+      required String name}) async {
+    await repo.createUser(name: name, password: password, email: email);
+    checkUserAuth();
+
   }
 
   Future<void> logout() async {

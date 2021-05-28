@@ -8,38 +8,48 @@ part of 'food.item.dart';
 
 _$_FoodItem _$_$_FoodItemFromJson(Map<String, dynamic> json) {
   return _$_FoodItem(
-    itemId: json['itemId'] as String,
-    category: Category.fromJson(json['category'] as Map<String, dynamic>),
+    itemId: json[r'$id'] as String? ?? '',
+    category: json['category'] as String,
     name: json['name'] as String,
     ingredients: (json['ingredients'] as List<dynamic>?)
         ?.map((e) => e as String)
         .toList(),
-    price: json['price'] as String,
-    tag: json['tag'] as String?,
+    price: json['price'] as int,
+    tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
     type: json['type'] as String?,
+    style: json['style'] as String?,
+    discount: json['discount'] as int?,
+    imageUrl: json['imageUrl'] as String?,
+    isEgg: json['isEgg'] as bool? ?? false,
+    isVeg: json['isVeg'] as bool? ?? true,
   );
 }
 
 Map<String, dynamic> _$_$_FoodItemToJson(_$_FoodItem instance) =>
     <String, dynamic>{
-      'itemId': instance.itemId,
+      r'$id': instance.itemId,
       'category': instance.category,
       'name': instance.name,
       'ingredients': instance.ingredients,
       'price': instance.price,
-      'tag': instance.tag,
+      'tags': instance.tags,
       'type': instance.type,
+      'style': instance.style,
+      'discount': instance.discount,
+      'imageUrl': instance.imageUrl,
+      'isEgg': instance.isEgg,
+      'isVeg': instance.isVeg,
     };
 
-_$_Category _$_$_CategoryFromJson(Map<String, dynamic> json) {
-  return _$_Category(
-    categoryId: json['categoryId'] as String,
-    name: json['name'] as String?,
+_$_FoodItemDS _$_$_FoodItemDSFromJson(Map<String, dynamic> json) {
+  return _$_FoodItemDS(
+    items: (json['documents'] as List<dynamic>)
+        .map((e) => FoodItem.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 
-Map<String, dynamic> _$_$_CategoryToJson(_$_Category instance) =>
+Map<String, dynamic> _$_$_FoodItemDSToJson(_$_FoodItemDS instance) =>
     <String, dynamic>{
-      'categoryId': instance.categoryId,
-      'name': instance.name,
+      'documents': instance.items,
     };

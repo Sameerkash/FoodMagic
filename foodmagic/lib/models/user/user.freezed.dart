@@ -21,7 +21,7 @@ class _$UserTearOff {
   const _$UserTearOff();
 
   _User call(
-      {required String userId,
+      {@JsonKey(name: '\$id') required String userId,
       String? userName,
       required String email,
       String? phone,
@@ -49,6 +49,7 @@ const $User = _$UserTearOff();
 
 /// @nodoc
 mixin _$User {
+  @JsonKey(name: '\$id')
   String get userId => throw _privateConstructorUsedError;
   String? get userName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
@@ -67,7 +68,7 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
   $Res call(
-      {String userId,
+      {@JsonKey(name: '\$id') String userId,
       String? userName,
       String email,
       String? phone,
@@ -133,7 +134,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$UserCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String userId,
+      {@JsonKey(name: '\$id') String userId,
       String? userName,
       String email,
       String? phone,
@@ -198,7 +199,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_User implements _User {
   const _$_User(
-      {required this.userId,
+      {@JsonKey(name: '\$id') required this.userId,
       this.userName,
       required this.email,
       this.phone,
@@ -210,6 +211,7 @@ class _$_User implements _User {
       _$_$_UserFromJson(json);
 
   @override
+  @JsonKey(name: '\$id')
   final String userId;
   @override
   final String? userName;
@@ -276,7 +278,7 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {required String userId,
+      {@JsonKey(name: '\$id') required String userId,
       String? userName,
       required String email,
       String? phone,
@@ -287,6 +289,7 @@ abstract class _User implements User {
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
+  @JsonKey(name: '\$id')
   String get userId => throw _privateConstructorUsedError;
   @override
   String? get userName => throw _privateConstructorUsedError;

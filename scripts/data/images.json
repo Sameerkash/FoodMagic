@@ -1,30 +1,14 @@
 [
   {
-    "imageId": "4388ce02-139e-484e-838e-b0c3c0d0030a",
-    "imageName": "classic-veg-burger.png"
-  },
-  {
-    "imageId": "d5541422-b9cc-46dc-adfa-8092c30dc816",
-    "imageName": "classic-nv.png"
-  },
-  {
-    "imageId": "306805b1-72ab-4316-ad4c-37957d821ce2",
-    "imageName": "Crunchy-Mexican-Paneer-Taco.png"
+    "imageId": "a4724778-3212-4fc4-b5f0-e1002ee11c5a",
+    "imageName": "margherita.png"
   },
   {
     "imageId": "f678ecf9-d968-4452-9b4f-1fda85f8852c",
     "imageName": "farmhouse.png"
   },
   {
-    "imageId": "a4724778-3212-4fc4-b5f0-e1002ee11c5a",
-    "imageName": "margherita.png"
-  },
-  {
-    "imageId": "c63a137c-c99d-444f-b647-4b53189a2798",
-    "imageName": "paneer-burger.png"
-  },
-  {
-    "imageId": "e461aa51-bffe-44d0-88e5-c7c5d92eb316",
+    "imageId": "306805b1-72ab-4316-ad4c-37957d821ce2",
     "imageName": "veggie-paradise.png"
   },
   {
@@ -36,20 +20,17 @@
     "imageName": "Indie-Chicken-Tikka.png"
   },
   {
-    "imageId": "bbfe581f-dbb8-447b-9104-e4c1bfd688d3",
-    "imageName": "Soft-Grilled-Chicken-Taco.png"
+    "imageId": "4388ce02-139e-484e-838e-b0c3c0d0030a",
+    "imageName": "classic-veg-burger.png"
   },
   {
-    "imageId": "09c8f333-d437-4702-b1ee-006994298e8b",
-    "imageName": "Shrimp-Tacos.png"
+    "imageId": "d5541422-b9cc-46dc-adfa-8092c30dc816",
+    "imageName": "classic-nv.png"
   },
+
   {
-    "imageId": "e460f52c-3319-4695-8e08-ed5eee137ce8",
-    "imageName": "Indie-Chicken-Tikka-Taco.png"
-  },
-  {
-    "imageId": "0fbaceaa-9583-44b3-89a6-8de898aed59c",
-    "imageName": "Egg-Cheese-Taco.png"
+    "imageId": "c63a137c-c99d-444f-b647-4b53189a2798",
+    "imageName": "paneer-burger.png"
   },
   {
     "imageId": "3e4207d5-077c-41a5-8bba-2b4c06a1c84a",
@@ -58,5 +39,13 @@
   {
     "imageId": "87eae49a-b9b2-4031-a2b1-4e8076133b99",
     "imageName": "Aloo-Tikki-Burger.png"
+  },
+  {
+    "imageId": "0fbaceaa-9583-44b3-89a6-8de898aed59c",
+    "imageName": "ChocolateDonut.png"
+  },
+  {
+    "imageId": "e460f52c-3319-4695-8e08-ed5eee137ce8",
+    "imageName": "StrawberryDonut.png"
   }
 ]
