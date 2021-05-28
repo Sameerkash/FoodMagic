@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodmagic/models/order/order.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../models/fooditem/food.item.dart';
@@ -22,6 +23,18 @@ class ItemDetailView extends HookWidget {
 
     const sizes = ["M", "L", "S"];
     const priceUp = [29, 39, 10];
+
+    final cart = useProvider(cartProvider.notifier);
+
+    final itemQuanity = useProvider(
+      cartProvider.select((value) => value.maybeWhen(
+          orElse: () => 0,
+          data: (cart) => cart.cartitems
+              .firstWhere((o) => o.foodItem.itemId == item.itemId,
+                  orElse: () => _dummy)
+              .quanity)),
+    );
+    var itemCount = useState(0);
 
     var size = useState(sizes);
 
@@ -54,7 +67,18 @@ class ItemDetailView extends HookWidget {
             type: item.type!,
           ),
           SizedBox(height: 0.05.sh),
-          ActionButtons(size: size, price: item.price),
+          ActionButtons(
+            size: size,
+            price: item.price,
+            quantity: itemQuanity,
+            remove: () {
+              if (itemCount.value != 0) itemCount.value -= 1;
+            },
+            add: () {
+              cart.addToCart(item);
+              print("called");
+            },
+          ),
           SizedBox(height: 0.05.sh),
           BottomBottons()
         ],
@@ -135,9 +159,16 @@ class InfoCard extends StatelessWidget {
 
 class ActionButtons extends StatelessWidget {
   final int price;
+  final int quantity;
+  final void Function() remove;
+  final void Function() add;
+
   const ActionButtons({
     Key? key,
     required this.price,
+    required this.quantity,
+    required this.remove,
+    required this.add,
     required this.size,
   }) : super(key: key);
 
@@ -159,7 +190,11 @@ class ActionButtons extends StatelessWidget {
             style: context.bodyText2,
           ),
         ),
-        AddToCartOptions(),
+        AddToCartOptions(
+          quantity: quantity,
+          add: add,
+          remove: remove,
+        ),
         TextButton(
           style: TextButton.styleFrom(
             shape: CircleBorder(),
@@ -203,8 +238,14 @@ class BottomBottons extends StatelessWidget {
 }
 
 class AddToCartOptions extends StatelessWidget {
+  final void Function() remove;
+  final void Function() add;
+  final int quantity;
   const AddToCartOptions({
     Key? key,
+    required this.remove,
+    required this.add,
+    required this.quantity,
   }) : super(key: key);
 
   @override
@@ -218,7 +259,7 @@ class AddToCartOptions extends StatelessWidget {
               minimumSize: Size(50, 50),
               backgroundColor: context.primaryColor,
             ),
-            onPressed: () {},
+            onPressed: remove,
             child: Text(
               '-',
               style: context.bodyText2,
@@ -232,7 +273,7 @@ class AddToCartOptions extends StatelessWidget {
                 elevation: 0,
                 shape: CircleBorder(),
                 child: Text(
-                  '2',
+                  "$quantity",
                   style: context.headline2,
                 )),
           ),
@@ -242,7 +283,7 @@ class AddToCartOptions extends StatelessWidget {
               minimumSize: Size(50, 50),
               backgroundColor: context.primaryColor,
             ),
-            onPressed: () {},
+            onPressed: add,
             child: Text(
               '+',
               style: context.bodyText2,
@@ -271,3 +312,9 @@ class CircleImage extends StatelessWidget {
     );
   }
 }
+
+OrderItem _dummy = OrderItem(
+  quanity: 0,
+  subTotal: 0,
+  foodItem: FoodItem(itemId: '', category: '', name: '', price: 0),
+);

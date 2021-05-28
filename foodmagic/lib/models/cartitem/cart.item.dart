@@ -8,7 +8,8 @@ part 'cart.item.g.dart';
 @freezed
 class CartData with _$CartData {
   const factory CartData(
-      {@Default(0)
+      {required String userId,
+      @Default(0)
           int quantity,
       @JsonSerializable(explicitToJson: true)
       @Default([])

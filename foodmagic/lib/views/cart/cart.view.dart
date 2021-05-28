@@ -1,15 +1,23 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hooks_riverpod/all.dart';
+
+import 'package:foodmagic/models/cartitem/cart.item.dart';
+import 'package:foodmagic/providers/auth.provider.dart';
 
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
 import '../../widgets/button.dart';
 import '../../widgets/containers.dart';
 
-class CartView extends StatelessWidget {
+class CartView extends HookWidget {
   @override
   Widget build(BuildContext context) {
+    final cart = useProvider(cartProvider);
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -34,8 +42,14 @@ class CartView extends StatelessWidget {
         ],
       ),
       body: CustomBackground(
-        child: SingleChildScrollView(
-          child: CartContent(),
+        child: cart.map(
+          loading: (_) => Center(
+            child: CircularProgressIndicator(),
+          ),
+          data: (data) => CartContent(cart: data.cart),
+          empty: (_) => Container(
+            child: Center(child: Text("Empty")),
+          ),
         ),
       ),
     );
@@ -43,8 +57,10 @@ class CartView extends StatelessWidget {
 }
 
 class CartContent extends StatelessWidget {
+  final CartData cart;
   const CartContent({
     Key? key,
+    required this.cart,
   }) : super(key: key);
 
   @override
@@ -58,28 +74,31 @@ class CartContent extends StatelessWidget {
             color: Colors.amber,
             alignment: Alignment.center,
             child: Text(
-              "3 Items/ Totoal Cost 199",
+              "${cart.quantity} Items,  Totoal Cost ${cart.total}",
               style: context.headline2!
                   .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
             ),
           ),
           ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) => ItemTile(
-              title: "Marghrita",
-              subTitle: '',
-              price: '',
-            ),
-            itemCount: 3,
-          ),
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) => ItemTile(
+                    title: cart.cartitems[index].foodItem.name,
+                    style: cart.cartitems[index].foodItem.style!,
+                    price: cart.cartitems[index].foodItem.price,
+                    imageUrl: cart.cartitems[index].foodItem.imageUrl!,
+                    type: cart.cartitems[index].foodItem.type!,
+                    tag: cart.cartitems[index].foodItem.tags![0],
+                    quantity: cart.cartitems[index].quanity,
+                  ),
+              itemCount: cart.cartitems.length),
           CartContainer(
-            leading: "Coupon Code",
-            trailing: "D3DE5",
+            leading: "Discount",
+            trailing: "${cart.discount}%",
           ),
           CartContainer(
             leading: "Total Amount",
-            trailing: "\$199",
+            trailing: "${cart.total}",
           ),
           CustomTextButton(text: "ORDER NOW"),
           SizedBox(
@@ -93,13 +112,21 @@ class CartContent extends StatelessWidget {
 
 class ItemTile extends StatelessWidget {
   final String title;
-  final String subTitle;
-  final String price;
+  final String style;
+  final int price;
+  final String tag;
+  final String type;
+  final String imageUrl;
+  final int quantity;
   const ItemTile({
     Key? key,
     required this.title,
-    required this.subTitle,
+    required this.style,
     required this.price,
+    required this.tag,
+    required this.type,
+    required this.imageUrl,
+    required this.quantity,
   }) : super(key: key);
 
   @override
@@ -112,7 +139,10 @@ class ItemTile extends StatelessWidget {
       child: Row(
         children: [
           CircleAvatar(
-              radius: 50, backgroundImage: AssetImage('assets/p1.jpeg')),
+            backgroundColor: Colors.transparent,
+            radius: 50,
+            backgroundImage: NetworkImage(imageUrl),
+          ),
           SizedBox(
             width: 0.03.sw,
           ),
@@ -121,18 +151,23 @@ class ItemTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(children: [
-                Text("Margherita", style: style1),
+                Text(title, style: style1),
                 SizedBox(width: 0.02.sw),
-                Text("Original", style: style2)
+                AutoSizeText(
+                  style,
+                  style: style2,
+                  overflow: TextOverflow.clip,
+                  minFontSize: 16,
+                ),
               ]),
               Row(children: [
-                Text("Italiano", style: style3),
+                Text(type, style: style3),
                 SizedBox(width: 0.02.sw),
-                Text("Lover", style: style3)
+                Text(tag, style: style3)
               ]),
               SizedBox(height: 0.002.sh),
               Text(
-                "\$27",
+                "$price x $quantity",
                 style: TextStyle(color: Colors.amber),
               )
             ],

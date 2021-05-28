@@ -24,7 +24,7 @@ class CartContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(leading, style: style),
-          Text(trailing, style: style),
+          Text(trailing, style: style.copyWith(color: Colors.black54)),
         ],
       ),
     );

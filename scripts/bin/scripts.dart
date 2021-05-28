@@ -22,7 +22,69 @@ void main() {
   /// Upload fooditems
   // createAndUploadFoodItems(db);
 
-  uploadImages(storage, db);
+  // createCartCollection(db);
+
+  createOrders(db);
+  // createOrderItemsCollection(db);
+
+  // createUsersCollection(db);
+  // uploadImages(storage, db);
+}
+
+void createCartCollection(Database db) async {
+  try {
+    final res = await db.createCollection(
+        name: "carts", read: ["*"], write: ["*"], rules: cartRules);
+    final cartCollection = res.data['\$id'];
+
+    print("CART_COLLECTION:$cartCollection");
+  } on AppwriteException catch (e) {
+    print(e.message);
+    print(e.response);
+    print(e.code);
+  }
+}
+
+void createOrders(Database db) async {
+  try {
+    final res = await db.createCollection(
+        name: "orders", read: ["*"], write: ["*"], rules: orderRules);
+    final orderCollection = res.data['\$id'];
+
+    print("ORDERS_COLLECTION:$orderCollection");
+  } on AppwriteException catch (e) {
+    print(e.message);
+    print(e.response);
+    print(e.code);
+  }
+}
+
+void createOrderItemsCollection(Database db) async {
+  try {
+    final res = await db.createCollection(
+        name: "orderItems", read: ["*"], write: ["*"], rules: orderItemRules);
+    final orderItemCollection = res.data['\$id'];
+
+    print("ORDERITEMS_COLLECTION:$orderItemCollection");
+  } on AppwriteException catch (e) {
+    print(e.message);
+    print(e.response);
+    print(e.code);
+  }
+}
+
+void createUsersCollection(Database db) async {
+  try {
+    final res = await db.createCollection(
+        name: "users", read: ["*"], write: ["*"], rules: userRules);
+    final usersCollection = res.data['\$id'];
+
+    print("USERS_COLLECTION:$usersCollection");
+  } on AppwriteException catch (e) {
+    print(e.message);
+    print(e.response);
+    print(e.code);
+  }
 }
 
 void uploadImages(Storage storage, Database db) async {
@@ -79,6 +141,57 @@ void createAndUploadFoodItems(Database db, String collectionId,
   }
 }
 
+const orderRules = [
+  {
+    "type": "text",
+    "key": "orderStatus",
+    "label": "orderStatus",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "text",
+    "key": "user",
+    "label": "user",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "text",
+    "key": "orderItem",
+    "label": "orderItem",
+    "default": "",
+    "array": true,
+    "required": true,
+  },
+  {
+    "type": "numeric",
+    "key": "total",
+    "label": "total",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "numeric",
+    "key": "discount",
+    "label": "discount",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "text",
+    "key": "time",
+    "label": "time",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+];
+
 const userRules = [
   {
     "type": "text",
@@ -126,6 +239,76 @@ const userRules = [
     "label": "bio",
     "default": "",
     "array": false,
+    "required": false,
+  },
+];
+
+const cartRules = [
+  {
+    "type": "text",
+    "key": "userId",
+    "label": "userId",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "numeric",
+    "key": "qauntity",
+    "label": "qauntity",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "text",
+    "key": "cartitems",
+    "label": "cartitems",
+    "default": "",
+    "array": true,
+    "required": true,
+  },
+  {
+    "type": "numeric",
+    "key": "total",
+    "label": "total",
+    "default": "",
+    "array": true,
+    "required": true,
+  },
+  {
+    "type": "numeric",
+    "key": "discount",
+    "label": "discount",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+];
+
+const orderItemRules = [
+  {
+    "type": "numeric",
+    "key": "quantity",
+    "label": "quantity",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "numeric",
+    "key": "subTotal",
+    "label": "subTotal",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "text",
+    "key": "foodItem",
+    "label": "foodItem",
+    "default": "",
+    "array": true,
     "required": false,
   },
 ];

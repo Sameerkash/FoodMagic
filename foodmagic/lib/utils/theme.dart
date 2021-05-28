@@ -27,7 +27,7 @@ class AppTheme {
             color: Colors.amber, fontSize: 14, fontWeight: FontWeight.w500),
         subtitle1: GoogleFonts.openSans(color: Colors.grey, fontSize: 12),
         subtitle2: GoogleFonts.openSans(
-            fontSize: 20, fontWeight: FontWeight.w400, color: Colors.grey),
+            fontSize: 18, fontWeight: FontWeight.w400, color: Colors.grey),
         button: GoogleFonts.openSans(
             backgroundColor: primaryColor, color: Colors.amber, fontSize: 18),
         caption: GoogleFonts.openSans(color: Colors.amber, fontSize: 16),

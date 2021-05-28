@@ -8,6 +8,7 @@ part of 'cart.item.dart';
 
 _$_CartData _$_$_CartDataFromJson(Map<String, dynamic> json) {
   return _$_CartData(
+    userId: json['userId'] as String,
     quantity: json['quantity'] as int? ?? 0,
     cartitems: (json['cartitems'] as List<dynamic>?)
             ?.map((e) => OrderItem.fromJson(e as Map<String, dynamic>))
@@ -20,6 +21,7 @@ _$_CartData _$_$_CartDataFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$_CartDataToJson(_$_CartData instance) =>
     <String, dynamic>{
+      'userId': instance.userId,
       'quantity': instance.quantity,
       'cartitems': instance.cartitems,
       'total': instance.total,

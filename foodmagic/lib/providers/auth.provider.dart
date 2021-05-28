@@ -1,3 +1,5 @@
+import 'package:foodmagic/views/cart/cart.vm.dart';
+
 import '../views/home/home.vm.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -12,4 +14,8 @@ final repoProvider = Provider<Repository>((ref) => Repository());
 
 final homeProvider = StateNotifierProvider<HomeVM, HomeState>((ref) {
   return HomeVM(ref);
+});
+
+final cartProvider = StateNotifierProvider<CartVM, CartState>((ref) {
+  return CartVM(ref);
 });

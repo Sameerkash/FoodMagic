@@ -19,6 +19,9 @@ class HomeView extends HookWidget {
   final home = useProvider(homeProvider);
   final h = useProvider(homeProvider.notifier);
 
+  final cartQuantity = useProvider(cartProvider.select((value) =>
+      value.maybeWhen(orElse: () => 0, data: (cart) => cart.cartitems.length)));
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -65,8 +68,9 @@ class HomeView extends HookWidget {
                     Badge(
                       badgeColor: Colors.white,
                       badgeContent: Text(
-                        '3',
-                        style: TextStyle(fontSize: 10),
+                        '$cartQuantity',
+                        style:
+                            TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Color(0xff0e273b)),
                       ),
                       child: Icon(
                         Icons.shopping_cart,

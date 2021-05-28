@@ -41,7 +41,7 @@ class RecentsView extends StatelessWidget {
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 3,
-                itemBuilder: (_, index) => OrderItem(
+                itemBuilder: (_, index) => Orders(
                   total: "\$100",
                   orderDate: "2 Feb 2021",
                   orderItems: orderItem,
@@ -56,12 +56,12 @@ class RecentsView extends StatelessWidget {
   }
 }
 
-class OrderItem extends StatelessWidget {
+class Orders extends StatelessWidget {
   final String total;
   final List<OrderItems> orderItems;
   final String? orderDate;
 
-  const OrderItem(
+  const Orders(
       {Key? key,
       required this.style1,
       required this.total,
