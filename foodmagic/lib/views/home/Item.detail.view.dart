@@ -72,7 +72,7 @@ class ItemDetailView extends HookWidget {
             price: item.price,
             quantity: itemQuanity,
             remove: () {
-              if (itemCount.value != 0) itemCount.value -= 1;
+              cart.removeFromCart(item);
             },
             add: () {
               cart.addToCart(item);
@@ -259,7 +259,7 @@ class AddToCartOptions extends StatelessWidget {
               minimumSize: Size(50, 50),
               backgroundColor: context.primaryColor,
             ),
-            onPressed: remove,
+            onPressed: quantity == 0 ? null : remove,
             child: Text(
               '-',
               style: context.bodyText2,

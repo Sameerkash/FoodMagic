@@ -10,7 +10,7 @@ class Order with _$Order {
   const factory Order({
     @JsonKey(name: '\$id') required String orderId,
     @Default('Received') String orderStatus,
-    @JsonSerializable(explicitToJson: true) required List<OrderItem> orderItem,
+    @JsonSerializable(explicitToJson: true) required List<OrderFoodItem> orderItem,
     required User user,
     required int total,
     final int? discount,
@@ -37,4 +37,24 @@ class OrderItem with _$OrderItem {
 
   factory OrderItem.fromJson(Map<String, dynamic> json) =>
       _$OrderItemFromJson(json);
+}
+
+
+@freezed
+class OrderFoodItem with _$OrderFoodItem {
+  const factory OrderFoodItem({
+    @Default(ORDER_ITEMS_COLLECTION)
+    @JsonKey(name: "\$collection")
+        final String collectionId,
+    @Default(rules)
+    @JsonKey(name: "\$permissions")
+        final Map<String, dynamic> permissions,
+    required int quanity,
+    @JsonSerializable(explicitToJson: true) 
+    required String foodItem,
+    required int subTotal,
+  }) = _OrderFoodItem;
+
+  factory OrderFoodItem.fromJson(Map<String, dynamic> json) =>
+      _$OrderFoodItemFromJson(json);
 }

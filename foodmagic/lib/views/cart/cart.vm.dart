@@ -54,7 +54,7 @@ class CartVM extends StateNotifier<CartState> {
 
       state = CartState.data(cart: cart);
 
-      await repo.addCartItem(cart: cart);
+      // await repo.addCartItem(cart: cart);
     }
 
     if (current is _Data) {
@@ -85,7 +85,7 @@ class CartVM extends StateNotifier<CartState> {
 
         state = CartState.data(cart: cart);
 
-        await repo.updateCartItem(cartData: cart);
+        // await repo.updateCartItem(cartData: cart);
       } else {
         /// calculate for Each Order
         int quantity = 1;
@@ -108,10 +108,63 @@ class CartVM extends StateNotifier<CartState> {
 
         state = CartState.data(cart: cart);
 
-        await repo.updateCartItem(cartData: cart);
+        // await repo.updateCartItem(cartData: cart);
       }
     }
   }
 
-  void removeFromCart() async {}
+  void removeFromCart(FoodItem item) async {
+    final current = state;
+
+    final user = await repo.getCurrentUser();
+
+    if (current is _Data) {
+      final food =
+          current.cart.cartitems.where((f) => f.foodItem == item).firstOrNull;
+      if (current.cart.quantity <= 1 && food!.quanity <= 1) {
+        state = CartState.empty();
+      } else {
+        final food =
+            current.cart.cartitems.where((f) => f.foodItem == item).firstOrNull;
+        if (food != null && current.cart.cartitems.contains(food)) {
+          if (food.quanity <= 1) {
+            int discount = min(food.foodItem.discount!, current.cart.discount!);
+            int price =
+                current.cart.total! - (current.cart.total! * discount ~/ 100);
+
+            final CartData cart = CartData(
+                userId: user.userId,
+                cartitems: [...current.cart.cartitems]..remove(food),
+                discount: discount,
+                quantity: current.cart.quantity - 1,
+                total: price);
+
+            state = CartState.data(cart: cart);
+          } else {
+            int quantity = food.quanity - 1;
+            int subTotal = item.price + (item.price * quantity);
+
+            OrderItem order = OrderItem(
+                quanity: quantity, foodItem: item, subTotal: subTotal);
+
+            /// calculate for Entire Cart
+            int totalDiscount = min(current.cart.discount!, item.discount!);
+            int total = current.cart.total! + order.subTotal;
+            int price = total - (total * totalDiscount ~/ 100);
+
+            CartData cart = CartData(
+                userId: user.userId,
+                cartitems: [...current.cart.cartitems]
+                  ..remove(food)
+                  ..add(order),
+                discount: totalDiscount,
+                quantity: current.cart.cartitems.length + 1,
+                total: price);
+
+            state = CartState.data(cart: cart);
+          }
+        }
+      }
+    }
+  }
 }
