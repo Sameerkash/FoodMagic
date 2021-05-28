@@ -204,7 +204,7 @@ class Repository {
           await _store.record(CARTKEY).put(await getDb(), cart.toJson());
 
       print("ADDCARTITEM $result");
-    }  catch (e) {
+    } catch (e) {
       print(e);
     }
   }
@@ -247,11 +247,14 @@ class Repository {
   Future<void> placeOrder({required Order order}) async {
     try {
       final result = await database.createDocument(
-          collectionId: ORDER_COLLECTION, data: {}, read: read, write: write);
+          collectionId: ORDER_COLLECTION,
+          data: order.toJson(),
+          read: read,
+          write: write);
 
       print(result.data);
-    } catch (e) {
-      print(e);
+    } on AppwriteException catch (e) {
+      print(e.message);
     }
   }
 

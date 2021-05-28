@@ -8,12 +8,12 @@ part of 'order.dart';
 
 _$_Order _$_$_OrderFromJson(Map<String, dynamic> json) {
   return _$_Order(
-    orderId: json[r'$id'] as String,
+    orderId: json[r'$id'] as String?,
     orderStatus: json['orderStatus'] as String? ?? 'Received',
     orderItem: (json['orderItem'] as List<dynamic>)
         .map((e) => OrderFoodItem.fromJson(e as Map<String, dynamic>))
         .toList(),
-    user: User.fromJson(json['user'] as Map<String, dynamic>),
+    userId: json['userId'] as String,
     total: json['total'] as int,
     discount: json['discount'] as int?,
     time: json['time'] == null ? null : DateTime.parse(json['time'] as String),
@@ -24,7 +24,7 @@ Map<String, dynamic> _$_$_OrderToJson(_$_Order instance) => <String, dynamic>{
       r'$id': instance.orderId,
       'orderStatus': instance.orderStatus,
       'orderItem': instance.orderItem,
-      'user': instance.user,
+      'userId': instance.userId,
       'total': instance.total,
       'discount': instance.discount,
       'time': instance.time?.toIso8601String(),

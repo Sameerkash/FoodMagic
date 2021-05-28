@@ -56,7 +56,7 @@ class CartView extends HookWidget {
   }
 }
 
-class CartContent extends StatelessWidget {
+class CartContent extends HookWidget {
   final CartData cart;
   const CartContent({
     Key? key,
@@ -65,6 +65,8 @@ class CartContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final c = useProvider(cartProvider.notifier);
+
     return Card(
       child: Column(
         children: [
@@ -100,7 +102,12 @@ class CartContent extends StatelessWidget {
             leading: "Total Amount",
             trailing: "${cart.total}",
           ),
-          CustomTextButton(text: "ORDER NOW"),
+          CustomTextButton(
+            text: "ORDER NOW",
+            onPressed: () {
+              c.orderNow();
+            },
+          ),
           SizedBox(
             height: 0.03.sh,
           ),

@@ -167,4 +167,33 @@ class CartVM extends StateNotifier<CartState> {
       }
     }
   }
+
+  void orderNow() async {
+    final user = await repo.getCurrentUser();
+
+    final current = state;
+
+    if (current is _Data) {
+      List<OrderFoodItem> orderFoodItems = [];
+
+      for (OrderItem o in current.cart.cartitems) {
+        OrderFoodItem of = OrderFoodItem(
+          foodItem: o.foodItem.name,
+          quanity: o.quanity,
+          subTotal: o.subTotal,
+        );
+        orderFoodItems.add(of);
+      }
+
+      Order order = Order(
+        userId: user.userId,
+        orderItem: orderFoodItems,
+        total: current.cart.total!,
+        discount: current.cart.discount,
+        time: DateTime.now(),
+      );
+
+      await repo.placeOrder(order: order);
+    }
+  }
 }

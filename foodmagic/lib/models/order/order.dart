@@ -8,10 +8,10 @@ part 'order.g.dart';
 @freezed
 class Order with _$Order {
   const factory Order({
-    @JsonKey(name: '\$id') required String orderId,
+    @JsonKey(name: '\$id')  String? orderId,
     @Default('Received') String orderStatus,
     @JsonSerializable(explicitToJson: true) required List<OrderFoodItem> orderItem,
-    required User user,
+    required String userId,
     required int total,
     final int? discount,
     final DateTime? time,
