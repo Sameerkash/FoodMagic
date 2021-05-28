@@ -23,6 +23,10 @@ class _$FoodItemTearOff {
   _FoodItem call(
       {@JsonKey(name: '\$id', defaultValue: '', ignore: false)
           required String itemId,
+      @JsonKey(name: "\$collection")
+          String collectionId = CART_FOOD_ITEMS_COLLECTION,
+      @JsonKey(name: "\$permissions")
+          Map<String, dynamic> permissions = rules,
       required String category,
       required String name,
       List<String>? ingredients,
@@ -36,6 +40,8 @@ class _$FoodItemTearOff {
       bool isVeg = true}) {
     return _FoodItem(
       itemId: itemId,
+      collectionId: collectionId,
+      permissions: permissions,
       category: category,
       name: name,
       ingredients: ingredients,
@@ -62,6 +68,10 @@ const $FoodItem = _$FoodItemTearOff();
 mixin _$FoodItem {
   @JsonKey(name: '\$id', defaultValue: '', ignore: false)
   String get itemId => throw _privateConstructorUsedError;
+  @JsonKey(name: "\$collection")
+  String get collectionId => throw _privateConstructorUsedError;
+  @JsonKey(name: "\$permissions")
+  Map<String, dynamic> get permissions => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   List<String>? get ingredients => throw _privateConstructorUsedError;
@@ -86,6 +96,8 @@ abstract class $FoodItemCopyWith<$Res> {
       _$FoodItemCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: '\$id', defaultValue: '', ignore: false) String itemId,
+      @JsonKey(name: "\$collection") String collectionId,
+      @JsonKey(name: "\$permissions") Map<String, dynamic> permissions,
       String category,
       String name,
       List<String>? ingredients,
@@ -110,6 +122,8 @@ class _$FoodItemCopyWithImpl<$Res> implements $FoodItemCopyWith<$Res> {
   @override
   $Res call({
     Object? itemId = freezed,
+    Object? collectionId = freezed,
+    Object? permissions = freezed,
     Object? category = freezed,
     Object? name = freezed,
     Object? ingredients = freezed,
@@ -127,6 +141,14 @@ class _$FoodItemCopyWithImpl<$Res> implements $FoodItemCopyWith<$Res> {
           ? _value.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
+      collectionId: collectionId == freezed
+          ? _value.collectionId
+          : collectionId // ignore: cast_nullable_to_non_nullable
+              as String,
+      permissions: permissions == freezed
+          ? _value.permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -182,6 +204,8 @@ abstract class _$FoodItemCopyWith<$Res> implements $FoodItemCopyWith<$Res> {
   @override
   $Res call(
       {@JsonKey(name: '\$id', defaultValue: '', ignore: false) String itemId,
+      @JsonKey(name: "\$collection") String collectionId,
+      @JsonKey(name: "\$permissions") Map<String, dynamic> permissions,
       String category,
       String name,
       List<String>? ingredients,
@@ -207,6 +231,8 @@ class __$FoodItemCopyWithImpl<$Res> extends _$FoodItemCopyWithImpl<$Res>
   @override
   $Res call({
     Object? itemId = freezed,
+    Object? collectionId = freezed,
+    Object? permissions = freezed,
     Object? category = freezed,
     Object? name = freezed,
     Object? ingredients = freezed,
@@ -224,6 +250,14 @@ class __$FoodItemCopyWithImpl<$Res> extends _$FoodItemCopyWithImpl<$Res>
           ? _value.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
+      collectionId: collectionId == freezed
+          ? _value.collectionId
+          : collectionId // ignore: cast_nullable_to_non_nullable
+              as String,
+      permissions: permissions == freezed
+          ? _value.permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -278,6 +312,10 @@ class _$_FoodItem implements _FoodItem {
   const _$_FoodItem(
       {@JsonKey(name: '\$id', defaultValue: '', ignore: false)
           required this.itemId,
+      @JsonKey(name: "\$collection")
+          this.collectionId = CART_FOOD_ITEMS_COLLECTION,
+      @JsonKey(name: "\$permissions")
+          this.permissions = rules,
       required this.category,
       required this.name,
       this.ingredients,
@@ -296,6 +334,12 @@ class _$_FoodItem implements _FoodItem {
   @override
   @JsonKey(name: '\$id', defaultValue: '', ignore: false)
   final String itemId;
+  @override
+  @JsonKey(name: "\$collection")
+  final String collectionId;
+  @override
+  @JsonKey(name: "\$permissions")
+  final Map<String, dynamic> permissions;
   @override
   final String category;
   @override
@@ -323,7 +367,7 @@ class _$_FoodItem implements _FoodItem {
 
   @override
   String toString() {
-    return 'FoodItem(itemId: $itemId, category: $category, name: $name, ingredients: $ingredients, price: $price, tags: $tags, type: $type, style: $style, discount: $discount, imageUrl: $imageUrl, isEgg: $isEgg, isVeg: $isVeg)';
+    return 'FoodItem(itemId: $itemId, collectionId: $collectionId, permissions: $permissions, category: $category, name: $name, ingredients: $ingredients, price: $price, tags: $tags, type: $type, style: $style, discount: $discount, imageUrl: $imageUrl, isEgg: $isEgg, isVeg: $isVeg)';
   }
 
   @override
@@ -332,6 +376,12 @@ class _$_FoodItem implements _FoodItem {
         (other is _FoodItem &&
             (identical(other.itemId, itemId) ||
                 const DeepCollectionEquality().equals(other.itemId, itemId)) &&
+            (identical(other.collectionId, collectionId) ||
+                const DeepCollectionEquality()
+                    .equals(other.collectionId, collectionId)) &&
+            (identical(other.permissions, permissions) ||
+                const DeepCollectionEquality()
+                    .equals(other.permissions, permissions)) &&
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
@@ -364,6 +414,8 @@ class _$_FoodItem implements _FoodItem {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(itemId) ^
+      const DeepCollectionEquality().hash(collectionId) ^
+      const DeepCollectionEquality().hash(permissions) ^
       const DeepCollectionEquality().hash(category) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(ingredients) ^
@@ -391,6 +443,10 @@ abstract class _FoodItem implements FoodItem {
   const factory _FoodItem(
       {@JsonKey(name: '\$id', defaultValue: '', ignore: false)
           required String itemId,
+      @JsonKey(name: "\$collection")
+          String collectionId,
+      @JsonKey(name: "\$permissions")
+          Map<String, dynamic> permissions,
       required String category,
       required String name,
       List<String>? ingredients,
@@ -408,6 +464,12 @@ abstract class _FoodItem implements FoodItem {
   @override
   @JsonKey(name: '\$id', defaultValue: '', ignore: false)
   String get itemId => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: "\$collection")
+  String get collectionId => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: "\$permissions")
+  Map<String, dynamic> get permissions => throw _privateConstructorUsedError;
   @override
   String get category => throw _privateConstructorUsedError;
   @override

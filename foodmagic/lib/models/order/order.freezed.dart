@@ -338,10 +338,17 @@ class _$OrderItemTearOff {
   const _$OrderItemTearOff();
 
   _OrderItem call(
-      {required int quanity,
-      @JsonSerializable(explicitToJson: true) required FoodItem foodItem,
+      {@JsonKey(name: "\$collection")
+          String collectionId = ORDER_ITEMS_COLLECTION,
+      @JsonKey(name: "\$permissions")
+          Map<String, dynamic> permissions = rules,
+      required int quanity,
+      @JsonSerializable(explicitToJson: true)
+          required FoodItem foodItem,
       required int subTotal}) {
     return _OrderItem(
+      collectionId: collectionId,
+      permissions: permissions,
       quanity: quanity,
       foodItem: foodItem,
       subTotal: subTotal,
@@ -358,6 +365,10 @@ const $OrderItem = _$OrderItemTearOff();
 
 /// @nodoc
 mixin _$OrderItem {
+  @JsonKey(name: "\$collection")
+  String get collectionId => throw _privateConstructorUsedError;
+  @JsonKey(name: "\$permissions")
+  Map<String, dynamic> get permissions => throw _privateConstructorUsedError;
   int get quanity => throw _privateConstructorUsedError;
   @JsonSerializable(explicitToJson: true)
   FoodItem get foodItem => throw _privateConstructorUsedError;
@@ -374,7 +385,9 @@ abstract class $OrderItemCopyWith<$Res> {
   factory $OrderItemCopyWith(OrderItem value, $Res Function(OrderItem) then) =
       _$OrderItemCopyWithImpl<$Res>;
   $Res call(
-      {int quanity,
+      {@JsonKey(name: "\$collection") String collectionId,
+      @JsonKey(name: "\$permissions") Map<String, dynamic> permissions,
+      int quanity,
       @JsonSerializable(explicitToJson: true) FoodItem foodItem,
       int subTotal});
 
@@ -391,11 +404,21 @@ class _$OrderItemCopyWithImpl<$Res> implements $OrderItemCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? collectionId = freezed,
+    Object? permissions = freezed,
     Object? quanity = freezed,
     Object? foodItem = freezed,
     Object? subTotal = freezed,
   }) {
     return _then(_value.copyWith(
+      collectionId: collectionId == freezed
+          ? _value.collectionId
+          : collectionId // ignore: cast_nullable_to_non_nullable
+              as String,
+      permissions: permissions == freezed
+          ? _value.permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       quanity: quanity == freezed
           ? _value.quanity
           : quanity // ignore: cast_nullable_to_non_nullable
@@ -426,7 +449,9 @@ abstract class _$OrderItemCopyWith<$Res> implements $OrderItemCopyWith<$Res> {
       __$OrderItemCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int quanity,
+      {@JsonKey(name: "\$collection") String collectionId,
+      @JsonKey(name: "\$permissions") Map<String, dynamic> permissions,
+      int quanity,
       @JsonSerializable(explicitToJson: true) FoodItem foodItem,
       int subTotal});
 
@@ -445,11 +470,21 @@ class __$OrderItemCopyWithImpl<$Res> extends _$OrderItemCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? collectionId = freezed,
+    Object? permissions = freezed,
     Object? quanity = freezed,
     Object? foodItem = freezed,
     Object? subTotal = freezed,
   }) {
     return _then(_OrderItem(
+      collectionId: collectionId == freezed
+          ? _value.collectionId
+          : collectionId // ignore: cast_nullable_to_non_nullable
+              as String,
+      permissions: permissions == freezed
+          ? _value.permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       quanity: quanity == freezed
           ? _value.quanity
           : quanity // ignore: cast_nullable_to_non_nullable
@@ -470,13 +505,24 @@ class __$OrderItemCopyWithImpl<$Res> extends _$OrderItemCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_OrderItem implements _OrderItem {
   const _$_OrderItem(
-      {required this.quanity,
-      @JsonSerializable(explicitToJson: true) required this.foodItem,
+      {@JsonKey(name: "\$collection")
+          this.collectionId = ORDER_ITEMS_COLLECTION,
+      @JsonKey(name: "\$permissions")
+          this.permissions = rules,
+      required this.quanity,
+      @JsonSerializable(explicitToJson: true)
+          required this.foodItem,
       required this.subTotal});
 
   factory _$_OrderItem.fromJson(Map<String, dynamic> json) =>
       _$_$_OrderItemFromJson(json);
 
+  @override
+  @JsonKey(name: "\$collection")
+  final String collectionId;
+  @override
+  @JsonKey(name: "\$permissions")
+  final Map<String, dynamic> permissions;
   @override
   final int quanity;
   @override
@@ -487,13 +533,19 @@ class _$_OrderItem implements _OrderItem {
 
   @override
   String toString() {
-    return 'OrderItem(quanity: $quanity, foodItem: $foodItem, subTotal: $subTotal)';
+    return 'OrderItem(collectionId: $collectionId, permissions: $permissions, quanity: $quanity, foodItem: $foodItem, subTotal: $subTotal)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _OrderItem &&
+            (identical(other.collectionId, collectionId) ||
+                const DeepCollectionEquality()
+                    .equals(other.collectionId, collectionId)) &&
+            (identical(other.permissions, permissions) ||
+                const DeepCollectionEquality()
+                    .equals(other.permissions, permissions)) &&
             (identical(other.quanity, quanity) ||
                 const DeepCollectionEquality()
                     .equals(other.quanity, quanity)) &&
@@ -508,6 +560,8 @@ class _$_OrderItem implements _OrderItem {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(collectionId) ^
+      const DeepCollectionEquality().hash(permissions) ^
       const DeepCollectionEquality().hash(quanity) ^
       const DeepCollectionEquality().hash(foodItem) ^
       const DeepCollectionEquality().hash(subTotal);
@@ -525,13 +579,21 @@ class _$_OrderItem implements _OrderItem {
 
 abstract class _OrderItem implements OrderItem {
   const factory _OrderItem(
-      {required int quanity,
+      {@JsonKey(name: "\$collection") String collectionId,
+      @JsonKey(name: "\$permissions") Map<String, dynamic> permissions,
+      required int quanity,
       @JsonSerializable(explicitToJson: true) required FoodItem foodItem,
       required int subTotal}) = _$_OrderItem;
 
   factory _OrderItem.fromJson(Map<String, dynamic> json) =
       _$_OrderItem.fromJson;
 
+  @override
+  @JsonKey(name: "\$collection")
+  String get collectionId => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: "\$permissions")
+  Map<String, dynamic> get permissions => throw _privateConstructorUsedError;
   @override
   int get quanity => throw _privateConstructorUsedError;
   @override

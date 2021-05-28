@@ -5,14 +5,18 @@ import '../order/order.dart';
 part 'cart.item.freezed.dart';
 part 'cart.item.g.dart';
 
+toNull(_) => null;
+
 @freezed
 class CartData with _$CartData {
   const factory CartData(
-      {required String userId,
+      {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false)
+          String? id,
+      required String userId,
       @Default(0)
           int quantity,
-      @JsonSerializable(explicitToJson: true)
       @Default([])
+      @JsonSerializable(explicitToJson: true)
           List<OrderItem> cartitems,
       int? total,
       int? discount}) = _CartData;

@@ -53,13 +53,13 @@ class CartVM extends StateNotifier<CartState> {
           total: item.price - (item.price * item.discount! ~/ 100));
 
       state = CartState.data(cart: cart);
+
+      await repo.addCartItem(cart: cart);
     }
 
     if (current is _Data) {
       final food =
           current.cart.cartitems.where((f) => f.foodItem == item).firstOrNull;
-
-      print(food);
 
       if (food != null && current.cart.cartitems.contains(food)) {
         /// calculate for Each Order
@@ -84,6 +84,8 @@ class CartVM extends StateNotifier<CartState> {
             total: price);
 
         state = CartState.data(cart: cart);
+
+        await repo.updateCartItem(cartData: cart);
       } else {
         /// calculate for Each Order
         int quantity = 1;
@@ -105,6 +107,8 @@ class CartVM extends StateNotifier<CartState> {
             total: price);
 
         state = CartState.data(cart: cart);
+
+        await repo.updateCartItem(cartData: cart);
       }
     }
   }

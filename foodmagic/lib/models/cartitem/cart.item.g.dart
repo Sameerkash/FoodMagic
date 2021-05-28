@@ -8,6 +8,7 @@ part of 'cart.item.dart';
 
 _$_CartData _$_$_CartDataFromJson(Map<String, dynamic> json) {
   return _$_CartData(
+    id: json[r'$id'] as String?,
     userId: json['userId'] as String,
     quantity: json['quantity'] as int? ?? 0,
     cartitems: (json['cartitems'] as List<dynamic>?)
@@ -19,11 +20,20 @@ _$_CartData _$_$_CartDataFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_CartDataToJson(_$_CartData instance) =>
-    <String, dynamic>{
-      'userId': instance.userId,
-      'quantity': instance.quantity,
-      'cartitems': instance.cartitems,
-      'total': instance.total,
-      'discount': instance.discount,
-    };
+Map<String, dynamic> _$_$_CartDataToJson(_$_CartData instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(r'$id', toNull(instance.id));
+  val['userId'] = instance.userId;
+  val['quantity'] = instance.quantity;
+  val['cartitems'] = instance.cartitems;
+  val['total'] = instance.total;
+  val['discount'] = instance.discount;
+  return val;
+}

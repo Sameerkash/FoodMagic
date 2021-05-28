@@ -22,13 +22,69 @@ void main() {
   /// Upload fooditems
   // createAndUploadFoodItems(db);
 
-  // createCartCollection(db);
+  createCartFoodItemCollection(db);
 
-  createOrders(db);
+  // addCartItem(db);
   // createOrderItemsCollection(db);
 
   // createUsersCollection(db);
   // uploadImages(storage, db);
+}
+
+Future<void> addCartItem(Database db) async {
+  try {
+    final result =
+        await db.createDocument(collectionId: '60afb8538b323', data: {
+      "userId": "60af99341c9fb",
+      "quantity": 1,
+      "cartitems": [
+        {
+          "quanity": 4,
+          "foodItem": {
+            "itemId": "60a67da3c06f5",
+            "category": "pizza",
+            "name": "Pizza Margherita",
+            "ingredients": ["Cheese", "Mozzarella", "Tomato", "Basil"],
+            "price": 199,
+            "tags": ["Recommended"],
+            "type": "Cheese Burst",
+            "style": "Italiano",
+            "discount": 20,
+            "imageUrl":
+                "http://192.168.29.223/v1/storage/files/60a67da360971/view?project=608adfe8f0dc4",
+            "isEgg": false,
+            "isVeg": true,
+            "subTotal": 1990
+          }
+        }
+      ],
+      "total": 2744,
+      "discount": 20
+    }, read: [
+      "*"
+    ], write: [
+      "*"
+    ]);
+
+    print("ADDCARTITEM $result");
+  } on AppwriteException catch (e) {
+    print(e.message);
+    print(e.response);
+  }
+}
+
+void createCartFoodItemCollection(Database db) async {
+  try {
+    final res = await db.createCollection(
+        name: "cartfooditems", read: ["*"], write: ["*"], rules: foodRules);
+    final cartCollection = res.data['\$id'];
+
+    print("CART_COLLECTION:$cartCollection");
+  } on AppwriteException catch (e) {
+    print(e.message);
+    print(e.response);
+    print(e.code);
+  }
 }
 
 void createCartCollection(Database db) async {

@@ -21,13 +21,16 @@ class _$CartDataTearOff {
   const _$CartDataTearOff();
 
   _CartData call(
-      {required String userId,
+      {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false)
+          String? id,
+      required String userId,
       int quantity = 0,
       @JsonSerializable(explicitToJson: true)
           List<OrderItem> cartitems = const [],
       int? total,
       int? discount}) {
     return _CartData(
+      id: id,
       userId: userId,
       quantity: quantity,
       cartitems: cartitems,
@@ -46,6 +49,8 @@ const $CartData = _$CartDataTearOff();
 
 /// @nodoc
 mixin _$CartData {
+  @JsonKey(name: '\$id', toJson: toNull, includeIfNull: false)
+  String? get id => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
   @JsonSerializable(explicitToJson: true)
@@ -64,7 +69,8 @@ abstract class $CartDataCopyWith<$Res> {
   factory $CartDataCopyWith(CartData value, $Res Function(CartData) then) =
       _$CartDataCopyWithImpl<$Res>;
   $Res call(
-      {String userId,
+      {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false) String? id,
+      String userId,
       int quantity,
       @JsonSerializable(explicitToJson: true) List<OrderItem> cartitems,
       int? total,
@@ -81,6 +87,7 @@ class _$CartDataCopyWithImpl<$Res> implements $CartDataCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? userId = freezed,
     Object? quantity = freezed,
     Object? cartitems = freezed,
@@ -88,6 +95,10 @@ class _$CartDataCopyWithImpl<$Res> implements $CartDataCopyWith<$Res> {
     Object? discount = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -118,7 +129,8 @@ abstract class _$CartDataCopyWith<$Res> implements $CartDataCopyWith<$Res> {
       __$CartDataCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String userId,
+      {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false) String? id,
+      String userId,
       int quantity,
       @JsonSerializable(explicitToJson: true) List<OrderItem> cartitems,
       int? total,
@@ -136,6 +148,7 @@ class __$CartDataCopyWithImpl<$Res> extends _$CartDataCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? userId = freezed,
     Object? quantity = freezed,
     Object? cartitems = freezed,
@@ -143,6 +156,10 @@ class __$CartDataCopyWithImpl<$Res> extends _$CartDataCopyWithImpl<$Res>
     Object? discount = freezed,
   }) {
     return _then(_CartData(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -171,7 +188,8 @@ class __$CartDataCopyWithImpl<$Res> extends _$CartDataCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CartData implements _CartData {
   const _$_CartData(
-      {required this.userId,
+      {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false) this.id,
+      required this.userId,
       this.quantity = 0,
       @JsonSerializable(explicitToJson: true) this.cartitems = const [],
       this.total,
@@ -180,6 +198,9 @@ class _$_CartData implements _CartData {
   factory _$_CartData.fromJson(Map<String, dynamic> json) =>
       _$_$_CartDataFromJson(json);
 
+  @override
+  @JsonKey(name: '\$id', toJson: toNull, includeIfNull: false)
+  final String? id;
   @override
   final String userId;
   @JsonKey(defaultValue: 0)
@@ -196,13 +217,15 @@ class _$_CartData implements _CartData {
 
   @override
   String toString() {
-    return 'CartData(userId: $userId, quantity: $quantity, cartitems: $cartitems, total: $total, discount: $discount)';
+    return 'CartData(id: $id, userId: $userId, quantity: $quantity, cartitems: $cartitems, total: $total, discount: $discount)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CartData &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.userId, userId) ||
                 const DeepCollectionEquality().equals(other.userId, userId)) &&
             (identical(other.quantity, quantity) ||
@@ -221,6 +244,7 @@ class _$_CartData implements _CartData {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(userId) ^
       const DeepCollectionEquality().hash(quantity) ^
       const DeepCollectionEquality().hash(cartitems) ^
@@ -240,7 +264,8 @@ class _$_CartData implements _CartData {
 
 abstract class _CartData implements CartData {
   const factory _CartData(
-      {required String userId,
+      {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false) String? id,
+      required String userId,
       int quantity,
       @JsonSerializable(explicitToJson: true) List<OrderItem> cartitems,
       int? total,
@@ -248,6 +273,9 @@ abstract class _CartData implements CartData {
 
   factory _CartData.fromJson(Map<String, dynamic> json) = _$_CartData.fromJson;
 
+  @override
+  @JsonKey(name: '\$id', toJson: toNull, includeIfNull: false)
+  String? get id => throw _privateConstructorUsedError;
   @override
   String get userId => throw _privateConstructorUsedError;
   @override

@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:appwrite/appwrite.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:foodmagic/models/cartitem/cart.item.dart';
 import 'package:path_provider/path_provider.dart';
@@ -43,6 +44,7 @@ class Repository {
   /// Keys
   static const USERKEY = 'userkey';
   static const SESSIONKEY = 'sessionkey';
+  static const CARTKEY = 'cartkey';
 
   // ignore: non_constant_identifier_names
   static String FOOD_COLLECTION = env['FOOD_COLLECTION']!;
@@ -52,6 +54,8 @@ class Repository {
   static String ORDER_COLLECTION = env['ORDER_COLLECTION']!;
   // ignore: non_constant_identifier_names
   static String CART_COLLECTION = env['CART_COLLECTION']!;
+
+  String CART_ID = '';
 
   final read = ['*'];
   final write = ['*'];
@@ -163,8 +167,6 @@ class Repository {
           await database.listDocuments(collectionId: FOOD_COLLECTION);
 
       if (result.statusCode == 200) {
-        print(result.data);
-
         final items = FoodItemDS.fromJson(result.data);
         food.addAll(items.items);
       }
@@ -179,12 +181,12 @@ class Repository {
   Future<CartData?> getCart() async {
     try {
       CartData? cart;
+      // final user = await getCurrentUser();
+      final result = await _store.record(CARTKEY).get(await getDb());
+      print(result);
 
-      final result =
-          await database.listDocuments(collectionId: FOOD_COLLECTION);
-
-      if (result.statusCode == 200) {
-        cart = CartData.fromJson(result.data);
+      if (result != null) {
+        cart = CartData.fromJson(result);
       }
       if (cart != null && cart.quantity != 0) {
         return cart;
@@ -196,36 +198,31 @@ class Repository {
     }
   }
 
-  Future<void> addCartItem({required Order order}) async {
+  Future<void> addCartItem({required CartData cart}) async {
     try {
-      // final result =
-      await database.createDocument(
-          collectionId: CART_COLLECTION, data: {}, read: read, write: write);
-    } catch (e) {
+      final result =
+          await _store.record(CARTKEY).put(await getDb(), cart.toJson());
+
+      print("ADDCARTITEM $result");
+    }  catch (e) {
       print(e);
     }
   }
 
-  Future<void> deleteCartItem({required Order order}) async {
+  Future<void> deleteCartItem({required CartData cartData}) async {
     try {
-      // final result =
-      await database.deleteDocument(
-          collectionId: CART_COLLECTION, documentId: order.orderId);
-    } catch (e) {
-      print(e);
+      final result = await _store.record(CARTKEY).delete(await getDb());
+      print(result);
+    } on AppwriteException catch (e) {
+      print(e.message);
     }
   }
 
-  Future<void> updateCartItem({required Order order}) async {
+  Future<void> updateCartItem({required CartData cartData}) async {
     try {
-      final result = await database.updateDocument(
-          collectionId: CART_COLLECTION,
-          documentId: order.orderId,
-          data: {},
-          write: write,
-          read: read);
-
-      print(result.data);
+      final result =
+          await _store.record(CARTKEY).put(await getDb(), cartData.toJson());
+      print(result);
     } catch (e) {
       print(e);
     }
