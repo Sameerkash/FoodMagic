@@ -13,7 +13,7 @@
     "style": "Italiano",
     "discount": 20,
     "imageUrl": "",
-    "arModelUrl": ""
+    "arModelUrl": "Pepperoni.sfb"
   },
   {
     "itemId": "f3ad5cff-9ad4-4961-994a-c70df0f1537a",
@@ -29,7 +29,7 @@
     "style": "Italiano",
     "discount": 10,
     "imageUrl": "",
-    "arModelUrl": ""
+    "arModelUrl": "Farmhouse.sfb"
   },
   {
     "itemId": "177875cb-bbc1-4802-9bbe-532d96803d17",
@@ -45,7 +45,7 @@
     "style": "Spanish",
     "discount": 30,
     "imageUrl": "",
-    "arModelUrl": ""
+    "arModelUrl": "VeggieParadise.sfb"
   },
   {
     "itemId": "ad6a745a-fc64-4f21-87f6-6316b6dd645e",
@@ -61,7 +61,7 @@
     "style": "Spanish",
     "discount": 10,
     "imageUrl": "",
-    "arModelUrl": ""
+    "arModelUrl": "MushroomF.sfb"
   },
   {
     "itemId": "f51e9c7c-c508-4534-bdc8-5e0113ba9679",
@@ -77,7 +77,7 @@
     "style": "Indian",
     "discount": 20,
     "imageUrl": "",
-    "arModelUrl": ""
+    "arModelUrl": "IndieCT.sfb"
   },
   {
     "itemId": "70d38800-69b9-4b5e-a0a8-cf75f1fa7eb4",
@@ -93,7 +93,7 @@
     "style": "American",
     "discount": 25,
     "imageUrl": "",
-    "arModelUrl": ""
+    "arModelUrl": "ClassicV.sfb"
   },
   {
     "itemId": "69b09356-5284-4de1-8668-28abd1846414",
@@ -109,7 +109,7 @@
     "style": "American",
     "discount": 20,
     "imageUrl": "",
-    "arModelUrl": ""
+    "arModelUrl": "ClassicNV.sfb"
   },
   {
     "itemId": "925edff0-df84-41d2-b1da-900fbddacd43",
@@ -131,7 +131,7 @@
     "style": "Indian",
     "discount": 20,
     "imageUrl": "",
-    "arModelUrl": ""
+    "arModelUrl": "PaneerBurger.sfb"
   },
   {
     "itemId": "41650ef1-803f-4ad7-b61a-c9defd749084",
@@ -154,7 +154,7 @@
     "style": "American",
     "discount": 20,
     "imageUrl": "",
-    "arModelUrl": ""
+    "arModelUrl": "DoublePatty.sfb"
   },
   {
     "itemId": "7beea333-8d0e-4939-b928-d196e76fc60d",
@@ -170,7 +170,7 @@
     "style": "Indian",
     "discount": 15,
     "imageUrl": "",
-    "arModelUrl": ""
+    "arModelUrl": "AlooTikki.sfb"
   },
   {
     "itemId": "f2b9558e-2be0-478f-a2c6-a960a1f39edc",
