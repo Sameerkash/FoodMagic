@@ -5,16 +5,18 @@ import 'package:foodmagic/env.dart';
 part 'order.freezed.dart';
 part 'order.g.dart';
 
+
+toNull(_) => null;
 @freezed
 class Order with _$Order {
   const factory Order({
-    @JsonKey(name: '\$id')  String? orderId,
+    @JsonKey(name: '\$id',  toJson: toNull, includeIfNull: false)  String? orderId,
     @Default('Received') String orderStatus,
-    @JsonSerializable(explicitToJson: true) required List<OrderFoodItem> orderItem,
+ required List<OrderFoodItem> orderItem,
     required String userId,
     required int total,
     final int? discount,
-    final DateTime? time,
+    final String? time,
   }) = _Order;
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
@@ -29,8 +31,7 @@ class OrderItem with _$OrderItem {
     @Default(rules)
     @JsonKey(name: "\$permissions")
         final Map<String, dynamic> permissions,
-    required int quanity,
-    @JsonSerializable(explicitToJson: true) 
+    required int quantity,
     required FoodItem foodItem,
     required int subTotal,
   }) = _OrderItem;
@@ -49,8 +50,7 @@ class OrderFoodItem with _$OrderFoodItem {
     @Default(rules)
     @JsonKey(name: "\$permissions")
         final Map<String, dynamic> permissions,
-    required int quanity,
-    @JsonSerializable(explicitToJson: true) 
+    required int quantity,
     required String foodItem,
     required int subTotal,
   }) = _OrderFoodItem;

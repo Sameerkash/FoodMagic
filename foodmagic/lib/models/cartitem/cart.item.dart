@@ -16,7 +16,6 @@ class CartData with _$CartData {
       @Default(0)
           int quantity,
       @Default([])
-      @JsonSerializable(explicitToJson: true)
           List<OrderItem> cartitems,
       int? total,
       int? discount}) = _CartData;

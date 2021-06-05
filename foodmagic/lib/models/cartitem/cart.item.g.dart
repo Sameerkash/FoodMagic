@@ -32,8 +32,8 @@ Map<String, dynamic> _$_$_CartDataToJson(_$_CartData instance) {
   writeNotNull(r'$id', toNull(instance.id));
   val['userId'] = instance.userId;
   val['quantity'] = instance.quantity;
-  val['cartitems'] = instance.cartitems;
-  val['total'] = instance.total;
-  val['discount'] = instance.discount;
+  val['cartitems'] = instance.cartitems.map((e) => e.toJson()).toList();
+  writeNotNull('total', instance.total);
+  writeNotNull('discount', instance.discount);
   return val;
 }

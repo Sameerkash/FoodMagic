@@ -91,7 +91,7 @@ class CartContent extends HookWidget {
                     imageUrl: cart.cartitems[index].foodItem.imageUrl!,
                     type: cart.cartitems[index].foodItem.type!,
                     tag: cart.cartitems[index].foodItem.tags![0],
-                    quantity: cart.cartitems[index].quanity,
+                    quantity: cart.cartitems[index].quantity,
                   ),
               itemCount: cart.cartitems.length),
           CartContainer(

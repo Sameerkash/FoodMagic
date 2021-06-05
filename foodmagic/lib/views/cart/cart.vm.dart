@@ -43,7 +43,7 @@ class CartVM extends StateNotifier<CartState> {
 
     if (current is _Empty) {
       OrderItem order =
-          OrderItem(quanity: 1, foodItem: item, subTotal: item.price);
+          OrderItem(quantity: 1, foodItem: item, subTotal: item.price);
 
       CartData cart = CartData(
           userId: user.userId,
@@ -54,7 +54,7 @@ class CartVM extends StateNotifier<CartState> {
 
       state = CartState.data(cart: cart);
 
-      // await repo.addCartItem(cart: cart);
+      await repo.addCartItem(cart: cart);
     }
 
     if (current is _Data) {
@@ -63,11 +63,11 @@ class CartVM extends StateNotifier<CartState> {
 
       if (food != null && current.cart.cartitems.contains(food)) {
         /// calculate for Each Order
-        int quantity = food.quanity + 1;
+        int quantity = food.quantity + 1;
         int subTotal = food.subTotal + (food.foodItem.price * quantity);
 
         OrderItem order =
-            OrderItem(quanity: quantity, foodItem: item, subTotal: subTotal);
+            OrderItem(quantity: quantity, foodItem: item, subTotal: subTotal);
 
         int totalDiscount = max(current.cart.discount!, item.discount!);
         int total = current.cart.total! + order.subTotal;
@@ -85,14 +85,14 @@ class CartVM extends StateNotifier<CartState> {
 
         state = CartState.data(cart: cart);
 
-        // await repo.updateCartItem(cartData: cart);
+        await repo.updateCartItem(cartData: cart);
       } else {
         /// calculate for Each Order
         int quantity = 1;
         int subTotal = item.price + (item.price * quantity);
 
         OrderItem order =
-            OrderItem(quanity: quantity, foodItem: item, subTotal: subTotal);
+            OrderItem(quantity: quantity, foodItem: item, subTotal: subTotal);
 
         /// calculate for Entire Cart
         int totalDiscount = max(current.cart.discount!, item.discount!);
@@ -108,7 +108,7 @@ class CartVM extends StateNotifier<CartState> {
 
         state = CartState.data(cart: cart);
 
-        // await repo.updateCartItem(cartData: cart);
+        await repo.updateCartItem(cartData: cart);
       }
     }
   }
@@ -121,13 +121,13 @@ class CartVM extends StateNotifier<CartState> {
     if (current is _Data) {
       final food =
           current.cart.cartitems.where((f) => f.foodItem == item).firstOrNull;
-      if (current.cart.quantity <= 1 && food!.quanity <= 1) {
+      if (current.cart.quantity <= 1 && food!.quantity <= 1) {
         state = CartState.empty();
       } else {
         final food =
             current.cart.cartitems.where((f) => f.foodItem == item).firstOrNull;
         if (food != null && current.cart.cartitems.contains(food)) {
-          if (food.quanity <= 1) {
+          if (food.quantity <= 1) {
             int discount = min(food.foodItem.discount!, current.cart.discount!);
             int price =
                 current.cart.total! - (current.cart.total! * discount ~/ 100);
@@ -141,11 +141,11 @@ class CartVM extends StateNotifier<CartState> {
 
             state = CartState.data(cart: cart);
           } else {
-            int quantity = food.quanity - 1;
+            int quantity = food.quantity - 1;
             int subTotal = item.price + (item.price * quantity);
 
             OrderItem order = OrderItem(
-                quanity: quantity, foodItem: item, subTotal: subTotal);
+                quantity: quantity, foodItem: item, subTotal: subTotal);
 
             /// calculate for Entire Cart
             int totalDiscount = min(current.cart.discount!, item.discount!);
@@ -179,7 +179,7 @@ class CartVM extends StateNotifier<CartState> {
       for (OrderItem o in current.cart.cartitems) {
         OrderFoodItem of = OrderFoodItem(
           foodItem: o.foodItem.name,
-          quanity: o.quanity,
+          quantity: o.quantity,
           subTotal: o.subTotal,
         );
         orderFoodItems.add(of);
@@ -190,7 +190,7 @@ class CartVM extends StateNotifier<CartState> {
         orderItem: orderFoodItems,
         total: current.cart.total!,
         discount: current.cart.discount,
-        time: DateTime.now(),
+        time: DateTime.now().toIso8601String(),
       );
 
       await repo.placeOrder(order: order);

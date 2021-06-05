@@ -27,23 +27,32 @@ _$_FoodItem _$_$_FoodItemFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_FoodItemToJson(_$_FoodItem instance) =>
-    <String, dynamic>{
-      r'$id': instance.itemId,
-      r'$collection': instance.collectionId,
-      r'$permissions': instance.permissions,
-      'category': instance.category,
-      'name': instance.name,
-      'ingredients': instance.ingredients,
-      'price': instance.price,
-      'tags': instance.tags,
-      'type': instance.type,
-      'style': instance.style,
-      'discount': instance.discount,
-      'imageUrl': instance.imageUrl,
-      'isEgg': instance.isEgg,
-      'isVeg': instance.isVeg,
-    };
+Map<String, dynamic> _$_$_FoodItemToJson(_$_FoodItem instance) {
+  final val = <String, dynamic>{
+    r'$id': instance.itemId,
+    r'$collection': instance.collectionId,
+    r'$permissions': instance.permissions,
+    'category': instance.category,
+    'name': instance.name,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('ingredients', instance.ingredients);
+  val['price'] = instance.price;
+  writeNotNull('tags', instance.tags);
+  writeNotNull('type', instance.type);
+  writeNotNull('style', instance.style);
+  writeNotNull('discount', instance.discount);
+  writeNotNull('imageUrl', instance.imageUrl);
+  val['isEgg'] = instance.isEgg;
+  val['isVeg'] = instance.isVeg;
+  return val;
+}
 
 _$_FoodItemDS _$_$_FoodItemDSFromJson(Map<String, dynamic> json) {
   return _$_FoodItemDS(
@@ -55,5 +64,5 @@ _$_FoodItemDS _$_$_FoodItemDSFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$_FoodItemDSToJson(_$_FoodItemDS instance) =>
     <String, dynamic>{
-      'documents': instance.items,
+      'documents': instance.items.map((e) => e.toJson()).toList(),
     };

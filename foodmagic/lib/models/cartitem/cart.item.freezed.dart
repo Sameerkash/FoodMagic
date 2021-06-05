@@ -21,12 +21,10 @@ class _$CartDataTearOff {
   const _$CartDataTearOff();
 
   _CartData call(
-      {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false)
-          String? id,
+      {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false) String? id,
       required String userId,
       int quantity = 0,
-      @JsonSerializable(explicitToJson: true)
-          List<OrderItem> cartitems = const [],
+      List<OrderItem> cartitems = const [],
       int? total,
       int? discount}) {
     return _CartData(
@@ -53,7 +51,6 @@ mixin _$CartData {
   String? get id => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
-  @JsonSerializable(explicitToJson: true)
   List<OrderItem> get cartitems => throw _privateConstructorUsedError;
   int? get total => throw _privateConstructorUsedError;
   int? get discount => throw _privateConstructorUsedError;
@@ -72,7 +69,7 @@ abstract class $CartDataCopyWith<$Res> {
       {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false) String? id,
       String userId,
       int quantity,
-      @JsonSerializable(explicitToJson: true) List<OrderItem> cartitems,
+      List<OrderItem> cartitems,
       int? total,
       int? discount});
 }
@@ -132,7 +129,7 @@ abstract class _$CartDataCopyWith<$Res> implements $CartDataCopyWith<$Res> {
       {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false) String? id,
       String userId,
       int quantity,
-      @JsonSerializable(explicitToJson: true) List<OrderItem> cartitems,
+      List<OrderItem> cartitems,
       int? total,
       int? discount});
 }
@@ -191,7 +188,7 @@ class _$_CartData implements _CartData {
       {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false) this.id,
       required this.userId,
       this.quantity = 0,
-      @JsonSerializable(explicitToJson: true) this.cartitems = const [],
+      this.cartitems = const [],
       this.total,
       this.discount});
 
@@ -208,7 +205,6 @@ class _$_CartData implements _CartData {
   final int quantity;
   @JsonKey(defaultValue: const [])
   @override
-  @JsonSerializable(explicitToJson: true)
   final List<OrderItem> cartitems;
   @override
   final int? total;
@@ -267,7 +263,7 @@ abstract class _CartData implements CartData {
       {@JsonKey(name: '\$id', toJson: toNull, includeIfNull: false) String? id,
       required String userId,
       int quantity,
-      @JsonSerializable(explicitToJson: true) List<OrderItem> cartitems,
+      List<OrderItem> cartitems,
       int? total,
       int? discount}) = _$_CartData;
 
@@ -281,7 +277,6 @@ abstract class _CartData implements CartData {
   @override
   int get quantity => throw _privateConstructorUsedError;
   @override
-  @JsonSerializable(explicitToJson: true)
   List<OrderItem> get cartitems => throw _privateConstructorUsedError;
   @override
   int? get total => throw _privateConstructorUsedError;

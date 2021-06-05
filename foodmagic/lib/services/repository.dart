@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:appwrite/appwrite.dart';
@@ -200,6 +201,16 @@ class Repository {
 
   Future<void> addCartItem({required CartData cart}) async {
     try {
+
+//  final result = await database.createDocument(
+//           collectionId: ORDER_COLLECTION,
+//           data: cart.toJson(),
+//           read: read,
+//           write: write);
+
+//       print(result.data);
+
+      // final json = jsonEncode(cart.toJson());
       final result =
           await _store.record(CARTKEY).put(await getDb(), cart.toJson());
 
@@ -221,7 +232,10 @@ class Repository {
   Future<void> updateCartItem({required CartData cartData}) async {
     try {
       final result =
-          await _store.record(CARTKEY).put(await getDb(), cartData.toJson());
+      await _store.record(CARTKEY).put(await getDb(), cartData.toJson());
+
+      final json = jsonEncode(cartData.toJson());
+
       print(result);
     } catch (e) {
       print(e);

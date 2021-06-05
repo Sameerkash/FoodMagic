@@ -32,7 +32,7 @@ class ItemDetailView extends HookWidget {
           data: (cart) => cart.cartitems
               .firstWhere((o) => o.foodItem.itemId == item.itemId,
                   orElse: () => _dummy)
-              .quanity)),
+              .quantity)),
     );
     var itemCount = useState(0);
 
@@ -314,7 +314,7 @@ class CircleImage extends StatelessWidget {
 }
 
 OrderItem _dummy = OrderItem(
-  quanity: 0,
+  quantity: 0,
   subTotal: 0,
   foodItem: FoodItem(itemId: '', category: '', name: '', price: 0),
 );
