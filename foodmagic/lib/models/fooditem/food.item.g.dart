@@ -9,8 +9,6 @@ part of 'food.item.dart';
 _$_FoodItem _$_$_FoodItemFromJson(Map<String, dynamic> json) {
   return _$_FoodItem(
     itemId: json[r'$id'] as String? ?? '',
-    collectionId: json[r'$collection'] as String,
-    permissions: json[r'$permissions'] as Map<String, dynamic>,
     category: json['category'] as String,
     name: json['name'] as String,
     ingredients: (json['ingredients'] as List<dynamic>?)
@@ -30,8 +28,6 @@ _$_FoodItem _$_$_FoodItemFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_FoodItemToJson(_$_FoodItem instance) {
   final val = <String, dynamic>{
     r'$id': instance.itemId,
-    r'$collection': instance.collectionId,
-    r'$permissions': instance.permissions,
     'category': instance.category,
     'name': instance.name,
   };
