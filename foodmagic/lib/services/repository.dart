@@ -3,12 +3,12 @@ import 'dart:typed_data';
 
 import 'package:appwrite/appwrite.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:foodmagic/models/cartitem/cart.item.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sembast/sembast.dart' as sembast;
 import 'package:sembast/sembast_io.dart';
 
+import '../env.dart';
 import '../models/fooditem/food.item.dart';
 import '../models/order/order.dart';
 import '../models/user/user.dart';
@@ -47,16 +47,8 @@ class Repository {
   static const SESSIONKEY = 'sessionkey';
   static const CARTKEY = 'cartkey';
 
-  // ignore: non_constant_identifier_names
-  static String FOOD_COLLECTION = env['FOOD_COLLECTION']!;
-  // ignore: non_constant_identifier_names
-  static String USER_COLLECTION = env['USER_COLLECTION']!;
-  // ignore: non_constant_identifier_names
-  static String ORDER_COLLECTION = env['ORDER_COLLECTION']!;
-  // ignore: non_constant_identifier_names
-  static String CART_COLLECTION = env['CART_COLLECTION']!;
 
-  String CART_ID = '';
+
 
   final read = ['*'];
   final write = ['*'];
@@ -73,8 +65,8 @@ class Repository {
   Repository() {
     // load environment vairables
     client
-        .setEndpoint('https://${env['IP']}/v1') // Your Appwrite Endpoint
-        .setProject(env['PROJECT_ID']) // Your project ID
+        .setEndpoint('https://$IP/v1') // Your Appwrite Endpoint
+        .setProject(PROJECT_ID) // Your project ID
         .setSelfSigned();
 
     //intialize appwrite services

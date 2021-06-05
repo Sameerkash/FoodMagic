@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart' hide Router;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -19,7 +19,7 @@ class MyHttpOverrides extends HttpOverrides {
 }
 
 void main() async {
-  await load();
+
 
   runApp(
     DevicePreview(
