@@ -1,0 +1,4767 @@
+{
+  animations: [
+    {
+      path: 'data/Farmhouse.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'plate',
+      parameters: [
+        {
+          baseColor: [
+            0.58542400000000006,
+            0.64771599999999996,
+            0.291576,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'olive',
+      parameters: [
+        {
+          baseColor: [
+            0.01456,
+            0.023571999999999999,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'origano',
+      parameters: [
+        {
+          baseColor: [
+            0.0051840000000000002,
+            0.80000000000000004,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'parsley',
+      parameters: [
+        {
+          baseColor: [
+            0.13527400000000001,
+            0.48816100000000001,
+            0.051632999999999998,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'pepperYellow',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            0.83298099999999997,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'pepperRed',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0,
+            0.0043080000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'pepperGreen',
+      parameters: [
+        {
+          baseColor: [
+            0.003872,
+            0.201713,
+            0.0049170000000000004,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cheese',
+      parameters: [
+        {
+          baseColor: [
+            0.68100099999999997,
+            0.389183,
+            0.039498999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Bottom Bun',
+      parameters: [
+        {
+          baseColor: [
+            0.56006500000000004,
+            0.084287000000000001,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepeno',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Jalepeno',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepenorim.002',
+      parameters: [
+        {
+          baseColor: [
+            0.103258,
+            0.207041,
+            0.024829,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepeno.003',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Jalepeno',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepenorim.004',
+      parameters: [
+        {
+          baseColor: [
+            0.103258,
+            0.207041,
+            0.024829,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepeno.004',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Jalepeno',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepenorim.005',
+      parameters: [
+        {
+          baseColor: [
+            0.103258,
+            0.207041,
+            0.024829,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepeno.005',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Jalepeno',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepenorim.006',
+      parameters: [
+        {
+          baseColor: [
+            0.103258,
+            0.207041,
+            0.024829,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepeno.006',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Jalepeno',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepenorim.007',
+      parameters: [
+        {
+          baseColor: [
+            0.103258,
+            0.207041,
+            0.024829,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepeno.007',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Jalepeno',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepenorim.008',
+      parameters: [
+        {
+          baseColor: [
+            0.103258,
+            0.207041,
+            0.024829,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepeno.008',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Jalepeno',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Jalepenorim.009',
+      parameters: [
+        {
+          baseColor: [
+            0.103258,
+            0.207041,
+            0.024829,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroom',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Mushroom',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroomrim',
+      parameters: [
+        {
+          baseColor: [
+            0.52879299999999996,
+            0.35731000000000002,
+            0.203376,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroom.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Mushroom',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroomrim.001',
+      parameters: [
+        {
+          baseColor: [
+            0.52879299999999996,
+            0.35731000000000002,
+            0.203376,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroom.002',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Mushroom',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroomrim.002',
+      parameters: [
+        {
+          baseColor: [
+            0.52879299999999996,
+            0.35731000000000002,
+            0.203376,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroom.003',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Mushroom',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroomrim.003',
+      parameters: [
+        {
+          baseColor: [
+            0.52879299999999996,
+            0.35731000000000002,
+            0.203376,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroom.004',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Mushroom',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroomrim.004',
+      parameters: [
+        {
+          baseColor: [
+            0.52879299999999996,
+            0.35731000000000002,
+            0.203376,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroom.005',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Mushroom',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroomrim.005',
+      parameters: [
+        {
+          baseColor: [
+            0.52879299999999996,
+            0.35731000000000002,
+            0.203376,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroom.006',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Mushroom',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroomrim.006',
+      parameters: [
+        {
+          baseColor: [
+            0.52879299999999996,
+            0.35731000000000002,
+            0.203376,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.001',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.002',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.003',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.004',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.005',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.006',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.007',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.008',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.009',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.010',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.011',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.012',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'paneer.013',
+      parameters: [
+        {
+          baseColor: [
+            0.66476500000000005,
+            0.33321499999999998,
+            0.163713,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.001',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.002',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.002',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.003',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.003',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.004',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.004',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.005',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.005',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.006',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.006',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.007',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.007',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.008',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.008',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.009',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.009',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.010',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.010',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.011',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.011',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.012',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.012',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.013',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.013',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.014',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.014',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.015',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.015',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.016',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.016',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.017',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.017',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.018',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.018',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.019',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.019',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.020',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.020',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.021',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.021',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.022',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.022',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.023',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.023',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.024',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.024',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.025',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.025',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.026',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.026',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.027',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.027',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroom.007',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Mushroom',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroomrim.007',
+      parameters: [
+        {
+          baseColor: [
+            0.52879299999999996,
+            0.35731000000000002,
+            0.203376,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroom.008',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Mushroom',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroomrim.008',
+      parameters: [
+        {
+          baseColor: [
+            0.52879299999999996,
+            0.35731000000000002,
+            0.203376,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroom.009',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Mushroom',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Mushroomrim.009',
+      parameters: [
+        {
+          baseColor: [
+            0.52879299999999996,
+            0.35731000000000002,
+            0.203376,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Onion',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.046235999999999999,
+            0.25034499999999998,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Onion.001',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.046235999999999999,
+            0.25034499999999998,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Onion.002',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.046235999999999999,
+            0.25034499999999998,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Onion.003',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.046235999999999999,
+            0.25034499999999998,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Onion.004',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.046235999999999999,
+            0.25034499999999998,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Onion.005',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.046235999999999999,
+            0.25034499999999998,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Onion.006',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.046235999999999999,
+            0.25034499999999998,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Onion.007',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.046235999999999999,
+            0.25034499999999998,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'olive.001',
+      parameters: [
+        {
+          baseColor: [
+            0.01456,
+            0.023571999999999999,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Corn.028',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corn',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cornrin.028',
+      parameters: [
+        {
+          baseColor: [
+            0.80000000000000004,
+            0.48711700000000002,
+            0.018284999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'data/Farmhouse.fbx',
+    name: 'Farmhouse',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'data/Farmhouse.fbm/corn.png',
+      name: 'corn',
+      pipeline_name: 'Farmhouse.fbm/corn.png',
+    },
+    {
+      file: 'data/Farmhouse.fbm/corn.png',
+      name: 'corn',
+      pipeline_name: 'Farmhouse.fbm/corn.png',
+    },
+    {
+      file: 'data/Farmhouse.fbm/Mushroom.png',
+      name: 'Mushroom',
+      pipeline_name: 'Farmhouse.fbm/Mushroom.png',
+    },
+    {
+      file: 'data/Farmhouse.fbm/Jalepeno.jpg',
+      name: 'Jalepeno',
+      pipeline_name: 'Farmhouse.fbm/Jalepeno.jpg',
+    },
+    {
+      file: 'data/Farmhouse.fbm/Mushroom.png',
+      name: 'Mushroom',
+      pipeline_name: 'Farmhouse.fbm/Mushroom.png',
+    },
+    {
+      file: 'data/Farmhouse.fbm/Jalepeno.jpg',
+      name: 'Jalepeno',
+      pipeline_name: 'Farmhouse.fbm/Jalepeno.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

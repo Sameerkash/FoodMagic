@@ -1,105 +1,62 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:dart_appwrite/dart_appwrite.dart';
-import 'package:dotenv/dotenv.dart' show load, env;
+
+/// envs
+/// Be Sure to set environemnt varibales before running this scirpt
+const IP = '192.168.29.223';
+const ENDPOINT = 'https://localhost';
+const PROJECT_ID = '608adfe8f0dc4';
+const API_KEY = '1f4dcdc82e64a32d15e5f81479aed759dd115f851bf008d3da432597d0a89c6aae407fd42d177a985a63bf00754acc863c49d8f22e29caba93725557388dcd4741014d175c9253beb750984ad8571e1da83ce8e9f5a80016ddb56ad8a57f50273979652b00094a62546282de1809aa37b1ac96d3c9bc94d824fe0d5f2c47a72a';
 
 /// Run script only once to avoid duplicate data, delete first if already exisiting
 void main() {
-  load();
 
   Client client = Client();
   client.selfSigned = true;
 
-  client
-      .setEndpoint(env['ENDPOINT']! + '/v1')
-      .setProject(env['PROJECT_ID']!)
-      .setKey(env['KEY']!);
+  client.setEndpoint('$ENDPOINT/v1').setProject(PROJECT_ID).setKey(API_KEY);
 
   Database db = Database(client);
   Storage storage = Storage(client);
 
-  /// Upload fooditems
-  // createAndUploadFoodItems(db);
+  /// Upload images and fooditems
+  uploadImages(storage, db);
 
-  createCartFoodItemCollection(db);
+  createUsersCollection(db);
 
-  // addCartItem(db);
-  // createOrderItemsCollection(db);
+  createOrderItemsCollection(db);
 
-  // createUsersCollection(db);
-  // uploadImages(storage, db);
+  createOrders(db);
 }
 
-Future<void> addCartItem(Database db) async {
-  try {
-    final result =
-        await db.createDocument(collectionId: '60afb8538b323', data: {
-      "userId": "60af99341c9fb",
-      "quantity": 1,
-      "cartitems": [
-        {
-          "quanity": 4,
-          "foodItem": {
-            "itemId": "60a67da3c06f5",
-            "category": "pizza",
-            "name": "Pizza Margherita",
-            "ingredients": ["Cheese", "Mozzarella", "Tomato", "Basil"],
-            "price": 199,
-            "tags": ["Recommended"],
-            "type": "Cheese Burst",
-            "style": "Italiano",
-            "discount": 20,
-            "imageUrl":
-                "http://192.168.29.223/v1/storage/files/60a67da360971/view?project=608adfe8f0dc4",
-            "isEgg": false,
-            "isVeg": true,
-            "subTotal": 1990
-          }
-        }
-      ],
-      "total": 2744,
-      "discount": 20
-    }, read: [
-      "*"
-    ], write: [
-      "*"
-    ]);
+// void createCartFoodItemCollection(Database db) async {
+//   try {
+//     final res = await db.createCollection(
+//         name: "cartfooditems", read: ["*"], write: ["*"], rules: foodRules);
+//     final cartCollection = res.data['\$id'];
 
-    print("ADDCARTITEM $result");
-  } on AppwriteException catch (e) {
-    print(e.message);
-    print(e.response);
-  }
-}
+//     print("CART_COLLECTION:$cartCollection");
+//   } on AppwriteException catch (e) {
+//     print(e.message);
+//     print(e.response);
+//     print(e.code);
+//   }
+// }
 
-void createCartFoodItemCollection(Database db) async {
-  try {
-    final res = await db.createCollection(
-        name: "cartfooditems", read: ["*"], write: ["*"], rules: foodRules);
-    final cartCollection = res.data['\$id'];
+// void createCartCollection(Database db) async {
+//   try {
+//     final res = await db.createCollection(
+//         name: "carts", read: ["*"], write: ["*"], rules: cartRules);
+//     final cartCollection = res.data['\$id'];
 
-    print("CART_COLLECTION:$cartCollection");
-  } on AppwriteException catch (e) {
-    print(e.message);
-    print(e.response);
-    print(e.code);
-  }
-}
-
-void createCartCollection(Database db) async {
-  try {
-    final res = await db.createCollection(
-        name: "carts", read: ["*"], write: ["*"], rules: cartRules);
-    final cartCollection = res.data['\$id'];
-
-    print("CART_COLLECTION:$cartCollection");
-  } on AppwriteException catch (e) {
-    print(e.message);
-    print(e.response);
-    print(e.code);
-  }
-}
+//     print("CART_COLLECTION:$cartCollection");
+//   } on AppwriteException catch (e) {
+//     print(e.message);
+//     print(e.response);
+//     print(e.code);
+//   }
+// }
 
 void createOrders(Database db) async {
   try {
@@ -181,7 +138,8 @@ void uploadImages(Storage storage, Database db) async {
 void createAndUploadFoodItems(Database db, String collectionId,
     Map<String, dynamic> data, String imageId) async {
   try {
-    data['imageUrl'] = imageId;
+    data['imageUrl'] =
+        'http://$IP/v1/storage/files/$imageId/view?project=$PROJECT_ID';
 
     await db.createDocument(
         collectionId: collectionId,
@@ -299,48 +257,48 @@ const userRules = [
   },
 ];
 
-const cartRules = [
-  {
-    "type": "text",
-    "key": "userId",
-    "label": "userId",
-    "default": "",
-    "array": false,
-    "required": true,
-  },
-  {
-    "type": "numeric",
-    "key": "qauntity",
-    "label": "qauntity",
-    "default": "",
-    "array": false,
-    "required": true,
-  },
-  {
-    "type": "text",
-    "key": "cartitems",
-    "label": "cartitems",
-    "default": "",
-    "array": true,
-    "required": true,
-  },
-  {
-    "type": "numeric",
-    "key": "total",
-    "label": "total",
-    "default": "",
-    "array": true,
-    "required": true,
-  },
-  {
-    "type": "numeric",
-    "key": "discount",
-    "label": "discount",
-    "default": "",
-    "array": false,
-    "required": true,
-  },
-];
+// const cartRules = [
+//   {
+//     "type": "text",
+//     "key": "userId",
+//     "label": "userId",
+//     "default": "",
+//     "array": false,
+//     "required": true,
+//   },
+//   {
+//     "type": "numeric",
+//     "key": "qauntity",
+//     "label": "qauntity",
+//     "default": "",
+//     "array": false,
+//     "required": true,
+//   },
+//   {
+//     "type": "text",
+//     "key": "cartitems",
+//     "label": "cartitems",
+//     "default": "",
+//     "array": true,
+//     "required": true,
+//   },
+//   {
+//     "type": "numeric",
+//     "key": "total",
+//     "label": "total",
+//     "default": "",
+//     "array": true,
+//     "required": true,
+//   },
+//   {
+//     "type": "numeric",
+//     "key": "discount",
+//     "label": "discount",
+//     "default": "",
+//     "array": false,
+//     "required": true,
+//   },
+// ];
 
 const orderItemRules = [
   {

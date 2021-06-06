@@ -1,0 +1,1555 @@
+{
+  animations: [
+    {
+      path: 'data/Pepperoni.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'plate',
+      parameters: [
+        {
+          baseColor: [
+            0.58542400000000006,
+            0.64771599999999996,
+            0.291576,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cheese',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            0.53728100000000001,
+            0.034492000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Bottom Bun',
+      parameters: [
+        {
+          baseColor: [
+            0.38783699999999999,
+            0.078098000000000001,
+            0.002666,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cheese.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            0.193384,
+            0.026806,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.001',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.002',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.002',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.003',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.003',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.004',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.004',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.005',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.005',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.006',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.006',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.007',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.007',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.008',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.008',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.009',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.009',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.010',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.010',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.011',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.011',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.012',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.012',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.013',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.013',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.014',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.014',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.015',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.015',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.016',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.016',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperoni.017',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'pepperoni',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Pepperonirim.017',
+      parameters: [
+        {
+          baseColor: [
+            0.57103499999999996,
+            0.022978999999999999,
+            0.036844000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'data/Pepperoni.fbx',
+    name: 'Pepperoni',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'data/Pepperoni.fbm/pepperoni.png',
+      name: 'pepperoni',
+      pipeline_name: 'Pepperoni.fbm/pepperoni.png',
+    },
+    {
+      file: 'data/Pepperoni.fbm/pepperoni.png',
+      name: 'pepperoni',
+      pipeline_name: 'Pepperoni.fbm/pepperoni.png',
+    },
+  ],
+  version: '0.54:2',
+}

@@ -1,0 +1,1510 @@
+{
+  animations: [
+    {
+      clips: [
+        {
+          name: 'Top Bun|Bottom BunAction',
+        },
+        {
+          name: 'Top Bun|Cheese1Action',
+        },
+        {
+          name: 'Top Bun|Cheese2Action',
+        },
+        {
+          name: 'Top Bun|Cheese3Action',
+        },
+        {
+          name: 'Top Bun|EmptyAction',
+        },
+        {
+          name: 'Top Bun|PattyAction',
+        },
+        {
+          name: 'Top Bun|Tomato.001Action',
+        },
+        {
+          name: 'Top Bun|Tomato.002Action',
+        },
+        {
+          name: 'Top Bun|Tomato.003Action',
+        },
+        {
+          name: 'Top Bun|Tomato.003Action.001',
+        },
+        {
+          name: 'Top Bun|Tomato.003Action.002',
+        },
+        {
+          name: 'Top Bun|Tomato.004Action',
+        },
+        {
+          name: 'Top Bun|TomatoAction',
+        },
+        {
+          name: 'Top Bun|Top BunAction',
+        },
+        {
+          name: 'Bottom Bun|Bottom BunAction',
+        },
+        {
+          name: 'Bottom Bun|Cheese1Action',
+        },
+        {
+          name: 'Bottom Bun|Cheese2Action',
+        },
+        {
+          name: 'Bottom Bun|Cheese3Action',
+        },
+        {
+          name: 'Bottom Bun|EmptyAction',
+        },
+        {
+          name: 'Bottom Bun|PattyAction',
+        },
+        {
+          name: 'Bottom Bun|Tomato.001Action',
+        },
+        {
+          name: 'Bottom Bun|Tomato.002Action',
+        },
+        {
+          name: 'Bottom Bun|Tomato.003Action',
+        },
+        {
+          name: 'Bottom Bun|Tomato.003Action.001',
+        },
+        {
+          name: 'Bottom Bun|Tomato.003Action.002',
+        },
+        {
+          name: 'Bottom Bun|Tomato.004Action',
+        },
+        {
+          name: 'Bottom Bun|TomatoAction',
+        },
+        {
+          name: 'Bottom Bun|Top BunAction',
+        },
+        {
+          name: 'Patty|Bottom BunAction',
+        },
+        {
+          name: 'Patty|Cheese1Action',
+        },
+        {
+          name: 'Patty|Cheese2Action',
+        },
+        {
+          name: 'Patty|Cheese3Action',
+        },
+        {
+          name: 'Patty|EmptyAction',
+        },
+        {
+          name: 'Patty|PattyAction',
+        },
+        {
+          name: 'Patty|Tomato.001Action',
+        },
+        {
+          name: 'Patty|Tomato.002Action',
+        },
+        {
+          name: 'Patty|Tomato.003Action',
+        },
+        {
+          name: 'Patty|Tomato.003Action.001',
+        },
+        {
+          name: 'Patty|Tomato.003Action.002',
+        },
+        {
+          name: 'Patty|Tomato.004Action',
+        },
+        {
+          name: 'Patty|TomatoAction',
+        },
+        {
+          name: 'Patty|Top BunAction',
+        },
+        {
+          name: 'Cheese1|Bottom BunAction',
+        },
+        {
+          name: 'Cheese1|Cheese1Action',
+        },
+        {
+          name: 'Cheese1|Cheese2Action',
+        },
+        {
+          name: 'Cheese1|Cheese3Action',
+        },
+        {
+          name: 'Cheese1|EmptyAction',
+        },
+        {
+          name: 'Cheese1|PattyAction',
+        },
+        {
+          name: 'Cheese1|Tomato.001Action',
+        },
+        {
+          name: 'Cheese1|Tomato.002Action',
+        },
+        {
+          name: 'Cheese1|Tomato.003Action',
+        },
+        {
+          name: 'Cheese1|Tomato.003Action.001',
+        },
+        {
+          name: 'Cheese1|Tomato.003Action.002',
+        },
+        {
+          name: 'Cheese1|Tomato.004Action',
+        },
+        {
+          name: 'Cheese1|TomatoAction',
+        },
+        {
+          name: 'Cheese1|Top BunAction',
+        },
+        {
+          name: 'Cheese2|Bottom BunAction',
+        },
+        {
+          name: 'Cheese2|Cheese1Action',
+        },
+        {
+          name: 'Cheese2|Cheese2Action',
+        },
+        {
+          name: 'Cheese2|Cheese3Action',
+        },
+        {
+          name: 'Cheese2|EmptyAction',
+        },
+        {
+          name: 'Cheese2|PattyAction',
+        },
+        {
+          name: 'Cheese2|Tomato.001Action',
+        },
+        {
+          name: 'Cheese2|Tomato.002Action',
+        },
+        {
+          name: 'Cheese2|Tomato.003Action',
+        },
+        {
+          name: 'Cheese2|Tomato.003Action.001',
+        },
+        {
+          name: 'Cheese2|Tomato.003Action.002',
+        },
+        {
+          name: 'Cheese2|Tomato.004Action',
+        },
+        {
+          name: 'Cheese2|TomatoAction',
+        },
+        {
+          name: 'Cheese2|Top BunAction',
+        },
+        {
+          name: 'Cheese3|Bottom BunAction',
+        },
+        {
+          name: 'Cheese3|Cheese1Action',
+        },
+        {
+          name: 'Cheese3|Cheese2Action',
+        },
+        {
+          name: 'Cheese3|Cheese3Action',
+        },
+        {
+          name: 'Cheese3|EmptyAction',
+        },
+        {
+          name: 'Cheese3|PattyAction',
+        },
+        {
+          name: 'Cheese3|Tomato.001Action',
+        },
+        {
+          name: 'Cheese3|Tomato.002Action',
+        },
+        {
+          name: 'Cheese3|Tomato.003Action',
+        },
+        {
+          name: 'Cheese3|Tomato.003Action.001',
+        },
+        {
+          name: 'Cheese3|Tomato.003Action.002',
+        },
+        {
+          name: 'Cheese3|Tomato.004Action',
+        },
+        {
+          name: 'Cheese3|TomatoAction',
+        },
+        {
+          name: 'Cheese3|Top BunAction',
+        },
+        {
+          name: 'Tomato|Bottom BunAction',
+        },
+        {
+          name: 'Tomato|Cheese1Action',
+        },
+        {
+          name: 'Tomato|Cheese2Action',
+        },
+        {
+          name: 'Tomato|Cheese3Action',
+        },
+        {
+          name: 'Tomato|EmptyAction',
+        },
+        {
+          name: 'Tomato|PattyAction',
+        },
+        {
+          name: 'Tomato|Tomato.001Action',
+        },
+        {
+          name: 'Tomato|Tomato.002Action',
+        },
+        {
+          name: 'Tomato|Tomato.003Action',
+        },
+        {
+          name: 'Tomato|Tomato.003Action.001',
+        },
+        {
+          name: 'Tomato|Tomato.003Action.002',
+        },
+        {
+          name: 'Tomato|Tomato.004Action',
+        },
+        {
+          name: 'Tomato|TomatoAction',
+        },
+        {
+          name: 'Tomato|Top BunAction',
+        },
+        {
+          name: 'Tomato.001|Bottom BunAction',
+        },
+        {
+          name: 'Tomato.001|Cheese1Action',
+        },
+        {
+          name: 'Tomato.001|Cheese2Action',
+        },
+        {
+          name: 'Tomato.001|Cheese3Action',
+        },
+        {
+          name: 'Tomato.001|EmptyAction',
+        },
+        {
+          name: 'Tomato.001|PattyAction',
+        },
+        {
+          name: 'Tomato.001|Tomato.001Action',
+        },
+        {
+          name: 'Tomato.001|Tomato.002Action',
+        },
+        {
+          name: 'Tomato.001|Tomato.003Action',
+        },
+        {
+          name: 'Tomato.001|Tomato.003Action.001',
+        },
+        {
+          name: 'Tomato.001|Tomato.003Action.002',
+        },
+        {
+          name: 'Tomato.001|Tomato.004Action',
+        },
+        {
+          name: 'Tomato.001|TomatoAction',
+        },
+        {
+          name: 'Tomato.001|Top BunAction',
+        },
+        {
+          name: 'Tomato.002|Bottom BunAction',
+        },
+        {
+          name: 'Tomato.002|Cheese1Action',
+        },
+        {
+          name: 'Tomato.002|Cheese2Action',
+        },
+        {
+          name: 'Tomato.002|Cheese3Action',
+        },
+        {
+          name: 'Tomato.002|EmptyAction',
+        },
+        {
+          name: 'Tomato.002|PattyAction',
+        },
+        {
+          name: 'Tomato.002|Tomato.001Action',
+        },
+        {
+          name: 'Tomato.002|Tomato.002Action',
+        },
+        {
+          name: 'Tomato.002|Tomato.003Action',
+        },
+        {
+          name: 'Tomato.002|Tomato.003Action.001',
+        },
+        {
+          name: 'Tomato.002|Tomato.003Action.002',
+        },
+        {
+          name: 'Tomato.002|Tomato.004Action',
+        },
+        {
+          name: 'Tomato.002|TomatoAction',
+        },
+        {
+          name: 'Tomato.002|Top BunAction',
+        },
+        {
+          name: 'Tomato.003|Bottom BunAction',
+        },
+        {
+          name: 'Tomato.003|Cheese1Action',
+        },
+        {
+          name: 'Tomato.003|Cheese2Action',
+        },
+        {
+          name: 'Tomato.003|Cheese3Action',
+        },
+        {
+          name: 'Tomato.003|EmptyAction',
+        },
+        {
+          name: 'Tomato.003|PattyAction',
+        },
+        {
+          name: 'Tomato.003|Tomato.001Action',
+        },
+        {
+          name: 'Tomato.003|Tomato.002Action',
+        },
+        {
+          name: 'Tomato.003|Tomato.003Action',
+        },
+        {
+          name: 'Tomato.003|Tomato.003Action.001',
+        },
+        {
+          name: 'Tomato.003|Tomato.003Action.002',
+        },
+        {
+          name: 'Tomato.003|Tomato.004Action',
+        },
+        {
+          name: 'Tomato.003|TomatoAction',
+        },
+        {
+          name: 'Tomato.003|Top BunAction',
+        },
+        {
+          name: 'Tomato.004|Bottom BunAction',
+        },
+        {
+          name: 'Tomato.004|Cheese1Action',
+        },
+        {
+          name: 'Tomato.004|Cheese2Action',
+        },
+        {
+          name: 'Tomato.004|Cheese3Action',
+        },
+        {
+          name: 'Tomato.004|EmptyAction',
+        },
+        {
+          name: 'Tomato.004|PattyAction',
+        },
+        {
+          name: 'Tomato.004|Tomato.001Action',
+        },
+        {
+          name: 'Tomato.004|Tomato.002Action',
+        },
+        {
+          name: 'Tomato.004|Tomato.003Action',
+        },
+        {
+          name: 'Tomato.004|Tomato.003Action.001',
+        },
+        {
+          name: 'Tomato.004|Tomato.003Action.002',
+        },
+        {
+          name: 'Tomato.004|Tomato.004Action',
+        },
+        {
+          name: 'Tomato.004|TomatoAction',
+        },
+        {
+          name: 'Tomato.004|Top BunAction',
+        },
+        {
+          name: 'Empty|Bottom BunAction',
+        },
+        {
+          name: 'Empty|Cheese1Action',
+        },
+        {
+          name: 'Empty|Cheese2Action',
+        },
+        {
+          name: 'Empty|Cheese3Action',
+        },
+        {
+          name: 'Empty|EmptyAction',
+        },
+        {
+          name: 'Empty|PattyAction',
+        },
+        {
+          name: 'Empty|Tomato.001Action',
+        },
+        {
+          name: 'Empty|Tomato.002Action',
+        },
+        {
+          name: 'Empty|Tomato.003Action',
+        },
+        {
+          name: 'Empty|Tomato.003Action.001',
+        },
+        {
+          name: 'Empty|Tomato.003Action.002',
+        },
+        {
+          name: 'Empty|Tomato.004Action',
+        },
+        {
+          name: 'Empty|TomatoAction',
+        },
+        {
+          name: 'Empty|Top BunAction',
+        },
+        {
+          name: 'Tomato.005|Bottom BunAction',
+        },
+        {
+          name: 'Tomato.005|Cheese1Action',
+        },
+        {
+          name: 'Tomato.005|Cheese2Action',
+        },
+        {
+          name: 'Tomato.005|Cheese3Action',
+        },
+        {
+          name: 'Tomato.005|EmptyAction',
+        },
+        {
+          name: 'Tomato.005|PattyAction',
+        },
+        {
+          name: 'Tomato.005|Tomato.001Action',
+        },
+        {
+          name: 'Tomato.005|Tomato.002Action',
+        },
+        {
+          name: 'Tomato.005|Tomato.003Action',
+        },
+        {
+          name: 'Tomato.005|Tomato.003Action.001',
+        },
+        {
+          name: 'Tomato.005|Tomato.003Action.002',
+        },
+        {
+          name: 'Tomato.005|Tomato.004Action',
+        },
+        {
+          name: 'Tomato.005|TomatoAction',
+        },
+        {
+          name: 'Tomato.005|Top BunAction',
+        },
+        {
+          name: 'Tomato.006|Bottom BunAction',
+        },
+        {
+          name: 'Tomato.006|Cheese1Action',
+        },
+        {
+          name: 'Tomato.006|Cheese2Action',
+        },
+        {
+          name: 'Tomato.006|Cheese3Action',
+        },
+        {
+          name: 'Tomato.006|EmptyAction',
+        },
+        {
+          name: 'Tomato.006|PattyAction',
+        },
+        {
+          name: 'Tomato.006|Tomato.001Action',
+        },
+        {
+          name: 'Tomato.006|Tomato.002Action',
+        },
+        {
+          name: 'Tomato.006|Tomato.003Action',
+        },
+        {
+          name: 'Tomato.006|Tomato.003Action.001',
+        },
+        {
+          name: 'Tomato.006|Tomato.003Action.002',
+        },
+        {
+          name: 'Tomato.006|Tomato.004Action',
+        },
+        {
+          name: 'Tomato.006|TomatoAction',
+        },
+        {
+          name: 'Tomato.006|Top BunAction',
+        },
+      ],
+      path: 'data/ClassicV.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'Seeds',
+      parameters: [
+        {
+          baseColor: [
+            0.90466100000000005,
+            0.57112499999999999,
+            0.215861,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Top Bun',
+      parameters: [
+        {
+          baseColor: [
+            0.61615799999999998,
+            0.11751499999999999,
+            0.0074190000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Bottom Bun',
+      parameters: [
+        {
+          baseColor: [
+            0.61615799999999998,
+            0.11751499999999999,
+            0.0074190000000000002,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Patty',
+      parameters: [
+        {
+          baseColor: [
+            0.20155600000000001,
+            0.015209,
+            0.023153,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Cheese',
+      parameters: [
+        {
+          baseColor: [
+            0.99110200000000004,
+            0.33527099999999999,
+            0.0040639999999999999,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomato',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'tomato',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomatorim',
+      parameters: [
+        {
+          baseColor: [
+            0.67774900000000005,
+            0.0041099999999999999,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomato.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'tomato',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomatorim.001',
+      parameters: [
+        {
+          baseColor: [
+            0.67774900000000005,
+            0.0041099999999999999,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomato.002',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'tomato',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomatorim.002',
+      parameters: [
+        {
+          baseColor: [
+            0.67774900000000005,
+            0.0041099999999999999,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomato.003',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'tomato',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomatorim.003',
+      parameters: [
+        {
+          baseColor: [
+            0.67774900000000005,
+            0.0041099999999999999,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomato.004',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'tomato',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomatorim.004',
+      parameters: [
+        {
+          baseColor: [
+            0.67774900000000005,
+            0.0041099999999999999,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomato.005',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'tomato',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomatorim.005',
+      parameters: [
+        {
+          baseColor: [
+            0.67774900000000005,
+            0.0041099999999999999,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomato.006',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'tomato',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Tomatorim.006',
+      parameters: [
+        {
+          baseColor: [
+            0.67774900000000005,
+            0.0041099999999999999,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Lettuce',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'lettuce',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Lettuce.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'lettuce',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Lettuce.002',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'lettuce',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'Lettuce.003',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'lettuce',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'data/ClassicV.fbx',
+    name: 'ClassicV',
+    recenter: 'root',
+    scale: 0.44452999999999998,
+  },
+  samplers: [
+    {
+      file: 'data/ClassicV.fbm/lettuce.png',
+      name: 'lettuce',
+      pipeline_name: 'ClassicV.fbm/lettuce.png',
+    },
+    {
+      file: 'data/ClassicV.fbm/tomato.jpg',
+      name: 'tomato',
+      pipeline_name: 'ClassicV.fbm/tomato.jpg',
+    },
+    {
+      file: 'data/ClassicV.fbm/lettuce.png',
+      name: 'lettuce',
+      pipeline_name: 'ClassicV.fbm/lettuce.png',
+    },
+    {
+      file: 'data/ClassicV.fbm/tomato.jpg',
+      name: 'tomato',
+      pipeline_name: 'ClassicV.fbm/tomato.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

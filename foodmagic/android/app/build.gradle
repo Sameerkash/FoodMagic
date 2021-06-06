@@ -24,9 +24,9 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
-
+apply plugin: 'com.google.ar.sceneform.plugin'
 android {
-    compileSdkVersion 30
+    compileSdkVersion 29
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -35,8 +35,8 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.foodmagic"
-        minSdkVersion 16
-        targetSdkVersion 30
+        minSdkVersion 24
+        targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
@@ -62,63 +62,58 @@ flutter {
     source '../..'
 }
 
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.multidex:multidex:2.0.1"
 
+dependencies {
     // Provides ArFragment, and other UX resources.
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.8.0'
-
-    // Alternatively, use ArSceneView without the UX dependency.
-    implementation 'com.google.ar.sceneform:core:1.8.0'
 }
 
-sceneform.asset('sampledata/AlooTikki.fbx',
+sceneform.asset('data/AlooTikki.fbx',
         'default',
-        'sampledata/AlooTikki.sfa',
+        'data/AlooTikki.sfa',
         'src/main/assets/AlooTikki')
 
-sceneform.asset('sampledata/ClassicNV.fbx',
+sceneform.asset('data/ClassicNV.fbx',
         'default',
-        'sampledata/ClassicNV.sfa',
+        'data/ClassicNV.sfa',
         'src/main/assets/ClassicNV')
 
-sceneform.asset('sampledata/ClassicV.fbx',
+sceneform.asset('data/ClassicV.fbx',
         'default',
-        'sampledata/ClassicV.sfa',
+        'data/ClassicV.sfa',
         'src/main/assets/ClassicV')
 
-sceneform.asset('sampledata/DoublePatty.fbx',
+sceneform.asset('data/DoublePatty.fbx',
         'default',
-        'sampledata/DoublePatty.sfa',
+        'data/DoublePatty.sfa',
         'src/main/assets/DoublePatty')
 
-sceneform.asset('sampledata/Farmhouse.fbx',
+sceneform.asset('data/Farmhouse.fbx',
         'default',
-        'sampledata/Farmhouse.sfa',
+        'data/Farmhouse.sfa',
         'src/main/assets/Farmhouse')
 
-sceneform.asset('sampledata/IndieCT.fbx',
+sceneform.asset('data/IndieCT.fbx',
         'default',
-        'sampledata/IndieCT.sfa',
+        'data/IndieCT.sfa',
         'src/main/assets/IndieCT')
 
-sceneform.asset('sampledata/MushroomF.fbx',
+sceneform.asset('data/MushroomF.fbx',
         'default',
-        'sampledata/MushroomF.sfa',
+        'data/MushroomF.sfa',
         'src/main/assets/MushroomF')
 
-sceneform.asset('sampledata/PaneerBurger.fbx',
+sceneform.asset('data/PaneerBurger.fbx',
         'default',
-        'sampledata/PaneerBurger.sfa',
+        'data/PaneerBurger.sfa',
         'src/main/assets/PaneerBurger')
 
-sceneform.asset('sampledata/Pepperoni.fbx',
+sceneform.asset('data/Pepperoni.fbx',
         'default',
-        'sampledata/Pepperoni.sfa',
+        'data/Pepperoni.sfa',
         'src/main/assets/Pepperoni')
 
-sceneform.asset('sampledata/VeggieParadise.fbx',
+sceneform.asset('data/VeggieParadise.fbx',
         'default',
-        'sampledata/VeggieParadise.sfa',
+        'data/VeggieParadise.sfa',
         'src/main/assets/VeggieParadise')

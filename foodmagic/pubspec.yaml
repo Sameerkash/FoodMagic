@@ -47,7 +47,9 @@ dependencies:
   sliding_sheet: ^0.5.0
   timelines: ^0.1.0
   url_launcher: ^6.0.3
-  arcore_flutter_plugin: ^0.0.11
+  arcore_flutter_plugin: 
+    git: https://github.com/giandifra/arcore_flutter_plugin.git
+    
 
 dev_dependencies:
   flutter_test:
