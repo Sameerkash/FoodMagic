@@ -603,13 +603,15 @@ class _$OrderFoodItemTearOff {
           Map<String, dynamic> permissions = rules,
       required int quantity,
       required String foodItem,
-      required int subTotal}) {
+      required int subTotal,
+      required String imageUrl}) {
     return _OrderFoodItem(
       collectionId: collectionId,
       permissions: permissions,
       quantity: quantity,
       foodItem: foodItem,
       subTotal: subTotal,
+      imageUrl: imageUrl,
     );
   }
 
@@ -630,6 +632,7 @@ mixin _$OrderFoodItem {
   int get quantity => throw _privateConstructorUsedError;
   String get foodItem => throw _privateConstructorUsedError;
   int get subTotal => throw _privateConstructorUsedError;
+  String get imageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -647,7 +650,8 @@ abstract class $OrderFoodItemCopyWith<$Res> {
       @JsonKey(name: "\$permissions") Map<String, dynamic> permissions,
       int quantity,
       String foodItem,
-      int subTotal});
+      int subTotal,
+      String imageUrl});
 }
 
 /// @nodoc
@@ -666,6 +670,7 @@ class _$OrderFoodItemCopyWithImpl<$Res>
     Object? quantity = freezed,
     Object? foodItem = freezed,
     Object? subTotal = freezed,
+    Object? imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
       collectionId: collectionId == freezed
@@ -688,6 +693,10 @@ class _$OrderFoodItemCopyWithImpl<$Res>
           ? _value.subTotal
           : subTotal // ignore: cast_nullable_to_non_nullable
               as int,
+      imageUrl: imageUrl == freezed
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -704,7 +713,8 @@ abstract class _$OrderFoodItemCopyWith<$Res>
       @JsonKey(name: "\$permissions") Map<String, dynamic> permissions,
       int quantity,
       String foodItem,
-      int subTotal});
+      int subTotal,
+      String imageUrl});
 }
 
 /// @nodoc
@@ -725,6 +735,7 @@ class __$OrderFoodItemCopyWithImpl<$Res>
     Object? quantity = freezed,
     Object? foodItem = freezed,
     Object? subTotal = freezed,
+    Object? imageUrl = freezed,
   }) {
     return _then(_OrderFoodItem(
       collectionId: collectionId == freezed
@@ -747,6 +758,10 @@ class __$OrderFoodItemCopyWithImpl<$Res>
           ? _value.subTotal
           : subTotal // ignore: cast_nullable_to_non_nullable
               as int,
+      imageUrl: imageUrl == freezed
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -761,7 +776,8 @@ class _$_OrderFoodItem implements _OrderFoodItem {
           this.permissions = rules,
       required this.quantity,
       required this.foodItem,
-      required this.subTotal});
+      required this.subTotal,
+      required this.imageUrl});
 
   factory _$_OrderFoodItem.fromJson(Map<String, dynamic> json) =>
       _$_$_OrderFoodItemFromJson(json);
@@ -778,10 +794,12 @@ class _$_OrderFoodItem implements _OrderFoodItem {
   final String foodItem;
   @override
   final int subTotal;
+  @override
+  final String imageUrl;
 
   @override
   String toString() {
-    return 'OrderFoodItem(collectionId: $collectionId, permissions: $permissions, quantity: $quantity, foodItem: $foodItem, subTotal: $subTotal)';
+    return 'OrderFoodItem(collectionId: $collectionId, permissions: $permissions, quantity: $quantity, foodItem: $foodItem, subTotal: $subTotal, imageUrl: $imageUrl)';
   }
 
   @override
@@ -802,7 +820,10 @@ class _$_OrderFoodItem implements _OrderFoodItem {
                     .equals(other.foodItem, foodItem)) &&
             (identical(other.subTotal, subTotal) ||
                 const DeepCollectionEquality()
-                    .equals(other.subTotal, subTotal)));
+                    .equals(other.subTotal, subTotal)) &&
+            (identical(other.imageUrl, imageUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageUrl, imageUrl)));
   }
 
   @override
@@ -812,7 +833,8 @@ class _$_OrderFoodItem implements _OrderFoodItem {
       const DeepCollectionEquality().hash(permissions) ^
       const DeepCollectionEquality().hash(quantity) ^
       const DeepCollectionEquality().hash(foodItem) ^
-      const DeepCollectionEquality().hash(subTotal);
+      const DeepCollectionEquality().hash(subTotal) ^
+      const DeepCollectionEquality().hash(imageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -831,7 +853,8 @@ abstract class _OrderFoodItem implements OrderFoodItem {
       @JsonKey(name: "\$permissions") Map<String, dynamic> permissions,
       required int quantity,
       required String foodItem,
-      required int subTotal}) = _$_OrderFoodItem;
+      required int subTotal,
+      required String imageUrl}) = _$_OrderFoodItem;
 
   factory _OrderFoodItem.fromJson(Map<String, dynamic> json) =
       _$_OrderFoodItem.fromJson;
@@ -849,7 +872,154 @@ abstract class _OrderFoodItem implements OrderFoodItem {
   @override
   int get subTotal => throw _privateConstructorUsedError;
   @override
+  String get imageUrl => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   _$OrderFoodItemCopyWith<_OrderFoodItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+OrderDS _$OrderDSFromJson(Map<String, dynamic> json) {
+  return _OrderDS.fromJson(json);
+}
+
+/// @nodoc
+class _$OrderDSTearOff {
+  const _$OrderDSTearOff();
+
+  _OrderDS call({@JsonKey(name: 'documents') required List<Order> orders}) {
+    return _OrderDS(
+      orders: orders,
+    );
+  }
+
+  OrderDS fromJson(Map<String, Object> json) {
+    return OrderDS.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $OrderDS = _$OrderDSTearOff();
+
+/// @nodoc
+mixin _$OrderDS {
+  @JsonKey(name: 'documents')
+  List<Order> get orders => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OrderDSCopyWith<OrderDS> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OrderDSCopyWith<$Res> {
+  factory $OrderDSCopyWith(OrderDS value, $Res Function(OrderDS) then) =
+      _$OrderDSCopyWithImpl<$Res>;
+  $Res call({@JsonKey(name: 'documents') List<Order> orders});
+}
+
+/// @nodoc
+class _$OrderDSCopyWithImpl<$Res> implements $OrderDSCopyWith<$Res> {
+  _$OrderDSCopyWithImpl(this._value, this._then);
+
+  final OrderDS _value;
+  // ignore: unused_field
+  final $Res Function(OrderDS) _then;
+
+  @override
+  $Res call({
+    Object? orders = freezed,
+  }) {
+    return _then(_value.copyWith(
+      orders: orders == freezed
+          ? _value.orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<Order>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$OrderDSCopyWith<$Res> implements $OrderDSCopyWith<$Res> {
+  factory _$OrderDSCopyWith(_OrderDS value, $Res Function(_OrderDS) then) =
+      __$OrderDSCopyWithImpl<$Res>;
+  @override
+  $Res call({@JsonKey(name: 'documents') List<Order> orders});
+}
+
+/// @nodoc
+class __$OrderDSCopyWithImpl<$Res> extends _$OrderDSCopyWithImpl<$Res>
+    implements _$OrderDSCopyWith<$Res> {
+  __$OrderDSCopyWithImpl(_OrderDS _value, $Res Function(_OrderDS) _then)
+      : super(_value, (v) => _then(v as _OrderDS));
+
+  @override
+  _OrderDS get _value => super._value as _OrderDS;
+
+  @override
+  $Res call({
+    Object? orders = freezed,
+  }) {
+    return _then(_OrderDS(
+      orders: orders == freezed
+          ? _value.orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<Order>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_OrderDS implements _OrderDS {
+  const _$_OrderDS({@JsonKey(name: 'documents') required this.orders});
+
+  factory _$_OrderDS.fromJson(Map<String, dynamic> json) =>
+      _$_$_OrderDSFromJson(json);
+
+  @override
+  @JsonKey(name: 'documents')
+  final List<Order> orders;
+
+  @override
+  String toString() {
+    return 'OrderDS(orders: $orders)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _OrderDS &&
+            (identical(other.orders, orders) ||
+                const DeepCollectionEquality().equals(other.orders, orders)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(orders);
+
+  @JsonKey(ignore: true)
+  @override
+  _$OrderDSCopyWith<_OrderDS> get copyWith =>
+      __$OrderDSCopyWithImpl<_OrderDS>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_OrderDSToJson(this);
+  }
+}
+
+abstract class _OrderDS implements OrderDS {
+  const factory _OrderDS(
+      {@JsonKey(name: 'documents') required List<Order> orders}) = _$_OrderDS;
+
+  factory _OrderDS.fromJson(Map<String, dynamic> json) = _$_OrderDS.fromJson;
+
+  @override
+  @JsonKey(name: 'documents')
+  List<Order> get orders => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$OrderDSCopyWith<_OrderDS> get copyWith =>
       throw _privateConstructorUsedError;
 }

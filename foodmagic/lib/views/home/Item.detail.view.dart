@@ -6,7 +6,7 @@ import 'package:foodmagic/models/order/order.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../models/fooditem/food.item.dart';
-import '../../providers/auth.provider.dart';
+import '../../providers/providers.dart';
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';
 import '../../widgets/labels.dart';
@@ -76,7 +76,6 @@ class ItemDetailView extends HookWidget {
             },
             add: () {
               cart.addToCart(item);
-              print("called");
             },
           ),
           SizedBox(height: 0.05.sh),

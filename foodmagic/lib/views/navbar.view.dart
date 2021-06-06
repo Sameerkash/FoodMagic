@@ -33,7 +33,6 @@ class NavbarView extends HookWidget {
         itemCornerRadius: 24,
         curve: Curves.easeIn,
         onItemSelected: (index) {
-          print(currentIndex.value);
           currentIndex.value = index;
           pageController.animateToPage(index,
               duration: Duration(milliseconds: 500),

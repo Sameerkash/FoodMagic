@@ -5,14 +5,15 @@ import 'package:foodmagic/env.dart';
 part 'order.freezed.dart';
 part 'order.g.dart';
 
-
 toNull(_) => null;
+
 @freezed
 class Order with _$Order {
   const factory Order({
-    @JsonKey(name: '\$id',  toJson: toNull, includeIfNull: false)  String? orderId,
+    @JsonKey(name: '\$id', toJson: toNull, includeIfNull: false)
+        String? orderId,
     @Default('Received') String orderStatus,
- required List<OrderFoodItem> orderItem,
+    required List<OrderFoodItem> orderItem,
     required String userId,
     required int total,
     final int? discount,
@@ -40,7 +41,6 @@ class OrderItem with _$OrderItem {
       _$OrderItemFromJson(json);
 }
 
-
 @freezed
 class OrderFoodItem with _$OrderFoodItem {
   const factory OrderFoodItem({
@@ -53,8 +53,18 @@ class OrderFoodItem with _$OrderFoodItem {
     required int quantity,
     required String foodItem,
     required int subTotal,
+    required String imageUrl
   }) = _OrderFoodItem;
 
   factory OrderFoodItem.fromJson(Map<String, dynamic> json) =>
       _$OrderFoodItemFromJson(json);
+}
+
+@freezed
+class OrderDS with _$OrderDS {
+  const factory OrderDS(
+      {@JsonKey(name: 'documents') required List<Order> orders}) = _OrderDS;
+
+  factory OrderDS.fromJson(Map<String, dynamic> json) =>
+      _$OrderDSFromJson(json);
 }

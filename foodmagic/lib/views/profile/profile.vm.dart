@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../models/user/user.dart';
-import '../../providers/auth.provider.dart';
+import '../../providers/providers.dart';
 import '../../services/repository.dart';
 
 part 'profile.vm.freezed.dart';

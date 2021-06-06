@@ -47,9 +47,6 @@ class Repository {
   static const SESSIONKEY = 'sessionkey';
   static const CARTKEY = 'cartkey';
 
-
-
-
   final read = ['*'];
   final write = ['*'];
 
@@ -113,8 +110,6 @@ class Repository {
     try {
       final Response user =
           await account.create(email: email, password: password, name: name);
-      print(user.statusCode);
-      print("USER $USER_COLLECTION");
 
       if (user.statusCode == 201) {
         // final Response session =
@@ -125,8 +120,6 @@ class Repository {
             data: {'name': name, 'email': email},
             read: read,
             write: write);
-
-        print("USERCREATE : $res");
 
         await _store.record(USERKEY).put(await getDb(), res.data);
       }
@@ -141,7 +134,6 @@ class Repository {
       {required String password, required String email}) async {
     final Response session =
         await account.createSession(email: email, password: password);
-    print(session);
     if (session.statusCode == 201) {
       print(session.data);
     }
@@ -174,10 +166,7 @@ class Repository {
   Future<CartData?> getCart() async {
     try {
       CartData? cart;
-      // final user = await getCurrentUser();
       final result = await _store.record(CARTKEY).get(await getDb());
-      print(result);
-
       if (result != null) {
         cart = CartData.fromJson(result);
       }
@@ -193,20 +182,7 @@ class Repository {
 
   Future<void> addCartItem({required CartData cart}) async {
     try {
-
-//  final result = await database.createDocument(
-//           collectionId: ORDER_COLLECTION,
-//           data: cart.toJson(),
-//           read: read,
-//           write: write);
-
-//       print(result.data);
-
-      // final json = jsonEncode(cart.toJson());
-      final result =
-          await _store.record(CARTKEY).put(await getDb(), cart.toJson());
-
-      print("ADDCARTITEM $result");
+      await _store.record(CARTKEY).put(await getDb(), cart.toJson());
     } catch (e) {
       print(e);
     }
@@ -223,12 +199,7 @@ class Repository {
 
   Future<void> updateCartItem({required CartData cartData}) async {
     try {
-      final result =
       await _store.record(CARTKEY).put(await getDb(), cartData.toJson());
-
-      final json = jsonEncode(cartData.toJson());
-
-      print(result);
     } catch (e) {
       print(e);
     }
@@ -264,16 +235,26 @@ class Repository {
     }
   }
 
-  Future<Order?> getOrders() async {
+  Future<List<Order>> getOrders() async {
     final user = await getCurrentUser();
+
+    List<Order> orders = [];
     try {
       final result = await database.listDocuments(
           collectionId: ORDER_COLLECTION, filters: ['userId=${user.userId}']);
-      if (result.statusCode == 201) {
-        return Order.fromJson(result.data);
+
+      print(result.statusCode);
+
+      if (result.statusCode == 200) {
+        final o = OrderDS.fromJson(result.data);
+        print(o);
+        orders.addAll(o.orders);
+        return orders;
+      } else {
+        return [];
       }
     } catch (e) {
-      return null;
+      return [];
     }
   }
 }

@@ -65,6 +65,7 @@ _$_OrderFoodItem _$_$_OrderFoodItemFromJson(Map<String, dynamic> json) {
     quantity: json['quantity'] as int,
     foodItem: json['foodItem'] as String,
     subTotal: json['subTotal'] as int,
+    imageUrl: json['imageUrl'] as String,
   );
 }
 
@@ -75,4 +76,18 @@ Map<String, dynamic> _$_$_OrderFoodItemToJson(_$_OrderFoodItem instance) =>
       'quantity': instance.quantity,
       'foodItem': instance.foodItem,
       'subTotal': instance.subTotal,
+      'imageUrl': instance.imageUrl,
+    };
+
+_$_OrderDS _$_$_OrderDSFromJson(Map<String, dynamic> json) {
+  return _$_OrderDS(
+    orders: (json['documents'] as List<dynamic>)
+        .map((e) => Order.fromJson(e as Map<String, dynamic>))
+        .toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_OrderDSToJson(_$_OrderDS instance) =>
+    <String, dynamic>{
+      'documents': instance.orders.map((e) => e.toJson()).toList(),
     };

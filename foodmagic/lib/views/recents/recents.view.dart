@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodmagic/models/order/order.dart';
+import 'package:foodmagic/providers/providers.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../../utils/extensions.dart';
 
-class RecentsView extends StatelessWidget {
+class RecentsView extends HookWidget {
   /// Dummy data
   final List<OrderItems> orderItem = [
     OrderItems(
@@ -25,31 +30,46 @@ class RecentsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final recents = useProvider(recentsProvider);
+    final recentsNotifier = useProvider(recentsProvider.notifier);
     final style1 = context.bodyText1;
     return Scaffold(
       backgroundColor: Color(0xff0e273b),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Your Orders",
-                style: context.headline1!.copyWith(fontSize: 22),
-              ).padAll(15),
-              ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: 3,
-                itemBuilder: (_, index) => Orders(
-                  total: "\$100",
-                  orderDate: "2 Feb 2021",
-                  orderItems: orderItem,
-                  style1: style1,
-                ),
-              )
-            ],
+      body: recents.map(
+        loading: (_) => Center(
+          child: CircularProgressIndicator(),
+        ),
+        data: (o) => SafeArea(
+          child: SingleChildScrollView(
+            child: RefreshIndicator(
+              onRefresh: () {
+                return recentsNotifier.getOrder();
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Your Orders",
+                    style: context.headline1!.copyWith(fontSize: 22),
+                  ).padAll(15),
+                  ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: o.recentOrders.length,
+                    itemBuilder: (_, i) => Orders(
+                      total: "${o.recentOrders[i].total}",
+                      orderDate: "${o.recentOrders[i].time}",
+                      orderItems: o.recentOrders[i].orderItem,
+                      style1: style1,
+                    ),
+                  )
+                ],
+              ),
+            ),
           ),
+        ),
+        empty: (_) => Container(
+          child: Center(child: Text("Empty")),
         ),
       ),
     );
@@ -58,15 +78,15 @@ class RecentsView extends StatelessWidget {
 
 class Orders extends StatelessWidget {
   final String total;
-  final List<OrderItems> orderItems;
-  final String? orderDate;
+  final List<OrderFoodItem> orderItems;
+  final String orderDate;
 
   const Orders(
       {Key? key,
       required this.style1,
       required this.total,
       required this.orderItems,
-      this.orderDate})
+      required this.orderDate})
       : super(key: key);
 
   final TextStyle? style1;
@@ -106,16 +126,18 @@ class Orders extends StatelessWidget {
                       width: 50,
                       child: CircleAvatar(
                           radius: 5,
-                          backgroundImage: AssetImage(orderItems[i].imageUrl)),
+                          backgroundImage:
+                              NetworkImage(orderItems[i].imageUrl)),
                     ),
                     SizedBox(width: 0.03.sw),
-                    Text("${orderItems[i].quantity} x ${orderItems[i].name}",
-                        style: style1!.copyWith(
-                            color: Colors.black87, fontSize: 15)),
+                    Text(
+                        "${orderItems[i].quantity} x ${orderItems[i].foodItem}",
+                        style: style1!
+                            .copyWith(color: Colors.black87, fontSize: 15)),
                     Spacer(flex: 1),
-                    Text("${orderItems[i].price}",
-                        style: style1!.copyWith(
-                            color: Colors.black54, fontSize: 14)),
+                    Text("${orderItems[i].subTotal}",
+                        style: style1!
+                            .copyWith(color: Colors.black54, fontSize: 14)),
                     SizedBox(width: 0.025.sw),
                   ],
                 ),
@@ -126,15 +148,26 @@ class Orders extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "Ordered on",
                       style:
                           style1!.copyWith(color: Colors.black54, fontSize: 14),
                     ),
-                    Text("$orderDate",
-                        style: style1!.copyWith(
-                            color: Colors.black87, fontSize: 14)),
+                    Text(
+                        DateFormat('EEE, dd MMM yy').format(
+                            DateFormat('yyyy-MM-ddTHH:mm:ssZ')
+                                .parse(orderDate)),
+                        style: style1!
+                            .copyWith(color: Colors.black87, fontSize: 14)),
+                    Text(
+                        DateFormat('hh:mm a').format(
+                            DateFormat('yyyy-MM-ddTHH:mm:ssZ')
+                                .parse(orderDate)),
+                        style: style1!
+                            .copyWith(color: Colors.black87, fontSize: 12)),
                   ],
                 ),
                 TextButton.icon(

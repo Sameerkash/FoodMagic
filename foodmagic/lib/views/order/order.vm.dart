@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../models/order/order.dart';
-import '../../providers/auth.provider.dart';
+import '../../providers/providers.dart';
 import '../../services/repository.dart';
 
 part 'order.vm.freezed.dart';
@@ -24,7 +24,7 @@ class OrderVM extends StateNotifier<OrderState> {
   void getOrder() async {
     final res = await repo.getOrders();
     if (res != null ) {
-      state = OrderState.data(order: res);
+      // state = OrderState.data(order: res);
     } else {
       state = OrderState.empty();
     }

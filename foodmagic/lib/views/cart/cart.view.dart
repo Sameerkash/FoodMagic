@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/all.dart';
 
 import 'package:foodmagic/models/cartitem/cart.item.dart';
-import 'package:foodmagic/providers/auth.provider.dart';
+import 'package:foodmagic/providers/providers.dart';
 
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';

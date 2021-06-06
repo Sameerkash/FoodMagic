@@ -8,7 +8,7 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../models/fooditem/food.item.dart';
-import '../../providers/auth.provider.dart';
+import '../../providers/providers.dart';
 import '../../router/router.gr.dart';
 import '../../utils/extensions.dart';
 import '../../widgets/background.dart';

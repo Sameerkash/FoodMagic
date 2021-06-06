@@ -6,7 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../models/cartitem/cart.item.dart';
-import '../../providers/auth.provider.dart';
+import '../../providers/providers.dart';
 import '../../services/repository.dart';
 import '../../models/order/order.dart';
 part 'cart.vm.freezed.dart';
@@ -29,7 +29,6 @@ class CartVM extends StateNotifier<CartState> {
 
   void checkCart() async {
     final res = await repo.getCart();
-    print("checkCart $res");
     if (res == null) {
       state = CartState.empty();
     } else {
@@ -181,6 +180,7 @@ class CartVM extends StateNotifier<CartState> {
           foodItem: o.foodItem.name,
           quantity: o.quantity,
           subTotal: o.subTotal,
+          imageUrl:  o.foodItem.imageUrl!
         );
         orderFoodItems.add(of);
       }

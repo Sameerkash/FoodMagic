@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../models/user/user.dart';
-import '../../providers/auth.provider.dart';
+import '../../providers/providers.dart';
 import '../../services/repository.dart';
 
 part 'auth.vm.freezed.dart';
@@ -24,7 +24,6 @@ class AuthVM extends StateNotifier<AuthState> {
 
   Future<void> checkUserAuth() async {
     final res = await repo.getLoggedInUser();
-    print(res);
     if (res != null)
       state = AuthState.authenticated();
     else

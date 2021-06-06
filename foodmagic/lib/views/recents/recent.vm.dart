@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../models/order/order.dart';
-import '../../providers/auth.provider.dart';
+import '../../providers/providers.dart';
 import '../../services/repository.dart';
 
 part 'recent.vm.freezed.dart';
@@ -19,5 +19,16 @@ class RecentVM extends StateNotifier<RecentsState> {
 
   RecentVM(ProviderReference ref)
       : repo = ref.read(repoProvider),
-        super(RecentsState.loading());
+        super(RecentsState.loading()) {
+    getOrder();
+  }
+
+  Future<void> getOrder() async {
+    final res = await repo.getOrders();
+    if (res.isNotEmpty) {
+      state = RecentsState.data(recentOrders: res);
+    } else {
+      state = RecentsState.empty();
+    }
+  }
 }
