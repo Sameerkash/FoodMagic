@@ -22,20 +22,22 @@ class _$UserTearOff {
 
   _User call(
       {@JsonKey(name: '\$id') required String userId,
-      String? userName,
+      String? name,
       required String email,
       String? phone,
       String? address,
       String? imageUrl,
-      String? bio}) {
+      String? bio,
+      int wallet = 0}) {
     return _User(
       userId: userId,
-      userName: userName,
+      name: name,
       email: email,
       phone: phone,
       address: address,
       imageUrl: imageUrl,
       bio: bio,
+      wallet: wallet,
     );
   }
 
@@ -51,12 +53,13 @@ const $User = _$UserTearOff();
 mixin _$User {
   @JsonKey(name: '\$id')
   String get userId => throw _privateConstructorUsedError;
-  String? get userName => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
   String? get bio => throw _privateConstructorUsedError;
+  int get wallet => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -69,12 +72,13 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: '\$id') String userId,
-      String? userName,
+      String? name,
       String email,
       String? phone,
       String? address,
       String? imageUrl,
-      String? bio});
+      String? bio,
+      int wallet});
 }
 
 /// @nodoc
@@ -88,21 +92,22 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   @override
   $Res call({
     Object? userId = freezed,
-    Object? userName = freezed,
+    Object? name = freezed,
     Object? email = freezed,
     Object? phone = freezed,
     Object? address = freezed,
     Object? imageUrl = freezed,
     Object? bio = freezed,
+    Object? wallet = freezed,
   }) {
     return _then(_value.copyWith(
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      userName: userName == freezed
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
       email: email == freezed
           ? _value.email
@@ -124,6 +129,10 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
               as String?,
+      wallet: wallet == freezed
+          ? _value.wallet
+          : wallet // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -135,12 +144,13 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   $Res call(
       {@JsonKey(name: '\$id') String userId,
-      String? userName,
+      String? name,
       String email,
       String? phone,
       String? address,
       String? imageUrl,
-      String? bio});
+      String? bio,
+      int wallet});
 }
 
 /// @nodoc
@@ -155,21 +165,22 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   @override
   $Res call({
     Object? userId = freezed,
-    Object? userName = freezed,
+    Object? name = freezed,
     Object? email = freezed,
     Object? phone = freezed,
     Object? address = freezed,
     Object? imageUrl = freezed,
     Object? bio = freezed,
+    Object? wallet = freezed,
   }) {
     return _then(_User(
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      userName: userName == freezed
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
       email: email == freezed
           ? _value.email
@@ -191,6 +202,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
               as String?,
+      wallet: wallet == freezed
+          ? _value.wallet
+          : wallet // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -200,12 +215,13 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 class _$_User implements _User {
   const _$_User(
       {@JsonKey(name: '\$id') required this.userId,
-      this.userName,
+      this.name,
       required this.email,
       this.phone,
       this.address,
       this.imageUrl,
-      this.bio});
+      this.bio,
+      this.wallet = 0});
 
   factory _$_User.fromJson(Map<String, dynamic> json) =>
       _$_$_UserFromJson(json);
@@ -214,7 +230,7 @@ class _$_User implements _User {
   @JsonKey(name: '\$id')
   final String userId;
   @override
-  final String? userName;
+  final String? name;
   @override
   final String email;
   @override
@@ -225,10 +241,13 @@ class _$_User implements _User {
   final String? imageUrl;
   @override
   final String? bio;
+  @JsonKey(defaultValue: 0)
+  @override
+  final int wallet;
 
   @override
   String toString() {
-    return 'User(userId: $userId, userName: $userName, email: $email, phone: $phone, address: $address, imageUrl: $imageUrl, bio: $bio)';
+    return 'User(userId: $userId, name: $name, email: $email, phone: $phone, address: $address, imageUrl: $imageUrl, bio: $bio, wallet: $wallet)';
   }
 
   @override
@@ -237,9 +256,8 @@ class _$_User implements _User {
         (other is _User &&
             (identical(other.userId, userId) ||
                 const DeepCollectionEquality().equals(other.userId, userId)) &&
-            (identical(other.userName, userName) ||
-                const DeepCollectionEquality()
-                    .equals(other.userName, userName)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.email, email) ||
                 const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.phone, phone) ||
@@ -251,19 +269,22 @@ class _$_User implements _User {
                 const DeepCollectionEquality()
                     .equals(other.imageUrl, imageUrl)) &&
             (identical(other.bio, bio) ||
-                const DeepCollectionEquality().equals(other.bio, bio)));
+                const DeepCollectionEquality().equals(other.bio, bio)) &&
+            (identical(other.wallet, wallet) ||
+                const DeepCollectionEquality().equals(other.wallet, wallet)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(userId) ^
-      const DeepCollectionEquality().hash(userName) ^
+      const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(phone) ^
       const DeepCollectionEquality().hash(address) ^
       const DeepCollectionEquality().hash(imageUrl) ^
-      const DeepCollectionEquality().hash(bio);
+      const DeepCollectionEquality().hash(bio) ^
+      const DeepCollectionEquality().hash(wallet);
 
   @JsonKey(ignore: true)
   @override
@@ -279,12 +300,13 @@ class _$_User implements _User {
 abstract class _User implements User {
   const factory _User(
       {@JsonKey(name: '\$id') required String userId,
-      String? userName,
+      String? name,
       required String email,
       String? phone,
       String? address,
       String? imageUrl,
-      String? bio}) = _$_User;
+      String? bio,
+      int wallet}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -292,7 +314,7 @@ abstract class _User implements User {
   @JsonKey(name: '\$id')
   String get userId => throw _privateConstructorUsedError;
   @override
-  String? get userName => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @override
   String get email => throw _privateConstructorUsedError;
   @override
@@ -303,6 +325,8 @@ abstract class _User implements User {
   String? get imageUrl => throw _privateConstructorUsedError;
   @override
   String? get bio => throw _privateConstructorUsedError;
+  @override
+  int get wallet => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

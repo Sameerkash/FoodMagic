@@ -205,19 +205,68 @@ class Repository {
     }
   }
 
-  Future<void> updateProfile({required User user}) async {
+  Future<User?> getProfile() async {
     final user = await getCurrentUser();
 
+    try {
+      final result = await database.getDocument(
+          collectionId: USER_COLLECTION, documentId: user.userId);
+      print(result.data);
+      if (result.statusCode == 200) {
+        return User.fromJson(result.data);
+      }
+    } catch (e) {
+      print(e);
+      return null;
+    }
+  }
+
+  Future<User?> updateProfile({required User user}) async {
     try {
       final result = await database.updateDocument(
           collectionId: USER_COLLECTION,
           documentId: user.userId,
-          data: {},
+          data: user.toJson(),
           read: read,
           write: write);
       print(result.data);
-    } catch (e) {
-      print(e);
+      await _store.record(USERKEY).put(await getDb(), result.data);
+      return User.fromJson(result.data);
+    } on AppwriteException catch (e) {
+      print(e.message);
+
+      return null;
+    }
+  }
+
+  Future<User?> updateImageUrl(
+      {required User user, required String path}) async {
+    try {
+      final file = await MultipartFile.fromFile(path);
+
+      final res =
+          await storage.createFile(file: file, read: read, write: write);
+
+      final id = res.data["\$id"];
+      final imageUrl =
+          "http://$IP/v1/storage/files/$id/view?project=$PROJECT_ID";
+
+      final u = user.copyWith(imageUrl: imageUrl);
+
+      print(u);
+      final result = await database.updateDocument(
+          collectionId: USER_COLLECTION,
+          documentId: user.userId,
+          data: u.toJson(),
+          read: read,
+          write: write);
+      print(result.data);
+
+      return User.fromJson(result.data);
+    } on AppwriteException catch (e) {
+      print(e.message);
+
+      return null;
     }
   }
 

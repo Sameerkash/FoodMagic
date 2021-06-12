@@ -1,5 +1,6 @@
 import 'package:foodmagic/views/cart/cart.vm.dart';
 import 'package:foodmagic/views/order/order.vm.dart';
+import 'package:foodmagic/views/profile/profile.vm.dart';
 import 'package:foodmagic/views/recents/recent.vm.dart';
 
 import '../views/home/home.vm.dart';
@@ -28,4 +29,8 @@ final ordersProvider = StateNotifierProvider<OrderVM, OrderState>((ref) {
 
 final recentsProvider = StateNotifierProvider<RecentVM, RecentsState>((ref) {
   return RecentVM(ref);
+});
+
+final profileProvider = StateNotifierProvider<ProfileVM, ProfileState>((ref) {
+  return ProfileVM(ref);
 });

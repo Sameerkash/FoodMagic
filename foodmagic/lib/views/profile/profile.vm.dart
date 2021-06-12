@@ -19,11 +19,35 @@ class ProfileVM extends StateNotifier<ProfileState> {
 
   ProfileVM(ProviderReference ref)
       : repo = ref.read(repoProvider),
-        super(ProfileState.loading());
+        super(ProfileState.loading()) {
+    getUserProfile();
+  }
 
   void getUserProfile() async {
+    final res = await repo.getProfile();
 
+    if (res != null) {
+      state = ProfileState.data(user: res);
+    } else {
+      state = ProfileState.error();
+    }
+  }
 
+  void updateProfile(Map<String, dynamic> form) async {
+    print(form);
+    User user = User.fromJson(form);
+    final res = await repo.updateProfile(user: user);
+    if (res != null) state = ProfileState.data(user: res);
+  }
 
+  void updateImage(String path) async {
+    final current = state;
+    if (current is _Data) {
+      final u = current.user;
+
+      final res = await repo.updateImageUrl(user: u, path: path);
+
+      if (res != null) state = ProfileState.data(user: res);
+    }
   }
 }

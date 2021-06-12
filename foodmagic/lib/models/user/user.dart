@@ -10,12 +10,13 @@ part 'user.g.dart';
 class User with _$User {
   const factory User({
     @JsonKey(name: '\$id') required String userId,
-    final String? userName,
+    final String? name,
     required String email,
     final String? phone,
     final String? address,
     final String? imageUrl,
     final String? bio,
+    @Default(0) final int wallet,
   }) = _User;
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
