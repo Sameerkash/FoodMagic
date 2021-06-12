@@ -21,6 +21,7 @@ class FoodItem with _$FoodItem {
     final int? discount,
     final String? imageUrl,
     final String? description,
+    final String? arModelUrl,
 
     @Default(false) final bool isEgg,
     @Default(true) final bool isVeg,

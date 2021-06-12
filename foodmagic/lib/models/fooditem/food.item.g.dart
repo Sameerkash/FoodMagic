@@ -21,6 +21,7 @@ _$_FoodItem _$_$_FoodItemFromJson(Map<String, dynamic> json) {
     discount: json['discount'] as int?,
     imageUrl: json['imageUrl'] as String?,
     description: json['description'] as String?,
+    arModelUrl: json['arModelUrl'] as String?,
     isEgg: json['isEgg'] as bool? ?? false,
     isVeg: json['isVeg'] as bool? ?? true,
   );
@@ -47,6 +48,7 @@ Map<String, dynamic> _$_$_FoodItemToJson(_$_FoodItem instance) {
   writeNotNull('discount', instance.discount);
   writeNotNull('imageUrl', instance.imageUrl);
   writeNotNull('description', instance.description);
+  writeNotNull('arModelUrl', instance.arModelUrl);
   val['isEgg'] = instance.isEgg;
   val['isVeg'] = instance.isVeg;
   return val;

@@ -2,24 +2,28 @@
 
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/material.dart';
-import 'package:vector_math/vector_math_64.dart' as vector;
 
-class AssetsObject extends StatefulWidget {
+import 'package:foodmagic/models/fooditem/food.item.dart';
+
+class ArView extends StatefulWidget {
+  final FoodItem item;
+  const ArView({
+    Key key,
+    this.item,
+  }) : super(key: key);
   @override
-  _AssetsObjectState createState() => _AssetsObjectState();
+  _ArViewState createState() => _ArViewState();
 }
 
-class _AssetsObjectState extends State<AssetsObject> {
+class _ArViewState extends State<ArView> {
   ArCoreController arCoreController;
-
-  String objectSelected;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('View in AR'),
+          title: Text(widget.item.name),
         ),
         body: Stack(
           children: <Widget>[
@@ -27,7 +31,6 @@ class _AssetsObjectState extends State<AssetsObject> {
               onArCoreViewCreated: _onArCoreViewCreated,
               enableTapRecognizer: true,
             ),
-            
           ],
         ),
       ),
@@ -36,53 +39,22 @@ class _AssetsObjectState extends State<AssetsObject> {
 
   void _onArCoreViewCreated(ArCoreController controller) {
     arCoreController = controller;
-    arCoreController.onNodeTap = (name) => onTapHandler(name);
     arCoreController.onPlaneTap = _handleOnPlaneTap;
   }
 
-  void _addToucano(ArCoreHitTestResult plane) {
-    if (objectSelected != null) {
-      final toucanoNode = ArCoreReferenceNode(
-          name: objectSelected,
-          object3DFileName: objectSelected,
-          position: plane.pose.translation,
-          rotation: plane.pose.rotation);
+  void _addItem(ArCoreHitTestResult plane) {
+    final toucanoNode = ArCoreReferenceNode(
+        name: widget.item.arModelUrl,
+        object3DFileName: widget.item.arModelUrl,
+        position: plane.pose.translation,
+        rotation: plane.pose.rotation);
 
-      arCoreController.addArCoreNodeWithAnchor(toucanoNode);
-    } else {
-      showDialog<void>(
-        context: context,
-        builder: (BuildContext context) =>
-            AlertDialog(content: Text('Select an object!')),
-      );
-    }
+    arCoreController.addArCoreNodeWithAnchor(toucanoNode);
   }
 
   void _handleOnPlaneTap(List<ArCoreHitTestResult> hits) {
     final hit = hits.first;
-    _addToucano(hit);
-  }
-
-  void onTapHandler(String name) {
-    print("Flutter: onNodeTap");
-    showDialog<void>(
-      context: context,
-      builder: (BuildContext context) => AlertDialog(
-        content: Row(
-          children: <Widget>[
-            Text('Remove $name?'),
-            IconButton(
-                icon: Icon(
-                  Icons.delete,
-                ),
-                onPressed: () {
-                  arCoreController.removeNode(nodeName: name);
-                  Navigator.pop(context);
-                })
-          ],
-        ),
-      ),
-    );
+    _addItem(hit);
   }
 
   @override
@@ -91,4 +63,3 @@ class _AssetsObjectState extends State<AssetsObject> {
     super.dispose();
   }
 }
-

@@ -1,8 +1,12 @@
+import 'dart:math';
+
+import 'package:animations/animations.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodmagic/models/order/order.dart';
+import 'package:foodmagic/views/ar/ar.view.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../models/fooditem/food.item.dart';
@@ -56,9 +60,16 @@ class ItemDetailView extends HookWidget {
           if (item.isVeg) VegLabel(),
           if (item.isEgg) EggLabel(),
           if (!item.isVeg) NonVegLabel(),
-          InkWell(
-              onTap: () {},
-              child: Container(child: Image.asset('3D'.png, height: 30))),
+          OpenContainer(
+            closedShape: BeveledRectangleBorder(),
+            transitionDuration: const Duration(milliseconds: 400),
+            closedBuilder: (context, action) {
+              return Container(child: Image.asset('3D'.png, height: 30));
+            },
+            openBuilder: (context, action) {
+              return ArView(item: item);
+            },
+          ),
           SizedBox(height: 0.02.sh),
           InfoCard(
             size: size,
@@ -66,7 +77,6 @@ class ItemDetailView extends HookWidget {
             style: item.style!,
             type: item.type!,
             description: item.description!,
-
           ),
           SizedBox(height: 0.05.sh),
           ActionButtons(

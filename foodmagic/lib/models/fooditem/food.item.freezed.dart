@@ -33,6 +33,7 @@ class _$FoodItemTearOff {
       int? discount,
       String? imageUrl,
       String? description,
+      String? arModelUrl,
       bool isEgg = false,
       bool isVeg = true}) {
     return _FoodItem(
@@ -47,6 +48,7 @@ class _$FoodItemTearOff {
       discount: discount,
       imageUrl: imageUrl,
       description: description,
+      arModelUrl: arModelUrl,
       isEgg: isEgg,
       isVeg: isVeg,
     );
@@ -74,6 +76,7 @@ mixin _$FoodItem {
   int? get discount => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
+  String? get arModelUrl => throw _privateConstructorUsedError;
   bool get isEgg => throw _privateConstructorUsedError;
   bool get isVeg => throw _privateConstructorUsedError;
 
@@ -99,6 +102,7 @@ abstract class $FoodItemCopyWith<$Res> {
       int? discount,
       String? imageUrl,
       String? description,
+      String? arModelUrl,
       bool isEgg,
       bool isVeg});
 }
@@ -124,6 +128,7 @@ class _$FoodItemCopyWithImpl<$Res> implements $FoodItemCopyWith<$Res> {
     Object? discount = freezed,
     Object? imageUrl = freezed,
     Object? description = freezed,
+    Object? arModelUrl = freezed,
     Object? isEgg = freezed,
     Object? isVeg = freezed,
   }) {
@@ -172,6 +177,10 @@ class _$FoodItemCopyWithImpl<$Res> implements $FoodItemCopyWith<$Res> {
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      arModelUrl: arModelUrl == freezed
+          ? _value.arModelUrl
+          : arModelUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       isEgg: isEgg == freezed
           ? _value.isEgg
           : isEgg // ignore: cast_nullable_to_non_nullable
@@ -201,6 +210,7 @@ abstract class _$FoodItemCopyWith<$Res> implements $FoodItemCopyWith<$Res> {
       int? discount,
       String? imageUrl,
       String? description,
+      String? arModelUrl,
       bool isEgg,
       bool isVeg});
 }
@@ -227,6 +237,7 @@ class __$FoodItemCopyWithImpl<$Res> extends _$FoodItemCopyWithImpl<$Res>
     Object? discount = freezed,
     Object? imageUrl = freezed,
     Object? description = freezed,
+    Object? arModelUrl = freezed,
     Object? isEgg = freezed,
     Object? isVeg = freezed,
   }) {
@@ -275,6 +286,10 @@ class __$FoodItemCopyWithImpl<$Res> extends _$FoodItemCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      arModelUrl: arModelUrl == freezed
+          ? _value.arModelUrl
+          : arModelUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       isEgg: isEgg == freezed
           ? _value.isEgg
           : isEgg // ignore: cast_nullable_to_non_nullable
@@ -303,6 +318,7 @@ class _$_FoodItem implements _FoodItem {
       this.discount,
       this.imageUrl,
       this.description,
+      this.arModelUrl,
       this.isEgg = false,
       this.isVeg = true});
 
@@ -332,6 +348,8 @@ class _$_FoodItem implements _FoodItem {
   final String? imageUrl;
   @override
   final String? description;
+  @override
+  final String? arModelUrl;
   @JsonKey(defaultValue: false)
   @override
   final bool isEgg;
@@ -341,7 +359,7 @@ class _$_FoodItem implements _FoodItem {
 
   @override
   String toString() {
-    return 'FoodItem(itemId: $itemId, category: $category, name: $name, ingredients: $ingredients, price: $price, tags: $tags, type: $type, style: $style, discount: $discount, imageUrl: $imageUrl, description: $description, isEgg: $isEgg, isVeg: $isVeg)';
+    return 'FoodItem(itemId: $itemId, category: $category, name: $name, ingredients: $ingredients, price: $price, tags: $tags, type: $type, style: $style, discount: $discount, imageUrl: $imageUrl, description: $description, arModelUrl: $arModelUrl, isEgg: $isEgg, isVeg: $isVeg)';
   }
 
   @override
@@ -375,6 +393,9 @@ class _$_FoodItem implements _FoodItem {
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
+            (identical(other.arModelUrl, arModelUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.arModelUrl, arModelUrl)) &&
             (identical(other.isEgg, isEgg) ||
                 const DeepCollectionEquality().equals(other.isEgg, isEgg)) &&
             (identical(other.isVeg, isVeg) ||
@@ -395,6 +416,7 @@ class _$_FoodItem implements _FoodItem {
       const DeepCollectionEquality().hash(discount) ^
       const DeepCollectionEquality().hash(imageUrl) ^
       const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(arModelUrl) ^
       const DeepCollectionEquality().hash(isEgg) ^
       const DeepCollectionEquality().hash(isVeg);
 
@@ -423,6 +445,7 @@ abstract class _FoodItem implements FoodItem {
       int? discount,
       String? imageUrl,
       String? description,
+      String? arModelUrl,
       bool isEgg,
       bool isVeg}) = _$_FoodItem;
 
@@ -451,6 +474,8 @@ abstract class _FoodItem implements FoodItem {
   String? get imageUrl => throw _privateConstructorUsedError;
   @override
   String? get description => throw _privateConstructorUsedError;
+  @override
+  String? get arModelUrl => throw _privateConstructorUsedError;
   @override
   bool get isEgg => throw _privateConstructorUsedError;
   @override
