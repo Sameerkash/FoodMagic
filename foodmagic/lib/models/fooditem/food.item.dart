@@ -20,6 +20,8 @@ class FoodItem with _$FoodItem {
     final String? style,
     final int? discount,
     final String? imageUrl,
+    final String? description,
+
     @Default(false) final bool isEgg,
     @Default(true) final bool isVeg,
   }) = _FoodItem;

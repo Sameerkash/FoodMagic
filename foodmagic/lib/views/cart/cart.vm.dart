@@ -169,7 +169,7 @@ class CartVM extends StateNotifier<CartState> {
 
   void orderNow() async {
     final user = await repo.getCurrentUser();
-
+    print(user);
     final current = state;
 
     if (current is _Data) {
@@ -177,11 +177,10 @@ class CartVM extends StateNotifier<CartState> {
 
       for (OrderItem o in current.cart.cartitems) {
         OrderFoodItem of = OrderFoodItem(
-          foodItem: o.foodItem.name,
-          quantity: o.quantity,
-          subTotal: o.subTotal,
-          imageUrl:  o.foodItem.imageUrl!
-        );
+            foodItem: o.foodItem.name,
+            quantity: o.quantity,
+            subTotal: o.subTotal,
+            imageUrl: o.foodItem.imageUrl!);
         orderFoodItems.add(of);
       }
 
@@ -193,6 +192,8 @@ class CartVM extends StateNotifier<CartState> {
         time: DateTime.now().toIso8601String(),
       );
 
+      state = CartState.empty();
+      await repo.deleteCartItem();
       await repo.placeOrder(order: order);
     }
   }

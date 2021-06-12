@@ -199,7 +199,7 @@ class Repository {
     }
   }
 
-  Future<void> deleteCartItem({required CartData cartData}) async {
+  Future<void> deleteCartItem() async {
     try {
       final result = await _store.record(CARTKEY).delete(await getDb());
       print(result);

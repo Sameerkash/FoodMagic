@@ -85,7 +85,7 @@ class HomeView extends HookWidget {
         ),
         body: CustomBackground(
           child: home.map(
-            loading: (_) => Center(child: CircularProgressIndicator()),
+            loading: (_) => Center(child: LinearProgressIndicator()),
             data: (data) => MenuItems(
               getFileView: h.repo.getImage,
               popularToday: data.popularToday,

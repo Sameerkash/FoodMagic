@@ -65,6 +65,8 @@ class ItemDetailView extends HookWidget {
             title: item.name,
             style: item.style!,
             type: item.type!,
+            description: item.description!,
+
           ),
           SizedBox(height: 0.05.sh),
           ActionButtons(
@@ -143,13 +145,13 @@ class InfoCard extends StatelessWidget {
             "$type . $style",
             style: context.subtitle2!.copyWith(
                 fontWeight: FontWeight.bold, color: context.primaryColor),
-          ).padSym(15, 0),
-          SizedBox(height: 0.025.sh),
+          ).padSym(10, 0),
+          SizedBox(height: 0.008.sh),
           Text(
-            'Flattened disk of bread dough topped with some combination of olive oil, oregano, tomato, olives, mozzarella or other cheese.',
+            description!,
             style: context.bodyText1,
-            textAlign: TextAlign.left,
-          ).padSym(0, 0.12.sw),
+            textAlign: TextAlign.center,
+          ).padSym(0, 0.06.sw),
         ],
       ),
     );

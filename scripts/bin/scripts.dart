@@ -166,8 +166,8 @@ const orderRules = [
   },
   {
     "type": "text",
-    "key": "user",
-    "label": "user",
+    "key": "userId",
+    "label": "userId",
     "default": "",
     "array": false,
     "required": true,
@@ -330,7 +330,15 @@ const orderItemRules = [
     "key": "foodItem",
     "label": "foodItem",
     "default": "",
-    "array": true,
+    "array": false,
+    "required": false,
+  },
+  {
+    "type": "text",
+    "key": "imageUrl",
+    "label": "imageUrl",
+    "default": "",
+    "array": false,
     "required": false,
   },
 ];
