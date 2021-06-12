@@ -37,6 +37,14 @@ class _ProfileViewState extends State<ProfileView> {
           style: TextStyle(
               fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout).padR(15.0),
+            onPressed: () {
+              context.read(authProvider.notifier).logout();
+            },
+          )
+        ],
       ),
       body: SafeArea(
         child: CustomBackground(
@@ -64,7 +72,7 @@ class _ProfileViewState extends State<ProfileView> {
                                 if (pickedFile != null)
                                   profileNotifier.updateImage(pickedFile.path);
                               },
-                              child: data.user.imageUrl != null
+                              child: data.user.imageUrl != null && data.user.imageUrl!.isNotEmpty
                                   ? CachedNetworkImage(
                                       imageUrl: data.user.imageUrl!,
                                       progressIndicatorBuilder: (_, ___, __) =>

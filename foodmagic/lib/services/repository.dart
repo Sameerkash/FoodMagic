@@ -81,8 +81,8 @@ class Repository {
         return result.data;
       } else
         return null;
-    } catch (e) {
-      print(e);
+    } on AppwriteException catch (e) {
+      print(e.message);
       return null;
     }
   }
@@ -134,6 +134,15 @@ class Repository {
       {required String password, required String email}) async {
     final Response session =
         await account.createSession(email: email, password: password);
+
+    final result = await database.listDocuments(
+        collectionId: USER_COLLECTION, filters: ['email=${email}']);
+
+    print(result.data);
+    await _store
+        .record(USERKEY)
+        .put(await getDb(), result.data['documents'][0]);
+
     if (session.statusCode == 201) {
       print(session.data);
     }
@@ -142,6 +151,8 @@ class Repository {
   Future signOut() async {
     try {
       await account.deleteSession(sessionId: 'current');
+      _store.record(USERKEY).delete(await getDb());
+      
     } catch (e) {}
   }
 

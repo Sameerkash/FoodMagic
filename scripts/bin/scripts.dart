@@ -6,8 +6,8 @@ import 'package:dart_appwrite/dart_appwrite.dart';
 /// Be Sure to set environemnt varibales before running this scirpt
 const IP = '192.168.29.223';
 const ENDPOINT = 'https://localhost';
-const PROJECT_ID = '608adfe8f0dc4';
-const API_KEY = '1f4dcdc82e64a32d15e5f81479aed759dd115f851bf008d3da432597d0a89c6aae407fd42d177a985a63bf00754acc863c49d8f22e29caba93725557388dcd4741014d175c9253beb750984ad8571e1da83ce8e9f5a80016ddb56ad8a57f50273979652b00094a62546282de1809aa37b1ac96d3c9bc94d824fe0d5f2c47a72a';
+const PROJECT_ID = '60c4d90c2130d';
+const API_KEY = 'd4dba4c257527f3c041b3e55bf453bd5be7161505e8d014015491c251c3a89f244c174a5ea6a176310d0771b2fffa7bd2eab71df6537315f72c2d1b0c36c26c2830df32e4d2f9c9a1f67dc87d58e92b6bf5c1f13e30b70de947e6e6b8a73e1a742c598fc349b59390ac7b410f3a50710b80f626476b5683a093e3f9dc627b422';
 
 /// Run script only once to avoid duplicate data, delete first if already exisiting
 void main() {
@@ -209,8 +209,8 @@ const orderRules = [
 const userRules = [
   {
     "type": "text",
-    "key": "userName",
-    "label": "userName",
+    "key": "name",
+    "label": "name",
     "default": "",
     "array": false,
     "required": true,
@@ -224,7 +224,15 @@ const userRules = [
     "required": true,
   },
   {
-    "type": "numeric",
+    "type": "text",
+    "key": "wallet",
+    "label": "wallet",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "text",
     "key": "phone",
     "label": "phone",
     "default": "",
@@ -397,6 +405,14 @@ const foodRules = [
     "type": "text",
     "key": "type",
     "label": "type",
+    "default": "",
+    "array": false,
+    "required": true,
+  },
+  {
+    "type": "text",
+    "key": "description",
+    "label": "description",
     "default": "",
     "array": false,
     "required": true,

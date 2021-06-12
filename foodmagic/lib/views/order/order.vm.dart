@@ -23,8 +23,8 @@ class OrderVM extends StateNotifier<OrderState> {
 
   void getOrder() async {
     final res = await repo.getOrders();
-    if (res != null ) {
-      // state = OrderState.data(order: res);
+    if (res.isEmpty) {
+      // state = Orde rState.data(order: res);
     } else {
       state = OrderState.empty();
     }
