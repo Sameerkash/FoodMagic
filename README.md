@@ -17,20 +17,19 @@ FoodMagic is an unique take on food delivery using augmented reailty and stunnin
 - [ ] Review and Rating Service
 - [ ] Delivery tracking using Maps
 
-<p>
-<img  src="./images/1.gif"/>
-<img  src="./images/2.gif"/>
-<img  src="./images/3.gif"/>
-<img  src="./images/4.gif"/>
-<img  src="./images/5.gif"/>
-</p>
+<pre>
+<img  src="./images/1.gif" width="300" height="600"/>
+<img  src="./images/2.gif" width="300" height="600"/>
+<img  src="./images/3.gif" width="300" height="600"/>
+<img  src="./images/4.gif" width="300" height="600"/>
+<img  src="./images/5.gif" width="300" height="600"/>
+</pre>
 
 **Tech Stack**
 
 ![FlutterAppwrite](./images/fa.jpeg)
 
 **Flutter**
-
 
 - Riverpod and Flutter Hooks to manage state of the app.
 - Auto Route for navigation.
