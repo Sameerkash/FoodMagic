@@ -1,3 +1,4 @@
+// @dart=2.9
 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart' hide Router;

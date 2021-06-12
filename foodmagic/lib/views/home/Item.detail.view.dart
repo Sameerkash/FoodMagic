@@ -67,7 +67,9 @@ class ItemDetailView extends HookWidget {
               return Container(child: Image.asset('3D'.png, height: 30));
             },
             openBuilder: (context, action) {
-              return ArView(item: item);
+              return 
+              // Container();
+              ArView(item: item);
             },
           ),
           SizedBox(height: 0.02.sh),

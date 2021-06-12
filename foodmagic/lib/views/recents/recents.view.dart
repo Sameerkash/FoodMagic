@@ -10,23 +10,6 @@ import '../../utils/extensions.dart';
 
 class RecentsView extends HookWidget {
   /// Dummy data
-  final List<OrderItems> orderItem = [
-    OrderItems(
-        imageUrl: "assets/p1.jpeg",
-        quantity: "2",
-        name: "Pizza Margherita",
-        price: "\$30"),
-    OrderItems(
-        imageUrl: "assets/burger.png",
-        quantity: "1",
-        name: "McVeggie",
-        price: "\$30"),
-    OrderItems(
-        imageUrl: "assets/taco.png",
-        quantity: "2",
-        name: "Taco Burrito",
-        price: "\$40")
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +23,12 @@ class RecentsView extends HookWidget {
           child: CircularProgressIndicator(),
         ),
         data: (o) => SafeArea(
-          child: SingleChildScrollView(
-            child: RefreshIndicator(
-              onRefresh: () {
-                return recentsNotifier.getOrder();
-              },
+          child: RefreshIndicator(
+            onRefresh: () {
+              return recentsNotifier.getOrder();
+            },
+            child: SingleChildScrollView(
+              physics: AlwaysScrollableScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
