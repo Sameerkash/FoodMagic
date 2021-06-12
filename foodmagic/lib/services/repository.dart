@@ -301,7 +301,7 @@ class Repository {
     List<Order> orders = [];
     try {
       final result = await database.listDocuments(
-          collectionId: ORDER_COLLECTION, filters: ['userId=${user.userId}']);
+          collectionId: ORDER_COLLECTION, filters: ['userId=${user.userId}'], orderType: OrderType.desc);
 
       print(result.statusCode);
 

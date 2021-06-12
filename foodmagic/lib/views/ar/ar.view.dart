@@ -27,14 +27,7 @@ class _AssetsObjectState extends State<AssetsObject> {
               onArCoreViewCreated: _onArCoreViewCreated,
               enableTapRecognizer: true,
             ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: ListObjectSelection(
-                onTap: (value) {
-                  objectSelected = value;
-                },
-              ),
-            ),
+            
           ],
         ),
       ),
@@ -49,7 +42,6 @@ class _AssetsObjectState extends State<AssetsObject> {
 
   void _addToucano(ArCoreHitTestResult plane) {
     if (objectSelected != null) {
-      //"https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF/Duck.gltf"
       final toucanoNode = ArCoreReferenceNode(
           name: objectSelected,
           object3DFileName: objectSelected,
@@ -100,70 +92,3 @@ class _AssetsObjectState extends State<AssetsObject> {
   }
 }
 
-class ListObjectSelection extends StatefulWidget {
-  final Function onTap;
-
-  ListObjectSelection({this.onTap});
-
-  @override
-  _ListObjectSelectionState createState() => _ListObjectSelectionState();
-}
-
-class _ListObjectSelectionState extends State<ListObjectSelection> {
-  List<String> gifs = [
-    // 'assets/TocoToucan.gif',
-    // 'assets/AndroidRobot.gif',
-    'assets/BurgerCompletePlain.gif',
-    // 'assets/ChocolateDonut.gif',
-    'assets/PizzaOne.gif',
-  ];
-
-  List<String> objectsFileName = [
-    // 'toucan.sfb',
-    // 'andy.sfb',
-    'BurgerCompletePlain.sfb',
-    'PizzaOne.sfb',
-  ];
-
-  String selected;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 150.0,
-      child: ListView.builder(
-        itemCount: gifs.length,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              setState(() {
-                selected = gifs[index];
-                widget.onTap(objectsFileName[index]);
-              });
-            },
-            child: Card(
-              elevation: 4.0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10),
-                ),
-              ),
-              child: Container(
-                color:
-                    selected == gifs[index] ? Colors.red : Colors.transparent,
-                padding: selected == gifs[index] ? EdgeInsets.all(8.0) : null,
-                child: Image.asset(gifs[index]),
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}

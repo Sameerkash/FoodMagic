@@ -19,12 +19,19 @@ class OrderVM extends StateNotifier<OrderState> {
 
   OrderVM(ProviderReference ref)
       : repo = ref.read(repoProvider),
-        super(OrderState.loading());
+        super(OrderState.loading()) {
+    getOrder();
+  }
 
-  void getOrder() async {
+  Future<void> getOrder() async {
     final res = await repo.getOrders();
-    if (res.isEmpty) {
-      // state = Orde rState.data(order: res);
+    final order = res[0];
+
+    final time = DateTime.now();
+    final o = time.difference(DateTime.parse(order.time!)).inMinutes <= 5;
+
+    if (res.isNotEmpty && o) {
+      state = OrderState.data(order: res[0]);
     } else {
       state = OrderState.empty();
     }

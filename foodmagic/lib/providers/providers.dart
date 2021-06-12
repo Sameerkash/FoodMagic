@@ -34,3 +34,5 @@ final recentsProvider = StateNotifierProvider<RecentVM, RecentsState>((ref) {
 final profileProvider = StateNotifierProvider<ProfileVM, ProfileState>((ref) {
   return ProfileVM(ref);
 });
+
+

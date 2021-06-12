@@ -24,6 +24,7 @@ class CustomBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     if (isScrollable)
       return SingleChildScrollView(
+          physics: AlwaysScrollableScrollPhysics(),
           child: Child(
               child: child,
               children: children,

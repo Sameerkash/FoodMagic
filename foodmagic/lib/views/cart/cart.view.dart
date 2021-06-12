@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,6 +18,8 @@ class CartView extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final cart = useProvider(cartProvider);
+    final order = useProvider(ordersProvider
+        .select((value) => value.maybeWhen(orElse: () => 0, data: (_) => 1)));
 
     return Scaffold(
       appBar: AppBar(
@@ -37,7 +40,17 @@ class CartView extends HookWidget {
             onPressed: () {
               context.router.pushNamed('/order-view');
             },
-            icon: Icon(Icons.shopping_bag).padR(20.0),
+            icon: Badge(
+                    badgeColor: Colors.white,
+                    badgeContent: Text(
+                      '$order',
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff0e273b)),
+                    ),
+                    child: Icon(Icons.shopping_bag))
+                .padR(0.3.sw),
           )
         ],
       ),
@@ -66,6 +79,7 @@ class CartContent extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final c = useProvider(cartProvider.notifier);
+    final oS = useProvider(ordersProvider.notifier);
 
     return Card(
       child: Column(
@@ -106,6 +120,7 @@ class CartContent extends HookWidget {
             text: "ORDER NOW",
             onPressed: () {
               c.orderNow();
+              oS.getOrder();
             },
           ),
           SizedBox(
