@@ -18,11 +18,7 @@ FoodMagic is an unique take on food delivery using augmented reailty and stunnin
 - [ ] Delivery tracking using Maps
 
 <pre>
-<img  src="./images/1.gif" width="300" height="600"/>
-<img  src="./images/2.gif" width="300" height="600"/>
-<img  src="./images/3.gif" width="300" height="600"/>
-<img  src="./images/4.gif" width="300" height="600"/>
-<img  src="./images/5.gif" width="300" height="600"/>
+<img  src="./images/1.gif" width="300" height="600"/> <img  src="./images/2.gif" width="300" height="600"/> <img  src="./images/3.gif" width="300" height="600"/> <img  src="./images/4.gif" width="300" height="600"/> <img  src="./images/5.gif" width="300" height="600"/>
 </pre>
 
 **Tech Stack**
