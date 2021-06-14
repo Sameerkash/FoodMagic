@@ -62,9 +62,9 @@ Once you have appwrite successfully running as a docker container,
 - Enter the app details, be sure enter `com.example.foodmagic` as the domain
 - Go to Project settings and copy your `projectId`
 - Navigate to the flutter project, which is at `FoodMagic/foodmagic`
-- create a `.env` file at the root and copy the contents from .env.example
-- In the `.env` file, add the `projectId` you just copied.
+- Copy `project_id`, colletion ids and other variabales into `env.dart`
 - If you're running on an emulator, insert `localhost` as the value for `IP` else use the IP adress of you PC if you're using a physical device.
+- make sure to set Appwrite env variable `_APP_OPTIONS_FORCE_HTTPS=disabled` to load images succesfully.
 
 **Run Scripts**
 
