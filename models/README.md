@@ -2,6 +2,3 @@
 
 
 **3D Models build using Blender**
-
-
-**Contents**
