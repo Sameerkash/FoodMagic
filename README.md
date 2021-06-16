@@ -18,7 +18,7 @@ FoodMagic is an unique take on food delivery using augmented reailty and stunnin
 - [ ] Delivery tracking using Maps
 
 <pre>
-<img  src="./images/1.gif" width="300" height="600"/> <img  src="./images/2.gif" width="300" height="600"/> <img  src="./images/3.gif" width="300" height="600"/> <img  src="./images/4.gif" width="300" height="600"/> <img  src="./images/5.gif" width="300" height="600"/>
+<img  src="./images/1.gif" width="300" height="600"/> <img  src="./images/6.gif" width="300" height="600"/> <img  src="./images/2.gif" width="300" height="600"/> <img  src="./images/3.gif" width="300" height="600"/> <img  src="./images/4.gif" width="300" height="600"/> <img  src="./images/5.gif" width="300" height="600"/>
 </pre>
 
 **Tech Stack**
@@ -46,6 +46,8 @@ FoodMagic is an unique take on food delivery using augmented reailty and stunnin
 If you wish to contribute to this repository, please fork the repository, make your chnages on a new branch and make a pull request.
 
 To View AR scenes, please ensure you have Google AR core services enabled on your phone.
+
+The initial build and install will take a few minutes as all of the AR model are assets in the app. There's currently an issue #17 trying to improve it to be remote, which wasn't possible due to Scenform's deprecation. If in the future there is a flutter AR core plugin using the latest AR core package, the app's AR performace can be improved. 
 
 **Setup AppWrite (version 0.8.0 required)**
 
