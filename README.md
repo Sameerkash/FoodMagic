@@ -2,7 +2,7 @@
 
 **An Augmendted Reailty app Food app built with Flutter and AR**
 
-FoodMagic is an unique take on food delivery using augmented reailty and stunning UI.
+FoodMagic is a unique take on food delivery using augmented reality and stunning UI.
 
 **Features**
 
